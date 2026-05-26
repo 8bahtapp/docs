@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8Baht Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Cookie Banner -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <div>
+                <h4>🍪 Cookies Policy</h4>
+                <p>เราใช้คุกกี้เพื่อปรับปรุงประสบการณ์ของคุณ บทความของเราจะช่วยให้คุณเข้าใจมากขึ้น</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn accept" onclick="acceptCookies()">ยอมรับ</button>
+                <button class="cookie-btn decline" onclick="declineCookies()">ปฏิเสธ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <!-- Logo — left -->
+                <div class="logo">
+                    <a href="https://8baht.com" target="_blank" rel="noopener noreferrer">
+                        <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/logo-8baht_n.png" alt="8Baht Logo">
+                    </a>
+                </div>
+
+                <!-- Nav links — center -->
+                <div class="nav-links">
+                    <a href="#installation" class="nav-link">ดาวน์โหลด</a>
+                    <a href="#license" class="nav-link">จัดการใบอนุญาต</a>
+                    <a href="#faq" class="nav-link">คำถามที่พบบ่อย</a>
+                    <a href="#knowledge-base" class="nav-link">ฐานความรู้</a>
+                </div>
+
+                <!-- Right side -->
+                <div class="nav-icons">
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" rel="noopener noreferrer" class="help-btn">
+                        บริการช่วยเหลือ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Bar -->
+    <div id="searchBar" class="search-bar hidden">
+        <div class="container">
+            <input type="text" id="searchInput" placeholder="ค้นหาบทความ, คำถาม, หรือหัวข้อ..." class="search-input">
+            <button class="search-close" onclick="toggleSearch()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>8Baht Docs</h1>
+            <p>ยินดีต้อนรับสู่ศูนย์คู่มือจัดการใบอนุญาตและการติดตั้งโปรแกรม</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Installation Section -->
+            <section id="installation" class="section">
+                <h2 class="section-title">ไฟล์ติดตั้ง</h2>
+                <div class="cards-grid">
+
+                    <div class="download-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/icon-adobecc.png" alt="Product">
+                            </div>
+                            <div class="card-title">
+                                <h3>Adobe Creative Cloud</h3>
+                                <p class="card-version">for Windows</p>
+                            </div>
+                            <button class="info-btn" onclick="showInfo('windows')" title="ข้อมูลเพิ่มเติม">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="card-divider"></div>
+                        <a href="https://8baht.com/" target="_blank" class="download-btn">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </a>
+                        <a href="https://helpx.adobe.com/creative-cloud/system-requirements.html" target="_blank" class="user-manual-btn">System Requirements →</a>
+                        <a href="https://helpx.adobe.com/support.html" target="_blank" class="user-manual-btn">User guide →</a>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/icon-adobecc.png" alt="Product">
+                            </div>
+                            <div class="card-title">
+                                <h3>Adobe Creative Cloud</h3>
+                                <p class="card-version">for macOS</p>
+                            </div>
+                            <button class="info-btn" onclick="showInfo('mac')" title="ข้อมูลเพิ่มเติม">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="card-divider"></div>
+                        <a href="https://8baht.com/" target="_blank" class="download-btn">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </a>
+                        <a href="https://helpx.adobe.com/creative-cloud/system-requirements.html" target="_blank" class="user-manual-btn">System Requirements →</a>
+                        <a href="https://helpx.adobe.com/support.html" target="_blank" class="user-manual-btn">User guide →</a>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/icon-adobe-ex.png" alt="Product">
+                            </div>
+                            <div class="card-title">
+                                <h3>Adobe Express</h3>
+                                <p class="card-version">for Web</p>
+                            </div>
+                        </div>
+                        <div class="card-divider"></div>
+                        <a href="https://new.express.adobe.com/" target="_blank" class="download-btn">
+                            Launch
+                        </a>
+                        <a href="https://helpx.adobe.com/express/web/get-started/web-technical-requirements.html" target="_blank" class="user-manual-btn">System Requirements →</a>
+                        <a href="https://helpx.adobe.com/support.html" target="_blank" class="user-manual-btn">User guide →</a>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/icon-acobat.png" alt="Product">
+                            </div>
+                            <div class="card-title">
+                                <h3>Acrobat</h3>
+                                <p class="card-version">for Windows</p>
+                            </div>
+                        </div>
+                        <div class="card-divider"></div>
+                        <a href="https://8baht.com/" target="_blank" class="download-btn">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </a>
+                        <a href="https://helpx.adobe.com/acrobat/desktop/get-started/learn-the-basics/tech-requirements.html" target="_blank" class="user-manual-btn">System Requirements →</a>
+                        <a href="https://helpx.adobe.com/support.html" target="_blank" class="user-manual-btn">User guide →</a>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/icon-adobe-ps.png" alt="Product">
+                            </div>
+                            <div class="card-title">
+                                <h3>Photoshop</h3>
+                                <p class="card-version">for Windows</p>
+                            </div>
+                        </div>
+                        <div class="card-divider"></div>
+                        <a href="https://8baht.com/" target="_blank" class="download-btn">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </a>
+                        <a href="https://helpx.adobe.com/photoshop/desktop/get-started/technical-requirements-installation/adobe-photoshop-on-desktop-technical-requirements.html" target="_blank" class="user-manual-btn">System Requirements →</a>
+                        <a href="https://helpx.adobe.com/support.html" target="_blank" class="user-manual-btn">User guide →</a>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/icon-adobe-ai.png" alt="Product">
+                            </div>
+                            <div class="card-title">
+                                <h3>illustrator</h3>
+                                <p class="card-version">for Windows</p>
+                            </div>
+                        </div>
+                        <div class="card-divider"></div>
+                        <a href="https://8baht.com/" target="_blank" class="download-btn">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </a>
+                        <a href="https://helpx.adobe.com/illustrator/desktop/get-started/learn-the-basics/technical-requirements.html#ai-on-the-desktop" target="_blank" class="user-manual-btn">System Requirements →</a>
+                        <a href="https://helpx.adobe.com/support.html" target="_blank" class="user-manual-btn">User guide →</a>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/icon-adobe.png" alt="Product">
+                            </div>
+                            <div class="card-title">
+                                <h3>แอปพลิเคชัน อื่นๆ</h3>
+                                <p class="card-version">All Platforms</p>
+                            </div>
+                        </div>
+                        <button class="info-btn" onclick="showInfo('windows')" title="ข้อมูลเพิ่มเติม">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        <div class="card-divider"></div>
+                        <a href="https://www.adobe.com/apps/all/all-platforms" target="_blank" class="download-btn">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </a>
+                        <a href="https://helpx.adobe.com/support.html" target="_blank" class="user-manual-btn">User guide →</a>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- License Section -->
+            <section id="license" class="section">
+                <h2 class="section-title">จัดการใบอนุญาต</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <div class="card-icon transfer-icon">
+                            <i class="fas fa-unlock"></i>
+                        </div>
+                        <h3>จัดการใบอนุญาต</h3>
+                        <p>เพื่อเริ่มต้นใช้งานจะต้องจัดการผู้ใช้งานก่อน</p>
+                        <a href="manage-license.html" class="card-link">เรียนรู้วิธี →</a>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-icon activate-icon">
+                            <i class="fas fa-lock-open"></i>
+                        </div>
+                        <h3>ติดตั้งและเปิดใช้งาน</h3>
+                        <p>ขั้นตอนการติดตั้งโปรแกรมและเปิดใช้งานใบอนุญาต</p>
+                        <a href="manage-license.html#install" class="card-link">เรียนรู้วิธี →</a>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-icon" style="background: rgba(255,59,48,0.1); color: #ff3b30;">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>ถอนใบอนุญาต</h3>
+                        <p>ถอนใบอนุญาตก่อนเปลี่ยนเครื่องหรือ Uninstall</p>
+                        <a href="manage-license.html#decivate" class="card-link">เรียนรู้วิธี →</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="faq" class="section">
+                <h2 class="section-title">คำถามที่พบบ่อย</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>วิธีเปิดใช้งานใบอนุญาตทำอย่างไร?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>หลังการสั่งซื้อ คุณจะได้รับอีเมลพร้อมลิงก์เปิดใช้งาน กดที่ลิงก์และเข้าสู่ระบบด้วยอีเมลที่ลงทะเบียนไว้</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>ต้องเชื่อมต่ออินเทอร์เน็ตตลอดเวลาหรือไม่?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>ใช่ จำเป็นต้องเชื่อมต่ออินเทอร์เน็ตสำหรับการเปิดใช้งานครั้งแรก หลังจากนั้นสามารถใช้งานแบบไม่เชื่อมต่ออินเทอร์เน็ตได้สูงสุด 99 วัน</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>วิธีรีเซ็ตรหัสผ่านลืมได้อย่างไร?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>ไปที่หน้าเข้าสู่ระบบและคลิก "ลืมรหัสผ่าน" เพื่อตั้งใหม่</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>ฉันสามารถใช้ใบอนุญาตหนึ่งฉบับบนหลายเครื่องได้หรือไม่?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>คุณสามารถลงชื่อเข้าใช้ได้ Adobe บนคอมพิวเตอร์ สองเครื่องเท่านั้นและคุณสามารถใช้งานแอปพลิเคชัน Adobe ได้บนคอมพิวเตอร์เพียงเครื่องเดียวในแต่ละครั้ง</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>หากฉันติดปัญหาการติดตั้งและเปิดใช้งานโปรแกรมทำอย่างไร?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>โปรดไปที่ <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank">Open Ticket</a> เจ้าหน้าที่จะติดต่อคุณในช่วงเวลาทำการ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Knowledge Base Section -->
+            <section id="knowledge-base" class="section">
+                <h2 class="section-title">ฐานความรู้</h2>
+                <div class="kb-grid">
+                    <div class="kb-card article-link">
+                        <h3>วิธีเปลี่ยนอีเมลผู้ใช้งาน</h3>
+                        <a href="https://8baht.com/" target="_blank" class="kb-link">เรียนรู้วิธี →</a>
+                    </div>
+                    <div class="kb-card article-link">
+                        <h3>วิธีเช็ควันหมดอายุ</h3>
+                        <a href="https://8baht.com/" target="_blank" class="kb-link">เรียนรู้วิธี →</a>
+                    </div>
+                    <div class="kb-card article-link">
+                        <h3>อัพเดตและเวอร์ชั่น</h3>
+                        <a href="https://8baht.com/" target="_blank" class="kb-link">เรียนรู้วิธี →</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Support CTA -->
+            <section class="guide-cta" id="contact">
+                <h2>ต้องการความช่วยเหลือเพิ่มเติม?</h2>
+                <p>หากคุณยังมีคำถาม โปรดติดต่อทีมสนับสนุนของเรา</p>
+                <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="cta-button">
+                    <i class="fas fa-headset"></i>
+                    บริการช่วยเหลือ
+                </a>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sale</h4>
+                    <a href="https://8baht.com" target="_blank">Product</a>
+                    <a href="mailto:8baht@applicadthai.com">Contact Sale</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank">Open Ticket</a>
+                    <a href="mailto:support8baht@applicadthai.com">Contact Support</a>
+                </div>
+                <div class="footer-section">
+                    <h4>8Baht</h4>
+                    <a href="https://8baht.com/" target="_blank">About</a>
+                    <a href="https://8baht.com/" target="_blank">Cookie</a>
+                </div>
+                <div class="footer-section">
+                    <h5>เวลาทำการ สำนักงานใหญ่</h5>
+                    <span style="font-size:12px;color:var(--footer-text)">จันทร์–ศุกร์ 09:00–17:00</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 8Baht Support. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Support Button -->
+    <div class="floating-support">
+        <button onclick="toggleChat()" title="ติดต่อฝ่ายสนับสนุน">
+            <i class="fas fa-headset"></i>
+        </button>
+    </div>
+
+    <!-- Chat Widget -->
+    <div id="chatWidget" class="chat-widget hidden">
+        <div class="chat-header">
+            <h4>Support Chat</h4>
+            <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-body">
+            <div class="chat-message bot">
+                <p>สวัสดี! ฉันสามารถช่วยอะไรได้บ้าง?</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="พิมพ์ข้อความ...">
+            <button><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Info Modal -->
+    <div id="infoModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="modalBody">
+                <div id="req-windows" class="req-content hidden">
+                    <h3>ข้อมูลเพิ่มเติม</h3>
+                    <ul>
+                        <li>ติดตั้ง Adobe Creative Cloud desktop app<br>
+                            เพื่อเริ่มต้นใช้งาน Application ในแผนของคุณทั้งหมด</li>
+                    </ul>
+                </div>
+                <div id="req-mac" class="req-content hidden">
+                    <h3>ข้อมูลเพิ่มเติม</h3>
+                    <ul>
+                        <li>ติดตั้ง Adobe Creative Cloud desktop app<br>
+                            เพื่อเริ่มต้นใช้งาน Application ในแผนของคุณทั้งหมด</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
