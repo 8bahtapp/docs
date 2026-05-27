@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>จัดการใบอนุญาต Adobe - 8Baht Docs</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <div>
+                <h4>🍪 Cookies Policy</h4>
+                <p>เราใช้คุกกี้เพื่อปรับปรุงประสบการณ์ของคุณ บทความของเราจะช่วยให้คุณเข้าใจมากขึ้น</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn accept" onclick="acceptCookies()">ยอมรับ</button>
+                <button class="cookie-btn decline" onclick="declineCookies()">ปฏิเสธ</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="/docs/">
+                        <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/logo-8baht_n.png" alt="8Baht Logo">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="/docs/adobe/" class="nav-link">Adobe</a>
+                    <a href="/docs/adobe/manage/" class="nav-link active">จัดการใบอนุญาต</a>
+                </div>
+                <div class="nav-icons">
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="help-btn">บริการช่วยเหลือ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content guide-page">
+        <div class="container guide-container">
+
+            <aside class="guide-sidebar">
+                <div class="sidebar-content">
+                    <h3>สารบัญ</h3>
+                    <nav class="toc-nav">
+                        <a href="#manage"   class="toc-link active">จัดการใบอนุญาต</a>
+                        <a href="#install"  class="toc-link">ติดตั้งและเปิดใช้งาน</a>
+                        <a href="#decivate" class="toc-link">ถอนใบอนุญาต</a>
+                        <a href="#faq"      class="toc-link">คำถามที่พบบ่อย</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <div class="guide-main">
+
+                <div class="guide-header">
+                    <h1>จัดการใบอนุญาต</h1>
+                    <p>เรียนรู้วิธีการจัดการใบอนุญาต Adobe ของคุณ</p>
+                </div>
+
+                <div class="breadcrumb-nav">
+                    <a href="/docs/">หน้าแรก</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="/docs/adobe/">Adobe</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>จัดการใบอนุญาต</span>
+                </div>
+
+                <!-- Section 1 -->
+                <section id="manage" class="guide-section">
+                    <h2>วิธีจัดการใบอนุญาต</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>เมื่อสั่งซื้อสำเร็จคุณจะได้รับอีเมลยืนยันการสั่งซื้อ อีเมลที่สั่งซื้อสามารถแอดอีเมลผู้ใช้งานและจัดการใบอนุญาตทั้งหมด</p>
+                        </div>
+
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <p>การใช้งาน 1 ใบอนุญาตต่อ 1 อีเมล เช่น 5 ใบอนุญาตต้องใช้อีเมล 5 บัญชี</p>
+                        </div>
+
+                        <h3>รับคำเชิญ</h3>
+                        <ul class="guide-list">
+                            <li>
+                                คุณจะได้รับอีเมลคำเชิญจาก Adobe ไปที่อีเมลที่คุณใช้สั่งซื้อ
+                                <ul class="info-sublist">
+                                    <li>ค้นหาอีเมลจาก message@adobe.com หากหาไม่พบ</li>
+                                </ul>
+                            </li>
+                            <li>คลิก <strong>Get started</strong></li>
+                            <li>
+                                Sign in ด้วยอีเมลผู้ดูแลระบบ
+                                <ul class="info-sublist">
+                                    <li>รีเซ็ตรหัสผ่านหากคุณจำรหัสผ่านเดิมไม่ได้</li>
+                                    <li>หากยังไม่มี Adobe ID โปรด <strong>Create account</strong></li>
+                                </ul>
+                            </li>
+                            <li>คลิก <strong>Join team</strong> เพื่อเข้าร่วมทีม</li>
+                            <li>เลือกโปรไฟล์ (ชื่อบริษัท)</li>
+                        </ul>
+
+                        <h3>เพิ่มผู้ใช้งาน</h3>
+                        <ul class="guide-list">
+                            <li>เข้าสู่หน้าจัดการใบอนุญาต <a href="https://adminconsole.adobe.com/" target="_blank">Adobe Admin Console</a></li>
+                            <li>คลิกที่ชื่อโปรดักส์ที่ต้องการ</li>
+                            <li>คลิก <strong>Add User</strong></li>
+                            <li>
+                                ใส่อีเมลผู้ใช้งาน และคลิกที่ปุ่มลูกศรด้านหลัง (หากมี)
+                                <ul class="info-sublist">
+                                    <li>เลือก <strong>Add as a new user</strong></li>
+                                    <li>ทำซ้ำขั้นตอนเดิมเพื่อเพิ่มอีเมลผู้ใช้งานท่านอื่น</li>
+                                </ul>
+                            </li>
+                            <li>ที่แถบเมนูด้านบนเลือก <strong>User</strong></li>
+                            <li>ผู้ใช้งานจะได้รับอีเมลคำเชิญเพื่อเริ่มต้นใช้งาน</li>
+                        </ul>
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>จัดการผู้ใช้งานทั้งหมดได้จากหน้า <a href="https://adminconsole.adobe.com/" target="_blank">Adobe Admin Console</a></p>
+                        </div>
+
+                        <div class="video-container">
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGrcdswG-U/nxtVFlJUIgIA3ovzuctspQ/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Section 2 -->
+                <section id="install" class="guide-section">
+                    <h2>ติดตั้งและเปิดใช้งาน</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>โปรดกดรับคำเชิญทางอีเมลก่อนเริ่มติดตั้ง</p>
+                        </div>
+
+                        <h3>ติดตั้ง</h3>
+                        <ul class="guide-list">
+                            <li>ดาวน์โหลดไฟล์ติดตั้งจาก <a href="/docs/adobe/">หน้า Adobe</a></li>
+                            <li>เปิดไฟล์ติดตั้งและทำตามขั้นตอน</li>
+                            <li>รอจนติดตั้งเสร็จสมบูรณ์</li>
+                        </ul>
+
+                        <h3>เปิดใช้งาน</h3>
+                        <ul class="guide-list">
+                            <li>เปิดโปรแกรม Creative Cloud</li>
+                            <li>Sign in ด้วยอีเมลที่ได้รับคำเชิญ</li>
+                            <li>เลือกโปรแกรมที่ต้องการติดตั้งและคลิก Install</li>
+                        </ul>
+
+                        <div class="video-container">
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGrcdswG-U/nxtVFlJUIgIA3ovzuctspQ/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Section 3 -->
+                <section id="decivate" class="guide-section">
+                    <h2>ถอนใบอนุญาต</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-red">
+                            <i class="fas fa-exclamation-circle info-box-icon"></i>
+                            <p>โปรดถอนใบอนุญาตก่อน Uninstall โปรแกรม หรือก่อนเปลี่ยนเครื่องคอมพิวเตอร์</p>
+                        </div>
+
+                        <h3>Deactivate</h3>
+                        <ul class="guide-list">
+                            <li>เปิด Creative Cloud Desktop App</li>
+                            <li>คลิกที่ชื่อบัญชีมุมขวาบน</li>
+                            <li>เลือก Sign Out</li>
+                        </ul>
+
+                        <div class="video-container">
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGrcdswG-U/nxtVFlJUIgIA3ovzuctspQ/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- FAQ -->
+                <section id="faq" class="guide-section">
+                    <h2>คำถามที่พบบ่อย</h2>
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>วิธีเปิดใช้งานใบอนุญาตทำอย่างไร?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>หลังการสั่งซื้อ คุณจะได้รับอีเมลพร้อมลิงก์เปิดใช้งาน กดที่ลิงก์และเข้าสู่ระบบด้วยอีเมลที่ลงทะเบียนไว้</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>ต้องเชื่อมต่ออินเทอร์เน็ตตลอดเวลาหรือไม่?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>ใช่ จำเป็นต้องเชื่อมต่ออินเทอร์เน็ตสำหรับการเปิดใช้งานครั้งแรก หลังจากนั้นสามารถใช้งานแบบไม่เชื่อมต่ออินเทอร์เน็ตได้สูงสุด 99 วัน</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>วิธีรีเซ็ตรหัสผ่านลืมได้อย่างไร?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>ไปที่หน้าเข้าสู่ระบบและคลิก "ลืมรหัสผ่าน" เพื่อตั้งใหม่</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>ฉันสามารถใช้ใบอนุญาตหนึ่งฉบับบนหลายเครื่องได้หรือไม่?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>คุณสามารถลงชื่อเข้าใช้ Adobe บนคอมพิวเตอร์สองเครื่องเท่านั้น และสามารถใช้งานแอปพลิเคชัน Adobe ได้บนคอมพิวเตอร์เพียงเครื่องเดียวในแต่ละครั้ง</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>หากฉันติดปัญหาการติดตั้งและเปิดใช้งานโปรแกรมทำอย่างไร?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>โปรดไปที่ <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank">Open Ticket</a> เจ้าหน้าที่จะติดต่อคุณในช่วงเวลาทำการ</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="guide-cta" id="contact">
+                    <h2>ต้องการความช่วยเหลือเพิ่มเติม?</h2>
+                    <p>หากคุณยังมีคำถาม โปรดติดต่อทีมสนับสนุนของเรา</p>
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="cta-button">
+                        <i class="fas fa-headset"></i> บริการช่วยเหลือ
+                    </a>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sale</h4>
+                    <a href="https://8baht.com" target="_blank">Product</a>
+                    <a href="mailto:8baht@applicadthai.com">Contact Sale</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank">Open Ticket</a>
+                    <a href="mailto:support8baht@applicadthai.com">Contact Support</a>
+                </div>
+                <div class="footer-section">
+                    <h4>8Baht</h4>
+                    <a href="https://8baht.com/" target="_blank">About</a>
+                    <a href="/docs/cookies/">Cookie Policy</a>
+                </div>
+                <div class="footer-section">
+                    <h4>เวลาทำการ สำนักงานใหญ่</h4>
+                    <span style="font-size:13px;color:var(--text-tertiary)">จันทร์–ศุกร์ 09:00–17:00</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span class="footer-dot"></span>
+                <p>&copy; 2026 8Baht Support. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-support">
+        <button onclick="toggleChat()" title="ติดต่อฝ่ายสนับสนุน">
+            <i class="fas fa-headset"></i>
+        </button>
+    </div>
+
+    <div id="chatWidget" class="chat-widget hidden">
+        <div class="chat-header">
+            <h4>Support Chat</h4>
+            <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot">
+                <p>สวัสดี! มีคำถามเกี่ยวกับ Adobe ไหม?</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="พิมพ์ข้อความ..." onkeydown="handleChatKey(event)">
+            <button onclick="sendChat()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="../../script.js"></script>
+    <script src="../chat-data.js"></script>
+    <script src="../chat-engine.js"></script>
+</body>
+</html>
