@@ -46,8 +46,6 @@ function initDisclaimer() {
   const parent = body.parentElement
   if (parent.querySelector('.chat-disclaimer')) return
 
-  // ให้ chatBody scroll ได้
-  body.style.overflowY = 'auto'
 
   const bar = document.createElement('div')
   bar.className = 'chat-disclaimer'
