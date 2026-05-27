@@ -134,6 +134,7 @@ function toggleChat() {
     if (!chatWidget.classList.contains('hidden')) {
         const chatInput = chatWidget.querySelector('.chat-input input');
         chatInput.focus();
+        if (typeof initDisclaimer === 'function') initDisclaimer();
     }
 }
 

@@ -37,6 +37,30 @@ function initChatEngine() {
   fuse = new Fuse(chatData, FUSE_OPTIONS)
 }
 
+// แสดง disclaimer แบบ sticky ใน chatBody เมื่อเปิด widget
+function initDisclaimer() {
+  const body = document.getElementById('chatBody')
+  if (!body || body.querySelector('.chat-disclaimer')) return
+
+  const bar = document.createElement('div')
+  bar.className = 'chat-disclaimer'
+  bar.style.cssText = [
+    'position:sticky',
+    'top:0',
+    'z-index:10',
+    'background:#fff8e1',
+    'color:#7a6300',
+    'font-size:11px',
+    'line-height:1.5',
+    'padding:6px 10px',
+    'border-bottom:1px solid #ffe082',
+    'text-align:center'
+  ].join(';')
+  bar.textContent = '🤖 ระบบตอบอัตโนมัติ — คำตอบอาจไม่ครอบคลุมทุกกรณี หากต้องการความช่วยเหลือเพิ่มเติม กรุณาเปิด Ticket'
+
+  body.prepend(bar)
+}
+
 // ─────────────────────────────────────────
 // Send & Search
 // ─────────────────────────────────────────
