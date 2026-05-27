@@ -37,28 +37,34 @@ function initChatEngine() {
   fuse = new Fuse(chatData, FUSE_OPTIONS)
 }
 
-// แสดง disclaimer แบบ sticky ใน chatBody เมื่อเปิด widget
+// แสดง disclaimer ใต้ chatBody (นอก scroll area) — คงอยู่ตลอด
 function initDisclaimer() {
   const body = document.getElementById('chatBody')
-  if (!body || body.querySelector('.chat-disclaimer')) return
+  if (!body) return
+
+  // วาง disclaimer เป็น sibling ถัดจาก chatBody ไม่ใช่ลูก
+  const parent = body.parentElement
+  if (parent.querySelector('.chat-disclaimer')) return
+
+  // ให้ chatBody scroll ได้
+  body.style.overflowY = 'auto'
 
   const bar = document.createElement('div')
   bar.className = 'chat-disclaimer'
   bar.style.cssText = [
-    'position:sticky',
-    'top:0',
-    'z-index:10',
     'background:#fff8e1',
     'color:#7a6300',
     'font-size:11px',
     'line-height:1.5',
     'padding:6px 10px',
-    'border-bottom:1px solid #ffe082',
-    'text-align:center'
+    'border-top:1px solid #ffe082',
+    'text-align:center',
+    'flex-shrink:0'
   ].join(';')
   bar.textContent = '🤖 ระบบตอบอัตโนมัติ — คำตอบอาจไม่ครอบคลุมทุกกรณี หากต้องการความช่วยเหลือเพิ่มเติม กรุณาเปิด Ticket'
 
-  body.prepend(bar)
+  // แทรกหลัง chatBody (ก่อน chat-input)
+  body.insertAdjacentElement('afterend', bar)
 }
 
 // ─────────────────────────────────────────
