@@ -59,25 +59,25 @@ function searchArticles() {
 // ========================================
 function toggleFaq(element) {
     const answer = element.nextElementSibling;
+    const faqItem = element.closest('.faq-item');
     const allAnswers = document.querySelectorAll('.faq-answer');
     const allQuestions = document.querySelectorAll('.faq-question');
-    
-    // Close all other FAQ items
-    allAnswers.forEach(item => {
-        if (item !== answer) {
-            item.classList.remove('show');
-        }
-    });
-    
-    allQuestions.forEach(item => {
-        if (item !== element) {
-            item.classList.remove('active');
-        }
-    });
-    
-    // Toggle current item
+    const allItems = document.querySelectorAll('.faq-item');
+
+    const scrollY = window.scrollY;
+
+    // Close all others
+    allAnswers.forEach(item => { if (item !== answer) item.classList.remove('show') });
+    allQuestions.forEach(item => { if (item !== element) item.classList.remove('active') });
+    allItems.forEach(item => { if (item !== faqItem) item.classList.remove('is-open') });
+
+    // Toggle current
     answer.classList.toggle('show');
     element.classList.toggle('active');
+    faqItem.classList.toggle('is-open', element.classList.contains('active'));
+
+    // Prevent page jump
+    window.scrollTo({ top: scrollY, behavior: 'instant' });
 }
 
 // ========================================

@@ -79,6 +79,24 @@
   --footer-bg   : var(--glass-bg-strong);
   --footer-text : var(--text-tertiary);
   --footer-head : var(--text-primary);
+
+  /* --- Dark UI (FAQ active, CTA background) --- */
+  --dark-bg         : #3a3a3c;
+  --dark-bg-deep    : #2c2c2e;
+  --dark-text       : #f4f4f5;
+  --dark-text-sub   : #d4d4d8;
+  --dark-text-faint : rgba(255, 255, 255, 0.45);
+  --dark-border     : rgba(255, 255, 255, 0.08);
+
+  /* --- Support Buttons (gradient dark) --- */
+  --support-bg        : #1c1c1e;
+  --support-bg-hover  : #2c2c2e;
+  --support-gradient  : linear-gradient(135deg, #28b84a 0%, #0ea5e9 100%);
+  --support-glow-1    : rgba(40, 184, 74, 0.6);    /* เขียว */
+  --support-glow-1-hi : rgba(40, 184, 74, 0.9);
+  --support-glow-2    : rgba(14, 165, 233, 0.25);  /* น้ำเงิน glow */
+  --support-glow-2-hi : rgba(14, 165, 233, 0.35);
+  --support-text      : #f4f4f5;
 }
 
 /* ============================================================
@@ -198,12 +216,33 @@ a:not(.help-btn):not(.download-btn):not(.cta-button):not(.cookie-btn):not(.nav-l
 .nav-icons { justify-self: end; display: flex; align-items: center }
 
 .help-btn {
-  padding: 8px 18px; background: var(--text-primary); color: #fff;
-  border-radius: 980px; font-size: 13px; font-weight: 600;
+  padding: 8px 18px;
+  background: var(--support-bg);
+  color: var(--support-text) !important;
+  border-radius: 980px;
+  font-size: 13px; font-weight: 600;
   transition: var(--transition); white-space: nowrap;
-  display: inline-flex; align-items: center;
+  display: inline-flex; align-items: center; gap: 6px;
+  position: relative;
+  /* gradient border via box-shadow */
+  box-shadow:
+    0 0 0 1.5px var(--support-glow-1),
+    0 0 0 1.5px rgba(196,65,12,0),
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 2px 8px rgba(0,0,0,0.25);
+  background-image: linear-gradient(var(--support-bg), var(--support-bg)),
+                    var(--support-gradient);
+  background-origin: border-box;
 }
-.help-btn:hover { background: var(--green); transform: translateY(-1px) }
+.help-btn:hover {
+  background: var(--support-bg-hover) !important;
+  color: var(--support-text) !important;
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 1.5px var(--support-glow-1-hi),
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 4px 16px var(--support-glow-2);
+}
 
 /* ============================================================
    SEARCH BAR
@@ -411,15 +450,35 @@ a:not(.help-btn):not(.download-btn):not(.cta-button):not(.cookie-btn):not(.nav-l
   transition: border-color 0.22s, box-shadow 0.22s;
 }
 .faq-item.is-open {
-  border-color: var(--green-border);
-  box-shadow: 0 0 0 1px var(--green-border), var(--glass-shadow);
+  border-color: var(--dark-bg);
+  box-shadow: var(--glass-shadow);
 }
+
+/* FAQ question — dark bg เมื่อเปิด */
+.faq-item.is-open .faq-question {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+  transition: background 0.22s, color 0.22s;
+}
+.faq-item.is-open .faq-question i {
+  color: var(--dark-text-faint);
+  transform: rotate(180deg);
+}
+
+/* FAQ answer — dark bg ต่อเนื่อง */
+.faq-item.is-open .faq-answer p {
+  background: var(--dark-bg-deep);
+  color: var(--dark-text-sub);
+  border-top-color: var(--dark-border);
+}
+.faq-item.is-open .faq-answer a       { color: var(--green) }
+.faq-item.is-open .faq-answer a:hover { text-decoration: underline }
 
 .faq-question {
   width: 100%; padding: 16px 20px;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
   background: none; border: none; cursor: pointer;
-  font-size: 14.5px; font-weight: 600; color: var(--text-primary);
+  font-size: 15.5px; font-weight: 600; color: var(--text-primary);
   text-align: left; font-family: inherit; transition: background 0.15s;
 }
 .faq-question:hover       { background: rgba(0,0,0,0.02) }
@@ -430,7 +489,7 @@ a:not(.help-btn):not(.download-btn):not(.cta-button):not(.cookie-btn):not(.nav-l
 .faq-answer.show          { max-height: 300px }
 
 .faq-answer p {
-  font-size: 14px; color: var(--text-secondary); line-height: 1.65;
+  font-size: 14.5px; color: var(--text-secondary); line-height: 1.65;
   border-top: 1px solid var(--border); padding: 14px 20px 18px;
 }
 .faq-answer a       { color: var(--green) }
@@ -519,12 +578,24 @@ a:not(.help-btn):not(.download-btn):not(.cta-button):not(.cookie-btn):not(.nav-l
 .floating-support { position: fixed; bottom: 28px; right: 28px; z-index: 500 }
 .floating-support button {
   width: 50px; height: 50px; border-radius: 50%;
-  background: var(--text-primary); color: #fff; border: none;
-  cursor: pointer; font-size: 17px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.22); transition: var(--transition);
+  background: var(--support-bg);
+  color: var(--support-text); border: none;
+  cursor: pointer; font-size: 18px;
+  box-shadow:
+    0 0 0 1.5px var(--support-glow-1),
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 4px 20px rgba(0,0,0,0.35);
+  transition: var(--transition);
   display: flex; align-items: center; justify-content: center;
 }
-.floating-support button:hover { background: var(--green); transform: scale(1.08) }
+.floating-support button:hover {
+  background: var(--support-bg-hover);
+  transform: scale(1.08);
+  box-shadow:
+    0 0 0 1.5px var(--support-glow-1-hi),
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 6px 24px var(--support-glow-2-hi);
+}
 
 /* ============================================================
    CHAT WIDGET
@@ -532,7 +603,9 @@ a:not(.help-btn):not(.download-btn):not(.cta-button):not(.cookie-btn):not(.nav-l
 .chat-widget {
   position: fixed; bottom: 88px; right: 28px; width: 310px;
   background: var(--glass-bg-strong); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); box-shadow: var(--glass-shadow-hover);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow-hover),
+              0 0 0 1.5px rgba(40,184,74,0.3);
   overflow: hidden; z-index: 499; animation: slideUp 0.22s ease;
 }
 .chat-widget.hidden { display: none }
@@ -543,18 +616,19 @@ a:not(.help-btn):not(.download-btn):not(.cta-button):not(.cookie-btn):not(.nav-l
 }
 
 .chat-header {
-  padding: 14px 18px; border-bottom: 1px solid var(--border);
+  padding: 14px 18px; border-bottom: 1px solid var(--dark-border);
   display: flex; align-items: center; justify-content: space-between;
+  background: var(--support-bg);
 }
-.chat-header h4      { font-size: 13.5px; font-weight: 700 }
-.chat-header button  {
-  background: none; border: none; cursor: pointer;
-  color: var(--text-tertiary); font-size: 13px;
+.chat-header h4 { font-size: 13.5px; font-weight: 700; color: var(--support-text) }
+.chat-header button {
+  background: rgba(255,255,255,0.08); border: none; cursor: pointer;
+  color: var(--dark-text-faint); font-size: 13px;
   width: 26px; height: 26px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   transition: var(--transition);
 }
-.chat-header button:hover { background: rgba(0,0,0,0.07) }
+.chat-header button:hover { background: rgba(255,255,255,0.15); color: var(--support-text) }
 
 .chat-body            { padding: 16px; min-height: 110px }
 .chat-message.bot {
@@ -571,11 +645,15 @@ a:not(.help-btn):not(.download-btn):not(.cta-button):not(.cookie-btn):not(.nav-l
 }
 .chat-input button {
   width: 30px; height: 30px; border-radius: 50%;
-  background: var(--text-primary); color: #fff; border: none;
+  background: var(--support-bg); color: var(--support-text); border: none;
   cursor: pointer; font-size: 11px; transition: var(--transition);
   display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 0 1px rgba(40,184,74,0.5);
 }
-.chat-input button:hover { background: var(--green) }
+.chat-input button:hover {
+  background: var(--support-bg-hover);
+  box-shadow: 0 0 0 1px var(--support-glow-1-hi), 0 2px 8px var(--support-glow-2);
+}
 
 /* ============================================================
    MODAL
@@ -721,28 +799,41 @@ a:not(.help-btn):not(.download-btn):not(.cta-button):not(.cookie-btn):not(.nav-l
 
 /* CTA */
 .guide-cta {
-  background: var(--glass-bg-strong); border: 1px solid var(--border);
+  background: var(--dark-bg-deep); border: 1px solid rgba(255,255,255,0.06);
   border-radius: var(--radius-xl); padding: 44px 40px; text-align: center;
   box-shadow: var(--glass-shadow); position: relative; overflow: hidden;
 }
 .guide-cta::before {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(40,184,74,0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(40,184,74,0.12) 0%, transparent 70%);
   pointer-events: none;
 }
 .guide-cta::after {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
   background: linear-gradient(90deg, transparent 10%, var(--green) 50%, transparent 90%);
 }
-.guide-cta h2 { font-family: var(--font-heading); font-size: 22px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px }
-.guide-cta p  { font-size: 14.5px; color: var(--text-tertiary); margin-bottom: 22px }
+.guide-cta h2 { font-family: var(--font-heading); font-size: 22px; font-weight: 700; color: var(--dark-text); margin-bottom: 10px }
+.guide-cta p  { font-size: 14.5px; color: var(--dark-text-sub); margin-bottom: 22px }
 
 .cta-button {
   display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px;
-  background: var(--text-primary); color: #fff;
-  border-radius: 980px; font-size: 14px; font-weight: 600; transition: var(--transition);
+  background: var(--support-bg);
+  color: var(--support-text) !important;
+  border-radius: 980px; font-size: 14px; font-weight: 600;
+  transition: var(--transition); position: relative;
+  box-shadow:
+    0 0 0 1.5px var(--support-glow-1),
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 4px 16px rgba(0,0,0,0.3);
 }
-.cta-button:hover { background: var(--green); transform: translateY(-2px) }
+.cta-button:hover {
+  background: var(--support-bg-hover) !important;
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 1.5px var(--support-glow-1-hi),
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 8px 24px var(--support-glow-2);
+}
 
 /* ============================================================
    MANAGE LICENSE ADDITIONS
