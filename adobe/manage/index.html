@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>จัดการใบอนุญาต Adobe - 8Baht Docs</title>
+    <title>Adobe Manage - 8Baht Docs</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/favicon.png">
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -12,8 +13,8 @@
     <div id="cookieBanner" class="cookie-banner">
         <div class="cookie-content">
             <div>
-                <h4>🍪 Cookies Policy</h4>
-                <p>เราใช้คุกกี้เพื่อปรับปรุงประสบการณ์ของคุณ บทความของเราจะช่วยให้คุณเข้าใจมากขึ้น</p>
+                <h4>Cookies Policy</h4>
+                p>เราใช้คุกกี้เพื่อปรับปรุงประสบการณ์ของคุณ <a href="https://8bahtapp.github.io/docs/cookies/" target="_blank">บทความของเรา</a>จะช่วยให้คุณเข้าใจมากขึ้น</p>
             </div>
             <div class="cookie-buttons">
                 <button class="cookie-btn accept" onclick="acceptCookies()">ยอมรับ</button>
@@ -31,8 +32,10 @@
                     </a>
                 </div>
                 <div class="nav-links">
-                    <a href="/docs/adobe/" class="nav-link">Adobe</a>
-                    <a href="/docs/adobe/manage/" class="nav-link active">จัดการใบอนุญาต</a>
+                    <a href="/docs/adobe/#installation" class="nav-link">ดาวน์โหลด</a>
+                    <a href="/docs/adobe/#manage" class="nav-link active">จัดการใบอนุญาต</a>
+                    <a href="/docs/adobe/#faq" class="nav-link">คำถามที่พบบ่อย</a>
+                    <a href="/docs/adobe/#tips" class="nav-link">ข้อมูลเพิ่มเติม</a>
                 </div>
                 <div class="nav-icons">
                     <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="help-btn">บริการช่วยเหลือ</a>
@@ -51,7 +54,7 @@
                         <a href="#manage"   class="toc-link active">จัดการใบอนุญาต</a>
                         <a href="#install"  class="toc-link">ติดตั้งและเปิดใช้งาน</a>
                         <a href="#decivate" class="toc-link">ถอนใบอนุญาต</a>
-                        <a href="#faq"      class="toc-link">คำถามที่พบบ่อย</a>
+                        <a href="#options"  class="toc-link">เพิ่มเติม</a>
                     </nav>
                 </div>
             </aside>
@@ -64,8 +67,6 @@
                 </div>
 
                 <div class="breadcrumb-nav">
-                    <a href="/docs/">หน้าแรก</a>
-                    <i class="fas fa-chevron-right"></i>
                     <a href="/docs/adobe/">Adobe</a>
                     <i class="fas fa-chevron-right"></i>
                     <span>จัดการใบอนุญาต</span>
@@ -91,12 +92,12 @@
                             <li>
                                 คุณจะได้รับอีเมลคำเชิญจาก Adobe ไปที่อีเมลที่คุณใช้สั่งซื้อ
                                 <ul class="info-sublist">
-                                    <li>ค้นหาอีเมลจาก message@adobe.com หากหาไม่พบ</li>
+                                    <li>โปรดค้นหาอีเมลจาก message@adobe.com</li>
                                 </ul>
                             </li>
                             <li>คลิก <strong>Get started</strong></li>
                             <li>
-                                Sign in ด้วยอีเมลผู้ดูแลระบบ
+                                <strong>Sign in</strong> ด้วยอีเมลผู้ดูแลระบบ
                                 <ul class="info-sublist">
                                     <li>รีเซ็ตรหัสผ่านหากคุณจำรหัสผ่านเดิมไม่ได้</li>
                                     <li>หากยังไม่มี Adobe ID โปรด <strong>Create account</strong></li>
@@ -144,22 +145,31 @@
                             <p>โปรดกดรับคำเชิญทางอีเมลก่อนเริ่มติดตั้ง</p>
                         </div>
 
-                        <h3>ติดตั้ง</h3>
+                        <h3>ติดตั้งและเปิดใช้งาน</h3>
                         <ul class="guide-list">
-                            <li>ดาวน์โหลดไฟล์ติดตั้งจาก <a href="/docs/adobe/">หน้า Adobe</a></li>
-                            <li>เปิดไฟล์ติดตั้งและทำตามขั้นตอน</li>
-                            <li>รอจนติดตั้งเสร็จสมบูรณ์</li>
+                            <li>ผู้ใช้งานจะได้รับอีเมลคำเชิญจาก Adobe</li>
+                            <li>คลิก <strong>Get started</strong></li>
+                            <li>
+                                <strong>Sign in</strong> ด้วยอีเมลผู้ดูแลระบบ
+                                <ul class="info-sublist">
+                                    <li>รีเซ็ตรหัสผ่านหากคุณจำรหัสผ่านเดิมไม่ได้</li>
+                                    <li>หากยังไม่มี Adobe ID โปรด <strong>Create account</strong></li>
+                                </ul>
+                            </li>
+                            <li>คลิก <strong>Join team</strong> เพื่อเข้าร่วมทีม</li>
+                            <li>เลือกโปรไฟล์ (ชื่อบริษัท)</li>
+                            <li>ไฟล์ติดตั้งจะดาวน์โหลดอัตโนมัติ หรือไปที่หน้า  <a href="ttps://www.adobe.com/apps" target="_blank">Download</a></li>
+                            <li>คลิกที่ไฟล์เพื่อติดตั้ง และรอติดตั้งสักครู่</li>
+                            <li>สามารถติดตั้ง <strong>Apps เพิ่มเติม</strong> ได้ใน Adobe Creative Cloud</li>
                         </ul>
 
-                        <h3>เปิดใช้งาน</h3>
-                        <ul class="guide-list">
-                            <li>เปิดโปรแกรม Creative Cloud</li>
-                            <li>Sign in ด้วยอีเมลที่ได้รับคำเชิญ</li>
-                            <li>เลือกโปรแกรมที่ต้องการติดตั้งและคลิก Install</li>
-                        </ul>
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <p>หากใช้งานไม่ได้ คุณอาจข้ามขั้นตอน <strong>Join team</strong> หรือเลือกโปรไฟล์ผิดตอนเข้าสู่ระบบ โปรดลองอีกครั้ง</p>
+                        </div>
 
                         <div class="video-container">
-                            <iframe loading="lazy" src="https://www.canva.com/design/DAGrcdswG-U/nxtVFlJUIgIA3ovzuctspQ/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGrhEKGnQU/nvDNEkNvelY8NI2yZrLDQQ/watch?embed" allowfullscreen allow="fullscreen"></iframe>
                         </div>
 
                     </div>
@@ -177,67 +187,31 @@
 
                         <h3>Deactivate</h3>
                         <ul class="guide-list">
-                            <li>เปิด Creative Cloud Desktop App</li>
-                            <li>คลิกที่ชื่อบัญชีมุมขวาบน</li>
-                            <li>เลือก Sign Out</li>
+                            <li>เปิดโปรแกรม Adobe Creative Cloud หรือ Adobe โปรแกรมใด้ก็ได้</li>
+                            <li>ที่มุมขวาบน  คลิกที่ไอค่อนคนหรือชื่อ</li>
+                            <li>คลิก <strong>Sign out</strong></li>
+                            <li>เสร็จสิ้นขั้นตอนการถอนใบอนุญาต</li>
+                            <li>คุณสามารถติดตั้งโปรแกรมทีเครื่องอื่น โดยใช้อีเมลและรหัสผ่านเดิมได้เลย</li>
                         </ul>
 
                         <div class="video-container">
-                            <iframe loading="lazy" src="https://www.canva.com/design/DAGrcdswG-U/nxtVFlJUIgIA3ovzuctspQ/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGrhrbiNco/ESpf5AbfyEsxOmmXVqDUxw/watch?embed" allowfullscreen allow="fullscreen"></iframe>
                         </div>
 
                     </div>
                 </section>
 
-                <!-- FAQ -->
-                <section id="faq" class="guide-section">
-                    <h2>คำถามที่พบบ่อย</h2>
-                    <div class="faq-container">
-                        <div class="faq-item">
-                            <button class="faq-question" onclick="toggleFaq(this)">
-                                <span>วิธีเปิดใช้งานใบอนุญาตทำอย่างไร?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>หลังการสั่งซื้อ คุณจะได้รับอีเมลพร้อมลิงก์เปิดใช้งาน กดที่ลิงก์และเข้าสู่ระบบด้วยอีเมลที่ลงทะเบียนไว้</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-question" onclick="toggleFaq(this)">
-                                <span>ต้องเชื่อมต่ออินเทอร์เน็ตตลอดเวลาหรือไม่?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>ใช่ จำเป็นต้องเชื่อมต่ออินเทอร์เน็ตสำหรับการเปิดใช้งานครั้งแรก หลังจากนั้นสามารถใช้งานแบบไม่เชื่อมต่ออินเทอร์เน็ตได้สูงสุด 99 วัน</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-question" onclick="toggleFaq(this)">
-                                <span>วิธีรีเซ็ตรหัสผ่านลืมได้อย่างไร?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>ไปที่หน้าเข้าสู่ระบบและคลิก "ลืมรหัสผ่าน" เพื่อตั้งใหม่</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-question" onclick="toggleFaq(this)">
-                                <span>ฉันสามารถใช้ใบอนุญาตหนึ่งฉบับบนหลายเครื่องได้หรือไม่?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>คุณสามารถลงชื่อเข้าใช้ Adobe บนคอมพิวเตอร์สองเครื่องเท่านั้น และสามารถใช้งานแอปพลิเคชัน Adobe ได้บนคอมพิวเตอร์เพียงเครื่องเดียวในแต่ละครั้ง</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-question" onclick="toggleFaq(this)">
-                                <span>หากฉันติดปัญหาการติดตั้งและเปิดใช้งานโปรแกรมทำอย่างไร?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>โปรดไปที่ <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank">Open Ticket</a> เจ้าหน้าที่จะติดต่อคุณในช่วงเวลาทำการ</p>
-                            </div>
-                        </div>
+                <!-- Options -->
+                <section id="options" class="guide-section">
+                    <div class="content-card">
+
+                        <h3> ข้อมูลเพิ่มเติม</h3>
+                        <ul class="guide-list">
+                            <li><a href="/docs/adobe/#faq">คำถามที่พบบ่อย</a></li>
+                            <li><a href="/docs/adobe/#tips">วิธีค้นหา Customer ID</a></li>
+                            <li><a href="/docs/adobe/#tips">วิธีเช็ควันหมดอายุ</a></li>
+                        </ul>
+
                     </div>
                 </section>
 
@@ -272,12 +246,11 @@
                     <a href="/docs/cookies/">Cookie Policy</a>
                 </div>
                 <div class="footer-section">
-                    <h4>เวลาทำการ สำนักงานใหญ่</h4>
-                    <span style="font-size:13px;color:var(--text-tertiary)">จันทร์–ศุกร์ 09:00–17:00</span>
+                    <h5>เวลาทำการ สำนักงานใหญ่</h5>
+                    <span style="font-size:12px;color:var(--footer-text)">จันทร์–ศุกร์ 09:00–17:00</span>
                 </div>
             </div>
             <div class="footer-bottom">
-                <span class="footer-dot"></span>
                 <p>&copy; 2026 8Baht Support. All rights reserved.</p>
             </div>
         </div>
@@ -296,7 +269,7 @@
         </div>
         <div class="chat-body" id="chatBody">
             <div class="chat-message bot">
-                <p>สวัสดี! มีคำถามเกี่ยวกับ Adobe ไหม?</p>
+                <p>มีคำถามเกี่ยวกับ Adobe ไหม?</p>
             </div>
         </div>
         <div class="chat-input">
@@ -306,7 +279,7 @@
     </div>
 
     <script src="../../script.js"></script>
-    <script src="../chat-data.js"></script>
-    <script src="../chat-engine.js"></script>
+    <script src="../../chat-data.js"></script>
+    <script src="../../chat-engine.js"></script>
 </body>
 </html>
