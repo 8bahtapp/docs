@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tips&Tricks - Adobe - 8Baht Docs</title>
+    <title>Tips Adobe - 8Baht Docs</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/favicon.png">
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -12,8 +13,8 @@
     <div id="cookieBanner" class="cookie-banner">
         <div class="cookie-content">
             <div>
-                <h4>🍪 Cookies Policy</h4>
-                <p>เราใช้คุกกี้เพื่อปรับปรุงประสบการณ์ของคุณ บทความของเราจะช่วยให้คุณเข้าใจมากขึ้น</p>
+                <h4>Cookies Policy</h4>
+                <p>เราใช้คุกกี้เพื่อปรับปรุงประสบการณ์ของคุณ <a href="https://8bahtapp.github.io/docs/cookies/" target="_blank">บทความของเรา</a>จะช่วยให้คุณเข้าใจมากขึ้น</p>
             </div>
             <div class="cookie-buttons">
                 <button class="cookie-btn accept" onclick="acceptCookies()">ยอมรับ</button>
@@ -31,8 +32,10 @@
                     </a>
                 </div>
                 <div class="nav-links">
-                    <a href="/docs/adobe/" class="nav-link">Adobe</a>
-                    <a href="/docs/adobe/tips/" class="nav-link active">How To</a>
+                    <a href="/docs/adobe/#installation" class="nav-link">ดาวน์โหลด</a>
+                    <a href="/docs/adobe/#manage" class="nav-link">จัดการใบอนุญาต</a>
+                    <a href="/docs/adobe/#faq" class="nav-link">คำถามที่พบบ่อย</a>
+                    <a href="/docs/adobe/#tips" class="nav-link">ข้อมูลเพิ่มเติม</a>
                 </div>
                 <div class="nav-icons">
                     <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="help-btn">บริการช่วยเหลือ</a>
@@ -48,8 +51,9 @@
                 <div class="sidebar-content">
                     <h3>สารบัญ</h3>
                     <nav class="toc-nav">
-                        <a href="#customer-id" class="toc-link active">วิธีค้นหา Customer ID</a>
-                        <a href="#faq"         class="toc-link">คำถามที่พบบ่อย</a>
+                        <a href="#cid" class="toc-link active">วิธีค้นหา Customer ID</a>
+                        <a href="#asd" class="toc-link active">วิธีค้นหา วันหมดอายุ</a>
+                        <a href="#options" class="toc-link">เพิ่มเติม</a>
                     </nav>
                 </div>
             </aside>
@@ -57,20 +61,18 @@
             <div class="guide-main">
 
                 <div class="guide-header">
-                    <h1>How To</h1>
-                    <p>วิธีการตั้งค่าและค้นหาข้อมูลต่างๆ ใน Adobe Admin Console</p>
+                    <h1>Knowledge Base</h1>
+                    <p>ข้อมูลและวิธีการเพิ่มเติมสำหรับการใช้งานใบอนุญาตซอฟต์แวร์ของคุณ</p>
                 </div>
 
                 <div class="breadcrumb-nav">
-                    <a href="/docs/">หน้าแรก</a>
-                    <i class="fas fa-chevron-right"></i>
                     <a href="/docs/adobe/">Adobe</a>
                     <i class="fas fa-chevron-right"></i>
-                    <span>Tips&Tricks</span>
+                    <span>Customer ID</span>
                 </div>
 
                 <!-- Customer ID -->
-                <section id="customer-id" class="guide-section">
+                <section id="cid" class="guide-section">
                     <h2>วิธีค้นหา Customer ID</h2>
                     <div class="content-card">
 
@@ -82,14 +84,14 @@
                         <h3>ขั้นตอน</h3>
                         <ul class="guide-list">
                             <li>ไปที่ <a href="https://adminconsole.adobe.com/" target="_blank">Adobe Admin Console</a></li>
-                            <li>Sign in ด้วยอีเมล Admin</li>
+                            <li><strong>Sign in</strong> ด้วยอีเมล Admin</li>
                             <li>เลือกโปรไฟล์ที่ต้องการ (ปกติจะเป็นชื่อบริษัท)
                                 <ul class="info-sublist">
                                     <li>หากมีใบอนุญาตหลายครั้งอาจมีโปรไฟล์ให้เลือกหลายโปรไฟล์</li>
                                 </ul>
                             </li>
                             <li>ที่แถบเมนูสีดำด้านบน ไปที่หัวข้อ <strong>Account</strong></li>
-                            <li>Customer ID จะแสดงเป็น Account ID (ตัวอย่าง 100XXXXXXX)</li>
+                            <li>Customer ID จะแสดงเป็น <strong>Account ID</strong> (ตัวอย่าง 100XXXXXXX)</li>
                         </ul>
 
                         <div class="video-container">
@@ -99,59 +101,51 @@
                     </div>
                 </section>
 
-                <!-- FAQ -->
-                <section id="faq" class="guide-section">
-                    <h2>คำถามที่พบบ่อย</h2>
-                    <div class="faq-container">
-                        <div class="faq-item">
-                            <button class="faq-question" onclick="toggleFaq(this)">
-                                <span>วิธีเปิดใช้งานใบอนุญาตทำอย่างไร?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>หลังการสั่งซื้อ คุณจะได้รับอีเมลพร้อมลิงก์เปิดใช้งาน กดที่ลิงก์และเข้าสู่ระบบด้วยอีเมลที่ลงทะเบียนไว้</p>
-                            </div>
+                <!-- Anniversary date -->
+                <section id="asd" class="guide-section">
+                    <h2>วิธีค้นหา Anniversary date</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>Anniversary date คือวันครบรอบหรือวันหมดอายุของ Adobe</p>
                         </div>
-                        <div class="faq-item">
-                            <button class="faq-question" onclick="toggleFaq(this)">
-                                <span>ต้องเชื่อมต่ออินเทอร์เน็ตตลอดเวลาหรือไม่?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>ใช่ จำเป็นต้องเชื่อมต่ออินเทอร์เน็ตสำหรับการเปิดใช้งานครั้งแรก หลังจากนั้นสามารถใช้งานแบบไม่เชื่อมต่ออินเทอร์เน็ตได้สูงสุด 99 วัน</p>
-                            </div>
+
+                        <h3>ขั้นตอน</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่ <a href="https://adminconsole.adobe.com/" target="_blank">Adobe Admin Console</a></li>
+                            <li><strong>Sign in</strong> ด้วยอีเมล Admin</li>
+                            <li>เลือกโปรไฟล์ที่ต้องการ (ปกติจะเป็นชื่อบริษัท)
+                                <ul class="info-sublist">
+                                    <li>หากมีใบอนุญาตหลายครั้งอาจมีโปรไฟล์ให้เลือกหลายโปรไฟล์</li>
+                                </ul>
+                            </li>
+                            <li>ที่แถบเมนูสีดำด้านบน ไปที่หัวข้อ <strong>Account</strong></li>
+                            <li>มองหาคำว่า <strong>Anniversary date</strong> คุณจะพบวันหมดอายุ</li>
+                        </ul>
+
+                        <div class="video-container">
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGkSybkwpg/J8NPVGLfENfSkvIm64CGHg/watch?embed" allowfullscreen allow="fullscreen"></iframe>
                         </div>
-                        <div class="faq-item">
-                            <button class="faq-question" onclick="toggleFaq(this)">
-                                <span>วิธีรีเซ็ตรหัสผ่านลืมได้อย่างไร?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>ไปที่หน้าเข้าสู่ระบบและคลิก "ลืมรหัสผ่าน" เพื่อตั้งใหม่</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-question" onclick="toggleFaq(this)">
-                                <span>ฉันสามารถใช้ใบอนุญาตหนึ่งฉบับบนหลายเครื่องได้หรือไม่?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>คุณสามารถลงชื่อเข้าใช้ Adobe บนคอมพิวเตอร์สองเครื่องเท่านั้น และสามารถใช้งานแอปพลิเคชัน Adobe ได้บนคอมพิวเตอร์เพียงเครื่องเดียวในแต่ละครั้ง</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-question" onclick="toggleFaq(this)">
-                                <span>หากฉันติดปัญหาการติดตั้งและเปิดใช้งานโปรแกรมทำอย่างไร?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>โปรดไปที่ <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank">Open Ticket</a> เจ้าหน้าที่จะติดต่อคุณในช่วงเวลาทำการ</p>
-                            </div>
-                        </div>
+
                     </div>
                 </section>
 
-                <section class="guide-cta">
+                <!-- Options -->
+                <section id="options" class="guide-section">
+                    <div class="content-card">
+
+                        <h3> ข้อมูลเพิ่มเติม</h3>
+                        <ul class="guide-list">
+                            <li><a href="/docs/adobe/#faq">คำถามที่พบบ่อย</a></li>
+                            <li><a href="/docs/adobe/manage/#cid">วิธีค้นหา Customer ID</a></li>
+                            <li><a href="/docs/adobe/manage/#asd">วิธีเช็ควันหมดอายุ</a></li>
+                        </ul>
+
+                    </div>
+                </section>
+
+                <section class="guide-cta" id="contact">
                     <h2>ต้องการความช่วยเหลือเพิ่มเติม?</h2>
                     <p>หากคุณยังมีคำถาม โปรดติดต่อทีมสนับสนุนของเรา</p>
                     <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="cta-button">
@@ -182,12 +176,11 @@
                     <a href="/docs/cookies/">Cookie Policy</a>
                 </div>
                 <div class="footer-section">
-                    <h4>เวลาทำการ สำนักงานใหญ่</h4>
-                    <span style="font-size:13px;color:var(--text-tertiary)">จันทร์–ศุกร์ 09:00–17:00</span>
+                    <h5>เวลาทำการ สำนักงานใหญ่</h5>
+                    <span style="font-size:12px;color:var(--footer-text)">จันทร์–ศุกร์ 09:00–17:00</span>
                 </div>
             </div>
             <div class="footer-bottom">
-                <span class="footer-dot"></span>
                 <p>&copy; 2026 8Baht Support. All rights reserved.</p>
             </div>
         </div>
@@ -206,7 +199,7 @@
         </div>
         <div class="chat-body" id="chatBody">
             <div class="chat-message bot">
-                <p>สวัสดี! มีคำถามเกี่ยวกับ Adobe ไหม?</p>
+                <p>มีคำถามเกี่ยวกับ Adobe ไหม?</p>
             </div>
         </div>
         <div class="chat-input">
@@ -216,7 +209,7 @@
     </div>
 
     <script src="../../script.js"></script>
-    <script src="../chat-data.js"></script>
-    <script src="../chat-engine.js"></script>
+    <script src="../../chat-data.js"></script>
+    <script src="../../chat-engine.js"></script>
 </body>
 </html>
