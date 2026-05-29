@@ -667,7 +667,7 @@ a:not(.help-btn):not(.download-btn):not(.cta-button):not(.cookie-btn):not(.nav-l
 .modal-content {
   background: var(--glass-bg-strong); border: 1px solid var(--glass-border);
   border-radius: var(--radius-xl); padding: 36px;
-  max-width: 460px; width: 100%;
+  max-width: 500px; width: 100%;
   box-shadow: 0 24px 64px rgba(0,0,0,0.18);
   position: relative; animation: modalIn 0.22s ease;
 }
@@ -943,3 +943,52 @@ a:not(.help-btn):not(.download-btn):not(.cta-button):not(.cookie-btn):not(.nav-l
   .hero           { padding: 48px 0 44px }
   .footer-content { grid-template-columns: 1fr }
 }
+/* ========================================
+   Cards Grid — Collapse / Expand
+   ======================================== */
+.cards-grid-wrap { position: relative }
+.cards-grid-wrap.collapsed .cards-grid {
+  max-height: var(--grid-collapsed-height, 460px);
+  overflow: hidden;
+  position: relative;
+}
+/* fade อยู่ใน .cards-grid เพื่อให้ overlap ทับการ์ดได้ */
+.cards-grid-fade {
+  display: none;
+  position: absolute;
+  left: 0; right: 0;
+  height: 160px;
+  background: linear-gradient(to bottom, transparent, var(--bg-page, #f2f2f4));
+  pointer-events: none;
+  z-index: 2;
+}
+.cards-grid-wrap.collapsed .cards-grid-fade { display: block }
+
+/* ปุ่ม "ดูทั้งหมด" */
+.cards-grid-toggle {
+  display: none;
+  position: relative; z-index: 2;
+  width: 50%; margin-top: 16px; padding: 12px 28px;
+  background: var(--text-tertiary);
+  color: var(--support-text) !important;
+  border: none; border-radius: 980px;
+  cursor: pointer; font-size: 14px; font-weight: 600;
+  transition: var(--transition);
+  box-shadow:
+    0 0 0 1.5px var(--support-glow-1),
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 4px 16px rgba(0,0,0,0.3);
+}
+.cards-grid-toggle:hover {
+  background: var(--support-bg-hover) !important;
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 1.5px var(--support-glow-1-hi),
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 8px 24px var(--support-glow-2);
+}
+.cards-grid-wrap.has-overflow {
+  display: flex; flex-direction: column; align-items: center;
+}
+.cards-grid-wrap.has-overflow .cards-grid { width: 100% }
+.cards-grid-wrap.has-overflow .cards-grid-toggle { display: block }

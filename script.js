@@ -242,3 +242,68 @@ document.querySelectorAll('.download-btn, .card-link, .kb-link').forEach(btn => 
         });
     });
 });
+// ========================================
+// Cards Grid — Collapse / Expand
+// ซ่อนแถวที่ 2+ เมื่อมีการ์ดมากกว่า 1 แถว (> 3 ใบ)
+// ========================================
+(function initCardsCollapse() {
+  const COLS = 3; // ตรงกับ grid-template-columns: repeat(3, ...)
+  const THRESHOLD = COLS + 1; // > 3 ใบ = มีแถวที่ 2
+
+  document.querySelectorAll('.cards-grid').forEach(grid => {
+    const cards = grid.querySelectorAll('.download-card');
+    if (cards.length < THRESHOLD) return; // 1–3 ใบ ไม่ทำอะไร
+
+    // วัด height ของ 1 แถว (การ์ดใบแรก + gap)
+    function getRowHeight() {
+      const gap = parseInt(getComputedStyle(grid).gap) || 24;
+      return cards[0].offsetHeight + gap;
+    }
+
+    // Wrap
+    const wrap = document.createElement('div');
+    wrap.className = 'cards-grid-wrap collapsed has-overflow';
+    grid.parentNode.insertBefore(wrap, grid);
+    wrap.appendChild(grid);
+
+    // Fade overlay — อยู่ใน grid เพื่อให้ overflow:hidden clip พร้อมกัน
+    const fade = document.createElement('div');
+    fade.className = 'cards-grid-fade';
+    grid.appendChild(fade);
+
+    // Toggle button
+    const btn = document.createElement('button');
+    btn.className = 'cards-grid-toggle';
+    btn.innerHTML = 'ดูแอปพลิเคชันเพิ่มเติม';
+    wrap.appendChild(btn);
+
+    // max-height = แถว 1 + ครึ่งแถว 2, fade วางที่ครึ่งบนของแถว 2
+    function applyCollapse() {
+      const rowH = getRowHeight();
+      const halfRow = rowH / 2;
+      const collapsedH = rowH + halfRow;   // แถว 1 + ครึ่งแถว 2
+
+      if (wrap.classList.contains('collapsed')) {
+        grid.style.maxHeight = collapsedH + 'px';
+        // fade bottom = 0 → ติดล่างสุดของ max-height (กึ่งกลางแถว 2 พอดี)
+        fade.style.bottom = '0';
+      }
+    }
+
+    applyCollapse();
+    window.addEventListener('resize', applyCollapse);
+
+    btn.addEventListener('click', () => {
+      const isCollapsed = wrap.classList.contains('collapsed');
+      if (isCollapsed) {
+        wrap.classList.remove('collapsed');
+        grid.style.maxHeight = '';
+        btn.innerHTML = 'ย่อขึ้น &#9650;';
+      } else {
+        wrap.classList.add('collapsed');
+        applyCollapse();
+        btn.innerHTML = 'ดูแอปพลิเคชันเพิ่มเติม';
+      }
+    });
+  });
+})();
