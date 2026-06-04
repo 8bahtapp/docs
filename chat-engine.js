@@ -55,11 +55,11 @@ function initDisclaimer() {
     'font-size:11px',
     'line-height:1.5',
     'padding:6px 10px',
-    'border-top:1px solid #ffe082',
+    'border-top:1px solid #c8900a',
     'text-align:center',
     'flex-shrink:0'
   ].join(';')
-  bar.textContent = '🤖 ระบบตอบอัตโนมัติ — คำตอบอาจไม่ครอบคลุมทุกกรณี หากต้องการความช่วยเหลือเพิ่มเติม กรุณาเปิด Ticket'
+  bar.innerHTML = 'ระบบตอบอัตโนมัติ — คำตอบอาจไม่ครอบคลุมทุกกรณี<br>ติดต่อเจ้าหน้าที่ คลิก <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" style="color: #0078d4; text-decoration: underline;">Open Ticket</a>';
 
   // แทรกหลัง chatBody (ก่อน chat-input)
   body.insertAdjacentElement('afterend', bar)

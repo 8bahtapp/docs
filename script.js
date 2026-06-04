@@ -307,3 +307,74 @@ document.querySelectorAll('.download-btn, .card-link, .kb-link').forEach(btn => 
     });
   });
 })();
+// ========================================
+// FAQ Container — Collapse / Expand
+// ซ่อนรายการที่ 7+ เมื่อมี FAQ มากกว่า 6 ข้อ
+// ========================================
+(function initFaqCollapse() {
+  const THRESHOLD = 6;
+
+  document.querySelectorAll('.faq-container').forEach(container => {
+    const items = Array.from(container.querySelectorAll('.faq-item'));
+    if (items.length <= THRESHOLD) return;
+
+    // outerWrap — ไม่มี overflow ใดๆ วางปุ่มได้อิสระ
+    const outerWrap = document.createElement('div');
+    outerWrap.className = 'faq-outer has-overflow';
+    container.parentNode.insertBefore(outerWrap, container);
+
+    // wrap — มี overflow:hidden สำหรับ clip เท่านั้น
+    const wrap = document.createElement('div');
+    wrap.className = 'faq-wrap collapsed';
+    outerWrap.appendChild(wrap);
+    wrap.appendChild(container);
+
+    // Fade overlay — อยู่ใน wrap (position:absolute ติดล่าง)
+    const fade = document.createElement('div');
+    fade.className = 'faq-fade';
+    wrap.appendChild(fade);
+
+    // Toggle button — อยู่ใน outerWrap นอก overflow:hidden จึงแสดงเสมอ
+    const btn = document.createElement('button');
+    btn.className = 'faq-toggle';
+    btn.textContent = 'ดูคำถามเพิ่มเติม';
+    outerWrap.appendChild(btn);
+
+    // คำนวณ max-height ของ wrapper = top ของ item[6] (ข้อที่ 7)
+    // วัดจาก top ของ container เพื่อรวม gap อัตโนมัติ
+    // บวกครึ่ง height ของ item[6] เพื่อบอกใบ้ว่ามีเพิ่ม
+    function getCollapsedHeight() {
+      const containerRect = container.getBoundingClientRect();
+      const item7 = items[THRESHOLD]; // index 6
+      const item7Rect = item7.getBoundingClientRect();
+      const relTop = item7Rect.top - containerRect.top;
+      return relTop + item7.offsetHeight / 2;
+    }
+
+    function applyCollapse() {
+      if (wrap.classList.contains('collapsed')) {
+        wrap.style.maxHeight = getCollapsedHeight() + 'px';
+      }
+    }
+
+    applyCollapse();
+    window.addEventListener('resize', applyCollapse);
+
+    btn.addEventListener('click', () => {
+      if (wrap.classList.contains('collapsed')) {
+        // Expand
+        wrap.classList.remove('collapsed');
+        wrap.style.maxHeight = '';
+        btn.innerHTML = 'ย่อขึ้น &#9650;';
+      } else {
+        // Collapse — ปิด accordion ที่เปิดอยู่ก่อน
+        container.querySelectorAll('.faq-answer.show').forEach(a => a.classList.remove('show'));
+        container.querySelectorAll('.faq-question.active').forEach(q => q.classList.remove('active'));
+        container.querySelectorAll('.faq-item.is-open').forEach(i => i.classList.remove('is-open'));
+        wrap.classList.add('collapsed');
+        applyCollapse();
+        btn.textContent = 'ดูคำถามเพิ่มเติม';
+      }
+    });
+  });
+})();
