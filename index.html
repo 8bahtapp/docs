@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8Baht Documentation</title>
+    <title>Adobe - 8Baht Docs</title>
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "x1nphjvla3");
+    </script>
 </head>
+
 <body>
 
     <div id="cookieBanner" class="cookie-banner">
         <div class="cookie-content">
             <div>
-                <h4>🍪 Cookies Policy</h4>
-                <p>เราใช้คุกกี้เพื่อปรับปรุงประสบการณ์ของคุณ บทความของเราจะช่วยให้คุณเข้าใจมากขึ้น</p>
+                <h4>Cookies Policy</h4>
+                <p>เราใช้คุกกี้เพื่อปรับปรุงประสบการณ์ของคุณ <a href="https://8bahtapp.github.io/docs/cookies/"
+                        target="_blank">บทความของเรา</a>จะช่วยให้คุณเข้าใจมากขึ้น</p>
             </div>
             <div class="cookie-buttons">
                 <button class="cookie-btn accept" onclick="acceptCookies()">ยอมรับ</button>
@@ -26,12 +39,13 @@
         <div class="container">
             <div class="nav-content">
                 <div class="logo">
-                    <a href="/docs/">
-                        <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/logo-8baht_n.png" alt="8Baht Logo">
+                    <a href="https://8baht.com" target="_blank" rel="noopener noreferrer">
+                        <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/logo-8baht_n.png"
+                            alt="8Baht Logo">
                     </a>
                 </div>
                 <div class="nav-links">
-                    <a href="/docs/adobe/" class="nav-link">Adobe</a>
+                    <a href="#" class="nav-link"> </a>
                 </div>
                 <div class="nav-icons">
                     <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="help-btn">บริการช่วยเหลือ</a>
@@ -42,8 +56,8 @@
 
     <section class="hero">
         <div class="container">
-            <h1>8Baht Support Center</h1>
-            <p>ยินดีต้อนรับสู่ศูนย์ความช่วยเหลือและคู่มือการใช้งาน 8Baht</p>
+            <h1>8Baht Docs</h1>
+            <p>ยินดีต้อนรับสู่ศูนย์ช่วยเหลือและคู่มือจัดการใบอนุญาต</p>
             <div class="hero-search">
                 <input type="text" placeholder="ค้นหาบทความ, วิดีโอ, หรือเรื่องที่ต้องการ...">
                 <button><i class="fas fa-search"></i></button>
@@ -95,42 +109,20 @@
                 <div class="footer-section">
                     <h4>8Baht</h4>
                     <a href="https://8baht.com/" target="_blank">About</a>
-                    <a href="/docs/cookies/">Cookie Policy</a>
+                    <a href="https://8bahtapp.github.io/docs/cookies/" target="_blank">Cookie Policy</a>
                 </div>
                 <div class="footer-section">
-                    <h4>เวลาทำการ สำนักงานใหญ่</h4>
-                    <span style="font-size:13px;color:var(--text-tertiary)">จันทร์–ศุกร์ 09:00–17:00</span>
+                    <h5>เวลาทำการ สำนักงานใหญ่</h5>
+                    <span style="font-size:12px;color:var(--footer-text)">จันทร์–ศุกร์ 09:00–17:00</span>
                 </div>
             </div>
             <div class="footer-bottom">
-                <span class="footer-dot"></span>
                 <p>&copy; 2026 8Baht Support. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <div class="floating-support">
-        <button onclick="toggleChat()" title="ติดต่อฝ่ายสนับสนุน">
-            <i class="fas fa-headset"></i>
-        </button>
-    </div>
-
-    <div id="chatWidget" class="chat-widget hidden">
-        <div class="chat-header">
-            <h4>Support Chat</h4>
-            <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="chat-body">
-            <div class="chat-message bot">
-                <p>สวัสดี! ฉันสามารถช่วยอะไรได้บ้าง?</p>
-            </div>
-        </div>
-        <div class="chat-input">
-            <input type="text" placeholder="พิมพ์ข้อความ...">
-            <button><i class="fas fa-paper-plane"></i></button>
-        </div>
-    </div>
-
     <script src="script.js"></script>
 </body>
+
 </html>
