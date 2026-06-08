@@ -107,9 +107,9 @@ function getContext() {
   if (path.includes('/adobe/'))    return DOCS.adobe
   // if (path.includes('/product2/')) return DOCS.product2
   // if (path.includes('/product3/')) return DOCS.product3
-  return null  // หน้าที่ไม่มี context → ไม่แสดง chatbot
+  return null
 }
-
+ 
 // ─────────────────────────────────────────
 // Disclaimer
 // ─────────────────────────────────────────
@@ -118,7 +118,7 @@ function initDisclaimer() {
   if (!body) return
   const parent = body.parentElement
   if (parent.querySelector('.chat-disclaimer')) return
-
+ 
   const bar = document.createElement('div')
   bar.className = 'chat-disclaimer'
   bar.style.cssText = [
@@ -134,7 +134,22 @@ function initDisclaimer() {
   bar.innerHTML = 'ระบบตอบอัตโนมัติ — คำตอบอาจไม่ครอบคลุมทุกกรณี<br>ติดต่อเจ้าหน้าที่ คลิก <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" style="color:#0078d4;text-decoration:underline;">Open Ticket</a>'
   body.insertAdjacentElement('afterend', bar)
 }
-
+ 
+// ─────────────────────────────────────────
+// Parse markdown links → <a>
+// ─────────────────────────────────────────
+function parseLinks(text) {
+  const escaped = text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+ 
+  return escaped.replace(
+    /\[([^\]]+)\]\((https?:\/\/[^)]+|\/[^)]*)\)/g,
+    '<a href="$2" target="_blank" style="color:inherit;text-decoration:underline;">$1</a>'
+  )
+}
+ 
 // ─────────────────────────────────────────
 // Send & Reply
 // ─────────────────────────────────────────
@@ -143,24 +158,24 @@ function sendChat() {
   if (!input) return
   const text = input.value.trim()
   if (!text) return
-
+ 
   const context = getContext()
-  if (!context) return  // ไม่มี context → ไม่ทำอะไร
-
+  if (!context) return
+ 
   appendMessage(text, 'user')
   input.value = ''
   showTyping()
-
+ 
   getReply(text, context).then(reply => {
     removeTyping()
     appendMessage(reply.text, 'bot', reply.link)
   })
 }
-
+ 
 function handleChatKey(e) {
   if (e.key === 'Enter') sendChat()
 }
-
+ 
 async function getReply(question, context) {
   try {
     const res = await fetch(WORKER_URL, {
@@ -168,53 +183,59 @@ async function getReply(question, context) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ question, context })
     })
-
+ 
     if (res.status === 429) {
       return {
         text: 'ขออภัย ระบบมีผู้ใช้งานจำนวนมาก กรุณาติดต่อเจ้าหน้าที่โดยตรง',
         link: { text: 'Open Ticket', url: SUPPORT_URL }
       }
     }
-
+ 
     if (!res.ok) return contactStaffReply()
-
+ 
     const data = await res.json()
     if (data.error) return contactStaffReply()
-
+ 
     return { text: data.answer, link: null }
-
+ 
   } catch (e) {
     return contactStaffReply()
   }
 }
-
+ 
 function contactStaffReply() {
   return {
     text: 'ขออภัย ไม่สามารถเชื่อมต่อระบบได้ กรุณาติดต่อเจ้าหน้าที่โดยตรง',
     link: { text: 'Open Ticket', url: SUPPORT_URL }
   }
 }
-
+ 
 // ─────────────────────────────────────────
 // UI Helpers
 // ─────────────────────────────────────────
 function appendMessage(text, type, link = null) {
   const body = document.getElementById('chatBody')
   if (!body) return
-
+ 
   const wrapper = document.createElement('div')
   wrapper.className = `chat-message ${type}`
   wrapper.style.cssText = type === 'user'
     ? 'text-align:right; margin-bottom:10px;'
     : 'margin-bottom:10px;'
-
+ 
   const bubble = document.createElement('p')
   bubble.style.cssText = type === 'user'
     ? 'display:inline-block; background:var(--text-primary); color:#fff; padding:9px 13px; border-radius:14px 14px 4px 14px; font-size:13px; max-width:85%; line-height:1.5;'
     : 'display:inline-block; background:rgba(0,0,0,0.06); color:var(--text-secondary); padding:9px 13px; border-radius:14px 14px 14px 4px; font-size:13px; max-width:85%; line-height:1.5;'
-  bubble.textContent = text
+ 
+  if (type === 'bot') {
+    bubble.innerHTML = parseLinks(text)
+  } else {
+    bubble.textContent = text
+  }
+ 
   wrapper.appendChild(bubble)
-
+ 
   if (link && type === 'bot') {
     const a = document.createElement('a')
     a.href = link.url
@@ -223,11 +244,11 @@ function appendMessage(text, type, link = null) {
     a.style.cssText = 'display:block; margin-top:6px; font-size:12px; color:var(--blue); text-decoration:underline;'
     wrapper.appendChild(a)
   }
-
+ 
   body.appendChild(wrapper)
   body.scrollTop = body.scrollHeight
 }
-
+ 
 function showTyping() {
   const body = document.getElementById('chatBody')
   if (!body) return
@@ -239,7 +260,7 @@ function showTyping() {
   body.appendChild(el)
   body.scrollTop = body.scrollHeight
 }
-
+ 
 function removeTyping() {
   const el = document.getElementById('typingIndicator')
   if (el) el.remove()
