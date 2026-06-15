@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="th">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autodesk Manage - 8Baht Docs</title>
+    <title>SketchUp Manage - 8Baht Docs</title>
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/favicon.png">
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -42,10 +42,10 @@
                     </a>
                 </div>
                 <div class="nav-links">
-                    <a href="/docs/autodesk/" class="nav-link">ดาวน์โหลด</a>
-                    <a href="/docs/autodesk/manage/" class="nav-link">จัดการใบอนุญาต</a>
-                    <a href="/docs/autodesk/autocadlt/#faq" class="nav-link">คำถามที่พบบ่อย</a>
-                    <a href="/docs/autodesk/tips" class="nav-link">ข้อมูลเพิ่มเติม</a>
+                    <a href="/docs/sketchup/#installation" class="nav-link">ดาวน์โหลด</a>
+                    <a href="/docs/sketchup/#license" class="nav-link">จัดการใบอนุญาต</a>
+                    <a href="/docs/sketchup/#faq" class="nav-link">คำถามที่พบบ่อย</a>
+                    <a href="/docs/sketchup/#tips" class="nav-link">ข้อมูลเพิ่มเติม</a>
                 </div>
                 <div class="nav-icons">
                     <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="help-btn">Open Ticket</a>
@@ -72,12 +72,12 @@
             <div class="guide-main">
 
                 <div class="guide-header">
-                    <h1>Autodesk</h1>
+                    <h1>SketchUp</h1>
                     <p>การจัดการใบอนุญาต ติดตั้งและถอนใบอนุญาต</p>
                 </div>
 
                 <div class="breadcrumb-nav">
-                    <a href="/docs/autodesk/">Autodesk</a>
+                    <a href="/docs/sketchup/">SketchUp</a>
                     <i class="fas fa-chevron-right"></i>
                     <span>Manage License</span>
                 </div>
@@ -88,7 +88,7 @@
 
                         <div class="info-box info-blue">
                             <i class="fas fa-info-circle info-box-icon"></i>
-                            <p>เมื่อสั่งซื้อสำเร็จคุณจะได้รับอีเมลยืนยันการสั่งซื้อ อีเมลที่สั่งซื้อสามารถเพิ่มอีเมลผู้ใช้งานและจัดการใบอนุญาตทั้งหมด</p>
+                            <p>เมื่อสั่งซื้อสำเร็จคุณจะได้รับอีเมลคำเชิญ (Trimble Invitation) เข้าไปที่อีเมลที่ใช้สั่งซื้อ เพื่อเริ่มต้นใช้งาน SketchUp โปรดกดรับคำเชิญจากในอีเมล</p>
                         </div>
 
                         <div class="info-box info-yellow">
@@ -96,35 +96,48 @@
                             <p>การใช้งานกำหนดให้ 1 ใบอนุญาต ผูกกับ 1 บัญชีอีเมล (เช่น หากมี 5 สิทธิ์การใช้งาน จะต้องใช้ 5 อีเมล) ทั้งนี้ อีเมลที่ใช้สั่งซื้อจะได้รับสิทธิ์เป็น ผู้ดูแลระบบ (Admin) ซึ่งสามารถจัดการมอบสิทธิ์ หรือโอนย้ายสิทธิ์การใช้งานให้แก่อีเมลอื่น ๆ ได้ตลอดเวลา โดยที่ยังคงสถานะผู้ดูแลระบบไว้ตามเดิม</p>
                         </div>
 
-                        <h3>ขั้นตอนเข้าสู่ระบบจัดการ</h3>
+                        <h3>รับคำเชิญ (ครั้งแรก)</h3>
                         <ul class="guide-list">
-                            <li>เข้าสู่หน้าจัดการใบอนุญาต ไปที่ <a href="https://manage.autodesk.com/" target="_blank">https://manage.autodesk.com/</a></li>
-                            <li><strong>Sign in</strong> ด้วยอีเมลที่ใช้สั่งซื้อ
+                            <li>
+                                ตรวจสอบอีเมลคำเชิญจาก <strong>no-reply@account.trimble.com</strong>
                                 <ul class="info-sublist">
-                                    <li>รีเซ็ตรหัสผ่านหากคุณจำรหัสผ่านเดิมไม่ได้/ หากคุณยังไม่เคยมีบัญชีโปรด Create account.</li>
+                                    <li>หรือลองหาหัวจดหมาย: Trimble Invitation</li>
                                 </ul>
                             </li>
-                            <li>ที่ด้านบนไปที่เมนู <strong>User Management</strong>
-                                <ul class="info-sublist">
-                                    <li>license จะถูกมอบหมายให้กับอีเมลที่สั่งซื้อโดยอัตโนมัติ สามารถ Unassign เพื่อเพิ่มให้ผู้ใช้งานอื่นได้</li>
-                                    <li>คุณสามารถใช้อีเมลที่สั่งซื้อในการใช้งานได้เลย แต่หากมีมากกว่า 1 license คุณจะต้องเพิ่มอีเมลให้ครบตามจำนวน</li>
-                                </ul>
-                            </li>
-                            <li>คลิกที่ปุ่ม <strong>Invite users</strong> เพื่อเพิ่มผู้ใช้งาน</li>
-                            <li>ใส่ข้อมูลให้ครบถ้วน กด Send invite</li>
-                            <li>ที่ด้านบนไปที่เมนู <strong>User Management</strong></li>
-                            <li>อีเมลที่เพิ่มใหม่จะแสดงที่หน้า User Management <strong>คลิกที่ชื่อผู้ใช้งาน</strong></li>
-                            <li>เลื่อนลงมาด้านล่าง จะมีโปรดักส์ที่ใช้งานได้</li>
-                            <li>คลิก <strong>Assign</strong> เพื่อเพิ่มโปรดักส์ให้ผู้ใช้งาน
-                                <ul class="info-sublist">
-                                    <li>หากเป็นปุ่มสีเทาแสดงว่าโปรดักส์ถูกมอบหมายครบตามจำนวน โปรด Unassign ออกจากผู้ใช้งานท่านอื่นก่อน</li>
-                                </ul>
-                            </li>
-                            <li>สามารถทำซ้ำขั้นตอนเดิมเพื่อเพิ่มผู้ใช้งานให้ครับตามจำนวน</li>
+                            <li>คลิกที่ <strong>Click here</strong> ในอีเมลเพื่อตอบรับคำเชิญ</li>
+                            <li>เข้าสู่ระบบหรือสร้างบัญชี Trimble Identity</li>
+                            <li>เลือกโปรไฟล์ชื่อบริษัท (Purchased via....)</li>
                         </ul>
 
+                        <h3>เพิ่มผู้ใช้งาน</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่ <a href="https://ecom-prd.trimblepaas.com/account/organization/" target="_blank">SketchUp License Portal</a></li>
+                            <li>เข้าสู่ระบบด้วยอีเมล Admin</li>
+                            <li>เลือกโปรไฟล์ชื่อบริษัท (Purchased via....)</li>
+                            <li>
+                                เลือก <strong>Members</strong>
+                                <ul class="info-sublist">
+                                    <li>โดยปกติ license จะถูกมอบหมายอัตโนมัตไปที่อีเมลผู้ดูแล(เปลี่ยนแปลงได้)</li>
+                                </ul>
+                            </li>
+                            <li>คลิก <strong>Add New User</strong> เพื่อเพิ่มอีเมลผู้ใช้งาน</li>
+                            <li>
+                                ใส่อีเมลผู้ใช้งาน → คลิก <strong>Next</strong>
+                                <ul class="info-sublist">
+                                    <li>คุณสามารถใช้อีเมลที่สั่งซื้อใช้งาน SketchUp ได้เช่นกัน</li>
+                                </ul>
+                            </li>
+                            <li>เลือกโปรดักส์ SketchUp ที่ต้องการ และคลิก <strong>Add User</strong></li>
+                            <li>สามารถทำซ้ำขั้นตอนเดิมเพื่อเพิ่มอีเมลผู้ใช้งานท่านอื่น</li>
+                        </ul>
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>ผู้มีสิทธิ์ใช้งานจะมีสถานะ 1 Product... หากไม่ได้รับสิทธิ์จะเป็น None — หากผู้ใช้งานมีสถานะเป็น <strong>Invited</strong> จะต้องกดรับคำเชิญทางอีเมล</p>
+                        </div>
+
                         <div class="video-container">
-                            <iframe loading="lazy" src="https://www.canva.com/design/DAGrziAvmgw/5-QuKEqDuRI728DAGe06dw/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGsLuKwdvE/rc8kWnnYvbdaOzvJR9LwYw/watch?embed" allowfullscreen allow="fullscreen"></iframe>
                         </div>
 
                     </div>
@@ -136,31 +149,31 @@
 
                         <div class="info-box info-blue">
                             <i class="fas fa-info-circle info-box-icon"></i>
-                            <p>ผู้ใช้งานจะได้รับคำเชิญจาก Autodesk ทางอีเมลเพื่อเริ่มต้นใช้งาน</p>
+                            <p>SketchUp Subscription จะใช้อีเมลและรหัสผ่านในการเปิดใช้งานโปรแกรม จำเป็นต้องใช้งานอินเทอร์เน็ตสำหรับ Activate สามารถใช้งานออฟไลน์ได้สูงสุด 28 วัน หลังจากนั้นต้องเชื่อมต่อกับอินเทอร์เน็ตอีกครั้งเพื่อตรวจสอบใบอนุญาต</p>
                         </div>
 
-                        <h3>ติดตั้งและเปิดใช้งาน</h3>
+                        <h3>ขั้นตอนติดตั้งและเปิดใช้งาน</h3>
                         <ul class="guide-list">
-                            <li>ไปที่หน้า <a href="https://manage.autodesk.com/products/all" target="_blank">Download</a> เพื่อดาวน์โหลดไฟล์ติดตั้ง</li>
-                            <li>คลิกที่ไฟล์เพื่อติดตั้ง</li>
-                            <li>คลิก Next &gt; Install &gt; รอติดตั้งสักครู่ &gt; Finish</li>
-                            <li>เปิดโปรแกรมที่ติดตั้งเมื่อสักครู่</li>
-                            <li>เลือกการเปิดใช้งาน <strong>Sign in with your Autodesk ID</strong></li>
-                            <li><strong>Sign in</strong> ด้วยอีเมลผู้ใช้งาน
+                            <li>ดาวน์โหลดไฟล์ติดตั้ง SketchUp ที่หน้า <a href="/docs/sketchup/#installation" class="guide-link">ดาวน์โหลด</a></li>
+                            <li>
+                                ดับเบิลคลิกที่ไฟล์ เพื่อติดตั้งโปรแกรม
                                 <ul class="info-sublist">
-                                    <li>รีเซ็ตรหัสผ่านหากคุณจำรหัสผ่านเดิมไม่ได้/ หากคุณยังไม่เคยมีบัญชีโปรด Create account.</li>
+                                    <li>เลือกโปรดักส์ของ SketchUp Studio ออก หากแผนของคุณคือ SketchUp Pro</li>
                                 </ul>
                             </li>
-                            <li>คลิก Go to product > Open Autodesk Identity Manager</li>
-                            <li>เสร็จสิ้นขั้นตอนการติดตั้งและเปิดใช้งาน</li>
+                            <li>เลือก <strong>Install</strong> → รอติดตั้งสักครู่</li>
+                            <li>ติดตั้งสำเร็จ คลิก <strong>Finish</strong></li>
+                            <li>เปิดโปรแกรม SketchUp คลิก <strong>Sign in</strong></li>
+                            <li>เข้าสู่ระบบด้วยอีเมลผู้ใช้งาน</li>
+                        </ul>
 
                         <div class="info-box info-yellow">
                             <i class="fas fa-exclamation-triangle info-box-icon"></i>
-                            <p>ต้องเชื่อมต่ออินเทอร์เน็ตในระหว่างการ Activate และทุก <strong>30 วัน</strong> เพื่อตรวจสอบสถานะใบอนุญาต</p>
+                            <p>หากคุณเป็นผู้ใช้ใหม่ โปรดกดรับคำเชิญจาก Trimble ทางอีเมลก่อน — หากเข้าสู่ระบบแล้วมีข้อความ <em>"You have exceeded your allowed activations"</em> หรือ <em>"Please authorize SketchUp"</em> โปรดดู <a href="/docs/sketchup/tips/#de">วิธีรีเซ็ตใบอนุญาต</a></p>
                         </div>
 
                         <div class="video-container">
-                            <iframe loading="lazy" src="https://www.canva.com/design/DAGrz2hjjNI/bsMgu6WCk8GdL8eFxLs0aQ/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGsMMFZrQw/70UG2Pw7KY-A3aGqlAISBA/watch?embed" allowfullscreen allow="fullscreen"></iframe>
                         </div>
 
                     </div>
@@ -172,34 +185,36 @@
 
                         <div class="info-box info-red">
                             <i class="fas fa-exclamation-circle info-box-icon"></i>
-                            <p>โปรดถอนใบอนุญาตก่อน Uninstall โปรแกรม หรือก่อนเปลี่ยนเครื่องคอมพิวเตอร์</p>
+                            <p>แนะนำให้ถอนใบอนุญาตก่อน Uninstall โปรแกรม หรือก่อนเปลี่ยนเครื่องคอมพิวเตอร์</p>
                         </div>
 
-
-                        <h3>ขั้นตอนการ Deactivate/ ย้ายเครื่อง</h3>
+                        <h3>วิธีถอนใบอนุญาต (Sign Out)</h3>
                         <ul class="guide-list">
-                            <li>เปิดโปรแกรม Autodesk Access หรือ Autodesk โปรแกรมใด้ก็ได้</li>
-                            <li>ที่มุมขวาบน  คลิกที่ไอคอนคนหรือชื่อ</li>
-                            <li>คลิก <strong>Sign out</strong></li>
-                            <li>ถอนใบอนุญาต สำเร็จ คุณสามารถติดตั้งโปรแกรมทีเครื่องอื่น โดยใช้อีเมลและรหัสผ่านเดิมได้เลย</li>
+                            <li>เปิดโปรแกรม SketchUp</li>
+                            <li>ไปที่ไอคอนรูปคนที่มุมขวาบน</li>
+                            <li>เลือก <strong>Sign Out</strong></li>
+                            <li>เสร็จสิ้นขั้นตอนการถอนใบอนุญาต</li>
+                            <li>คุณสามารถใช้อีเมลและรหัสผ่านเดิมเพื่อติดตั้งและเปิดใช้งานที่คอมพิวเตอร์เครื่องใหม่ได้ทันที</li>
                         </ul>
 
                         <div class="video-container">
-                            <iframe loading="lazy" src="https://www.canva.com/design/DAGr0UQKFgY/WOvl2bQaIOxd1INEt9oLGg/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAG2f3mo5kw/1w1E6L2h_iodEJVXwSdViA/watch?embed" allowfullscreen allow="fullscreen"></iframe>
                         </div>
 
                     </div>
                 </section>
 
+                <!-- ข้อมูลเพิ่มเติม -->
                 <section id="options" class="guide-section">
                     <div class="content-card">
 
-                        <h3> ข้อมูลเพิ่มเติม</h3>
+                        <h3>ข้อมูลเพิ่มเติม</h3>
                         <ul class="guide-list">
-                            <li><a href="/docs/autodesk/autocadlt/#faq">คำถามที่พบบ่อย</a></li>
-                            <li><a href="/docs/autodesk/tips/#sn">วิธีค้นหา Serial Number</a></li>
-                            <li><a href="/docs/autodesk/tips/#exp">วิธีเช็ควันหมดอายุ</a></li>
-                            <li><a href="/cus/autodesk/tips/#exp">วิธีเช็ควันหมดอายุ</a></li>
+                            <li><a href="/docs/sketchup/#faq">คำถามที่พบบ่อย</a></li>
+                            <li><a href="/docs/sketchup/tips/#de">วิธีถอนใบอนุญาต (Deauthorize)</a></li>
+                            <li><a href="/docs/sketchup/tips/#eba">วิธีเช็ควันหมดอายุ (Admin)</a></li>
+                            <li><a href="/docs/sketchup/tips/#ebu">วิธีเช็ควันหมดอายุ (User)</a></li>
+                            <li><a href="/docs/sketchup/tips/#cus">วิธีเปลี่ยนอีเมลผู้ใช้งาน</a></li>
                         </ul>
 
                     </div>
@@ -259,7 +274,7 @@
         </div>
         <div class="chat-body" id="chatBody">
             <div class="chat-message bot">
-                <p>มีคำถามเกี่ยวกับ Autodesk ไหม?</p>
+                <p>สวัสดี! มีคำถามเกี่ยวกับ SketchUp ไหม?</p>
             </div>
         </div>
         <div class="chat-input">
@@ -271,4 +286,5 @@
     <script src="../../script.js"></script>
     <script src="../../chat-engine.js"></script>
 </body>
+
 </html>

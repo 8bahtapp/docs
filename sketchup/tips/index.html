@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SketchUp Tips - 8Baht Docs</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/favicon.png">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "x1nphjvla3");
+    </script>
+</head>
+
+<body>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <div>
+                <h4>Cookies Policy</h4>
+                <p>เราใช้คุกกี้เพื่อปรับปรุงประสบการณ์ของคุณ <a href="/docs/cookies/" target="_blank">บทความของเรา</a>จะช่วยให้คุณเข้าใจมากขึ้น</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn accept" onclick="acceptCookies()">ยอมรับ</button>
+                <button class="cookie-btn decline" onclick="declineCookies()">ปฏิเสธ</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="https://8baht.com" target="_blank" rel="noopener noreferrer">
+                        <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/logo-8baht_n.png" alt="8Baht Logo">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="/docs/sketchup/#installation" class="nav-link">ดาวน์โหลด</a>
+                    <a href="/docs/sketchup/#license" class="nav-link">จัดการใบอนุญาต</a>
+                    <a href="/docs/sketchup/#faq" class="nav-link">คำถามที่พบบ่อย</a>
+                    <a href="/docs/sketchup/tips" class="nav-link active">ข้อมูลเพิ่มเติม</a>
+                </div>
+                <div class="nav-icons">
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="help-btn">Open Ticket</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content guide-page">
+        <div class="container guide-container">
+
+            <aside class="guide-sidebar">
+                <div class="sidebar-content">
+                    <h3>สารบัญ</h3>
+                    <nav class="toc-nav">
+                        <a href="#de"  class="toc-link active">วิธีรีเซ็ตใบอนุญาต</a>
+                        <a href="#cus" class="toc-link">วิธีเปลี่ยนอีเมลผู้ใช้งาน</a>
+                        <a href="#eba" class="toc-link">วิธีเช็ควันหมดอายุ (Admin)</a>
+                        <a href="#ebu" class="toc-link">วิธีเช็ควันหมดอายุ (User)</a>
+                        <a href="#sa"  class="toc-link">วิธีบันทึกไฟล์เป็นเวอร์ชั่นเก่า</a>
+                        <a href="#options" class="toc-link">เพิ่มเติม</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <div class="guide-main">
+
+                <div class="guide-header">
+                    <h1>SketchUp</h1>
+                    <p>ข้อมูลเพิ่มเติมและคำแนะนำเกี่ยวกับใบอนุญาต</p>
+                </div>
+
+                <div class="breadcrumb-nav">
+                    <a href="/docs/sketchup/">SketchUp</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Knowledge Base</span>
+                </div>
+
+                <section id="de" class="guide-section">
+                    <h2>วิธีรีเซ็ตใบอนุญาต (Deauthorize)</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <p>หากคุณเข้าสู่ระบบที่โปรแกรม SketchUp และมีข้อความแจ้งว่า <em>"You have exceeded your allowed activations"</em> หรือ <em>"Please authorize SketchUp"</em> โปรดดำเนินการตามขั้นตอนดังนี้เพื่อรีเซ็ตการเข้าสู่ระบบทั้งหมด</p>
+                        </div>
+
+                        <h3>รีเซ็ตการเข้าสู่ระบบ (Deauthorize All)</h3>
+                        <ul class="guide-list">
+                            <li>คลิกที่ <strong>Manage Activations</strong> ในโปรแกรม หรือไปที่ <a href="https://ecom-prd.trimblepaas.com/account/" target="_blank">SketchUp License Portal</a></li>
+                            <li>เข้าสู่ระบบ</li>
+                            <li>เลือกโปรไฟล์ชื่อบริษัท (Purchased via....)</li>
+                            <li>เลือก <strong>My Products</strong></li>
+                            <li>คลิก <strong>View Included Applications</strong></li>
+                            <li>คลิก <strong>Manage Devices</strong></li>
+                            <li>คลิก <strong>Deauthorize All</strong> → คลิก <strong>Done</strong></li>
+                            <li>กลับไปที่โปรแกรม SketchUp</li>
+                            <li>Sign out และ Sign in ใหม่อีกครั้ง</li>
+                        </ul>
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>ขั้นตอนอาจมีแตกต่างเล็กน้อยขึ้นอยู่กับ Role ของคุณ</p>
+                        </div>
+
+                        <div class="video-container">
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGl_pl77KY/tBepp81FSTWFPodGbx3Vzg/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="cus" class="guide-section">
+                    <h2>วิธีเปลี่ยนอีเมลผู้ใช้งาน</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>การเปลี่ยนอีเมลผู้ใช้งานทำโดย Admin โดยต้องถอดสิทธิ์อีเมลเดิมออกก่อน แล้วเพิ่มอีเมลใหม่เข้าไปในระบบ</p>
+                        </div>
+
+                        <h3>ถอดสิทธิ์ผู้ใช้งานเดิม</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่ <a href="https://ecom-prd.trimblepaas.com/account/organization/" target="_blank">SketchUp License Portal</a></li>
+                            <li>เข้าสู่ระบบด้วยอีเมล Admin</li>
+                            <li>เลือกโปรไฟล์ชื่อบริษัท (Purchased via....)</li>
+                            <li>เลือก <strong>Members</strong></li>
+                            <li>คลิกที่ <strong>⁝</strong> (จุดสามจุด) ด้านหลังอีเมลผู้ใช้งาน</li>
+                            <li>คลิก <strong>Modify Product Access</strong></li>
+                            <li>คลิกยกเลิกโปรดักส์</li>
+                            <li>คลิกยืนยัน <strong>Save Product Access</strong></li>
+                        </ul>
+
+                        <h3>เพิ่มผู้ใช้งานใหม่</h3>
+                        <ul class="guide-list">
+                            <li>เลือก <strong>Add New User</strong> เพื่อเพิ่มอีเมลผู้ใช้งาน</li>
+                            <li>ใส่อีเมลผู้ใช้งาน → คลิก <strong>Next</strong></li>
+                            <li>เลือกโปรดักส์ SketchUp ที่ต้องการ และคลิก <strong>Add User</strong></li>
+                            <li>อีเมลจะถูกเพิ่มเข้ามาที่หน้าจัดการใบอนุญาต</li>
+                            <li>ผู้ใช้งานใหม่ (Status: <strong>Invited</strong>) จะได้รับอีเมลคำเชิญจาก Trimble โปรดกดรับคำเชิญทางอีเมล</li>
+                        </ul>
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>ผู้มีสิทธิ์ใช้งานจะมีสถานะ <strong>1 Product...</strong> หากไม่ได้รับสิทธิ์จะเป็น None</p>
+                        </div>
+
+                        <div class="video-container">
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGsOFMSqUw/L06Cv7LMPrqz3dl5gNjr-w/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="eba" class="guide-section">
+                    <h2>วิธีเช็ควันหมดอายุ (Admin)</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>SketchUp Subscription สามารถเช็ควันหมดอายุได้แบบออนไลน์โดยผู้ดูแลใบอนุญาต (อีเมลที่ใช้สั่งซื้อหรือผู้ที่ได้รับสิทธิ์ Admin) โดยมีข้อมูลที่จำเป็นทั้งหมดสำหรับการต่ออายุ</p>
+                        </div>
+
+                        <h3>ขั้นตอนสำหรับผู้ดูแลใบอนุญาต</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่ <a href="https://ecom-prd.trimblepaas.com/account/organization/" target="_blank">SketchUp License Portal</a></li>
+                            <li>เข้าสู่ระบบด้วยอีเมล Admin</li>
+                            <li>เลือกโปรไฟล์ชื่อบริษัท (Purchased via....)</li>
+                            <li>เลือก <strong>Plan Settings</strong></li>
+                            <li>วันหมดอายุ, ชื่อโปรดักส์ และจำนวนใบอนุญาตจะแสดงอยู่ที่หน้านี้</li>
+                        </ul>
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>หน้านี้จะเห็นวันหมดอายุของใบอนุญาตทั้งหมด เฉพาะผู้ดูแลใบอนุญาตเท่านั้น — หากคุณเป็นผู้ใช้งานทั่วไป โปรดดู <a href="#ebu">วิธีเช็ควันหมดอายุ (User)</a></p>
+                        </div>
+
+                        <div class="video-container">
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGn3uz3QwA/zDmacVsLO_dC6_40FPjLnw/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="ebu" class="guide-section">
+                    <h2>วิธีเช็ควันหมดอายุ (User)</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>ผู้ใช้งานทั่วไปสามารถตรวจสอบวันหมดอายุของใบอนุญาตได้โดยตรงจากในโปรแกรม SketchUp</p>
+                        </div>
+
+                        <h3>ขั้นตอนสำหรับผู้ใช้งาน</h3>
+                        <ul class="guide-list">
+                            <li>เปิดโปรแกรม SketchUp ของคุณ</li>
+                            <li>วันหมดอายุของคุณจะแสดงที่มุมด้านบนทางขวา</li>
+                            <li>หรือไปที่เมนู <strong>Help</strong> → <strong>Manage Licensing</strong></li>
+                        </ul>
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>หากคุณเป็นผู้ดูแลใบอนุญาต โปรดดู <a href="#eba">วิธีเช็ควันหมดอายุ (Admin)</a></p>
+                        </div>
+
+                        <div class="video-container">
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGn3qnZ7e8/hHVFHzp_glWNHd9yRQkj1w/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="sa" class="guide-section">
+                    <h2>วิธีบันทึกไฟล์เป็นเวอร์ชั่นเก่า</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <p>SketchUp 2024 หรือใหม่กว่าจะไม่มีเครื่องมือสำหรับ Save As ไฟล์เป็นเวอร์ชั่นเก่า คุณจะต้องใช้ Extension เพิ่มเติมเพื่อบันทึกไฟล์เป็นเวอร์ชั่นเก่า</p>
+                        </div>
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>ไฟล์ที่บันทึกด้วย SketchUp 2021 หรือใหม่กว่าสามารถใช้งานร่วมกันได้โดยไม่ต้องระบุเวอร์ชั่น</p>
+                        </div>
+
+                        <h3>ติดตั้ง Extension — Dezmo Save to older SketchUp Version</h3>
+                        <ul class="guide-list">
+                            <li>
+                                ดาวน์โหลดไฟล์ติดตั้ง Dezmo ที่ <a href="https://forums.sketchup.com/uploads/short-url/5u6BiSKx32GIOJYDJ3tBnsGjfre.rbz" target="_blank">Download - Dezmo Save to older SketchUp Version</a> หรือที่ <a href="https://sketchucation.com/plugin/2821-dezmo_save_to_older_ver" target="_blank">SketchUcation</a>
+                            </li>
+                            <li>คุณจะได้รับไฟล์ <strong>.rbz</strong> สำหรับติดตั้ง</li>
+                            <li>เปิด SketchUp (เลือก Templates ใดก็ได้ หากมี)</li>
+                            <li>ที่เมนูด้านบนเลือก <strong>Extension</strong> → <strong>Extension Manager</strong></li>
+                            <li>คลิก <strong>Install Extension</strong></li>
+                            <li>ไปที่โฟลเดอร์ไฟล์ .rbz ที่คุณดาวน์โหลดมา</li>
+                            <li>คลิกที่ไฟล์ .rbz → คลิก <strong>Open</strong></li>
+                            <li>
+                                เครื่องมือ Dezmo จะแสดงขึ้นมา
+                                <ul class="info-sublist">
+                                    <li>หากไม่แสดงให้ไปที่เมนู <strong>View</strong> → <strong>Toolbars</strong> → เลือก <strong>Dezmo</strong></li>
+                                </ul>
+                            </li>
+                            <li>คุณสามารถเลือกบันทึกเป็นเวอร์ชั่นที่ต้องการ</li>
+                        </ul>
+
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <p>เนื่องจาก Extension ถูกพัฒนาโดยบุคคลที่สาม อาจมีข้อผิดพลาดในการใช้งาน</p>
+                        </div>
+
+                        <div class="video-container">
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAG5sd1kSrY/mU8uhOfEC0Bw_vje3F8Xgw/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="options" class="guide-section">
+                    <div class="content-card">
+
+                        <h3>ข้อมูลเพิ่มเติม</h3>
+                        <ul class="guide-list">
+                            <li><a href="/docs/sketchup/#faq">คำถามที่พบบ่อย</a></li>
+                            <li><a href="/docs/sketchup/manage/#manage">วิธีจัดการใบอนุญาต</a></li>
+                            <li><a href="/docs/sketchup/manage/#install">วิธีติดตั้งและเปิดใช้งาน</a></li>
+                            <li><a href="/docs/sketchup/manage/#decivate">วิธีถอนใบอนุญาต</a></li>
+                        </ul>
+
+                    </div>
+                </section>
+
+                <section class="guide-cta" id="contact">
+                    <h2>ต้องการความช่วยเหลือเพิ่มเติม?</h2>
+                    <p>หากคุณยังมีคำถาม โปรดติดต่อทีมสนับสนุนของเรา</p>
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="cta-button">
+                        <i class="fas fa-headset"></i> ติดต่อเจ้าหน้าที่
+                    </a>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sale</h4>
+                    <a href="https://8baht.com" target="_blank">Product</a>
+                    <a href="mailto:8baht@applicadthai.com">Contact Sale</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank">Open Ticket</a>
+                    <a href="mailto:support8baht@applicadthai.com">Contact Support</a>
+                </div>
+                <div class="footer-section">
+                    <h4>8Baht</h4>
+                    <a href="https://8baht.com/" target="_blank">About</a>
+                    <a href="/docs/cookies/" target="_blank">Cookie Policy</a>
+                </div>
+                <div class="footer-section">
+                    <h5>เวลาทำการ สำนักงานใหญ่</h5>
+                    <span style="font-size:12px;color:var(--footer-text)">จันทร์–ศุกร์ 09:00–17:00</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 8Baht Support. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-support">
+        <button onclick="toggleChat()" title="ติดต่อฝ่ายสนับสนุน">
+            <i class="fas fa-headset"></i>
+        </button>
+    </div>
+
+    <div id="chatWidget" class="chat-widget hidden">
+        <div class="chat-header">
+            <h4>Support Chat</h4>
+            <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot">
+                <p>สวัสดี! มีคำถามเกี่ยวกับ SketchUp ไหม?</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="พิมพ์ข้อความ..." onkeydown="handleChatKey(event)">
+            <button onclick="sendChat()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="../../script.js"></script>
+    <script src="../../chat-engine.js"></script>
+</body>
+
+</html>
