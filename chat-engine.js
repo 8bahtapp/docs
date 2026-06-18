@@ -143,15 +143,44 @@ function initDisclaimer() {
 // Parse markdown links → <a>
 // ─────────────────────────────────────────
 function parseLinks(text) {
-  const escaped = text
+  // Escape HTML
+  let html = text
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
- 
-  return escaped.replace(
+
+  // Bold: **text**
+  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+
+  // Markdown links [label](url)
+  html = html.replace(
     /\[([^\]]+)\]\((https?:\/\/[^)]+|\/[^)]*)\)/g,
     '<a href="$2" target="_blank" style="color:inherit;text-decoration:underline;">$1</a>'
   )
+
+  // Split into lines and render bullets / paragraphs
+  const lines = html.split('\n')
+  const parts = []
+  let listOpen = false
+
+  for (const raw of lines) {
+    const line = raw.trim()
+    if (!line) {
+      if (listOpen) { parts.push('</ul>'); listOpen = false }
+      parts.push('<br>')
+      continue
+    }
+    if (line.startsWith('- ')) {
+      if (!listOpen) { parts.push('<ul style="margin:4px 0 4px 16px;padding:0;">'); listOpen = true }
+      parts.push(`<li style="margin-bottom:2px;">${line.slice(2)}</li>`)
+    } else {
+      if (listOpen) { parts.push('</ul>'); listOpen = false }
+      parts.push(`<span>${line}</span><br>`)
+    }
+  }
+  if (listOpen) parts.push('</ul>')
+
+  return parts.join('')
 }
  
 // ─────────────────────────────────────────
@@ -227,7 +256,7 @@ function appendMessage(text, type, link = null) {
     ? 'text-align:right; margin-bottom:10px;'
     : 'margin-bottom:10px;'
  
-  const bubble = document.createElement('p')
+  const bubble = document.createElement('div')
   bubble.style.cssText = type === 'user'
     ? 'display:inline-block; background:var(--text-primary); color:#fff; padding:9px 13px; border-radius:14px 14px 4px 14px; font-size:13px; max-width:85%; line-height:1.5;'
     : 'display:inline-block; background:rgba(0,0,0,0.06); color:var(--text-secondary); padding:9px 13px; border-radius:14px 14px 14px 4px; font-size:13px; max-width:85%; line-height:1.5;'
@@ -609,4 +638,3 @@ DOCS.chaos = `
 - Sale: 8baht@applicadthai.com
 - เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
 `
-
