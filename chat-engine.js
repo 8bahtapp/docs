@@ -259,7 +259,7 @@ function appendMessage(text, type, link = null) {
   const bubble = document.createElement('div')
   bubble.style.cssText = type === 'user'
     ? 'display:inline-block; background:var(--text-primary); color:#fff; padding:9px 13px; border-radius:14px 14px 4px 14px; font-size:13px; max-width:85%; line-height:1.5;'
-    : 'display:inline-block; background:rgba(0,0,0,0.06); color:var(--text-secondary); padding:9px 13px; border-radius:14px 14px 14px 4px; font-size:13px; max-width:85%; line-height:1.5;'
+    : 'line-height:1.5;'
  
   if (type === 'bot') {
     bubble.innerHTML = parseLinks(text)
