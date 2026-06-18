@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaos Manage - 8Baht Docs</title>
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/favicon.png">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "x1nphjvla3");
+    </script>
+</head>
+
+<body>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <div>
+                <h4>Cookies Policy</h4>
+                <p>เราใช้คุกกี้เพื่อปรับปรุงประสบการณ์ของคุณ <a href="/docs/cookies/"
+                        target="_blank">บทความของเรา</a>จะช่วยให้คุณเข้าใจมากขึ้น</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn accept" onclick="acceptCookies()">ยอมรับ</button>
+                <button class="cookie-btn decline" onclick="declineCookies()">ปฏิเสธ</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="https://8baht.com" target="_blank" rel="noopener noreferrer">
+                        <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/logo-8baht_n.png"
+                            alt="8Baht Logo">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="/docs/chaos/" class="nav-link">ดาวน์โหลด</a>
+                    <a href="/docs/chaos/manage/" class="nav-link">จัดการใบอนุญาต</a>
+                    <a href="/docs/chaos/enscape/#faq" class="nav-link">คำถามที่พบบ่อย</a>
+                    <a href="/docs/chaos/tips" class="nav-link">ข้อมูลเพิ่มเติม</a>
+                </div>
+                <div class="nav-icons">
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="help-btn">Open Ticket</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content guide-page">
+        <div class="container guide-container">
+
+            <aside class="guide-sidebar">
+                <div class="sidebar-content">
+                    <h3>สารบัญ</h3>
+                    <nav class="toc-nav">
+                        <a href="#manage" class="toc-link active">จัดการใบอนุญาต (Named)</a>
+                        <a href="#floating" class="toc-link">จัดการใบอนุญาต (Floating)</a>
+                        <a href="#install-corona" class="toc-link">ติดตั้ง Corona</a>
+                        <a href="#install-enscape" class="toc-link">ติดตั้ง Enscape</a>
+                        <a href="#install-vray" class="toc-link">ติดตั้ง V-Ray</a>
+                        <a href="#decivate" class="toc-link">ถอนใบอนุญาต</a>
+                        <a href="#options" class="toc-link">เพิ่มเติม</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <div class="guide-main">
+
+                <div class="guide-header">
+                    <h1>Chaos</h1>
+                    <p>การจัดการใบอนุญาต ติดตั้งและถอนใบอนุญาต</p>
+                </div>
+
+                <div class="breadcrumb-nav">
+                    <a href="/docs/chaos/">Chaos</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Manage License</span>
+                </div>
+
+                <section id="manage" class="guide-section">
+                    <h2>จัดการใบอนุญาต — Named License</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p><strong>Named License</strong> ผูกใบอนุญาตกับอีเมลผู้ใช้งานแต่ละคน — Admin ต้อง Assign
+                                โปรดักส์ให้อีเมลผู้ใช้งานแต่ละคนก่อนจึงจะเปิดใช้งานได้</p>
+                        </div>
+
+                        <h3>ขั้นตอนเพิ่มอีเมลผู้ใช้งาน</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่ <a href="https://my.chaos.com/organization/licenses"
+                                    target="_blank">my.chaos.com/organization/licenses</a></li>
+                            <li>
+                                เข้าสู่ระบบด้วยอีเมลที่ใช้สั่งซื้อ
+                                <ul class="info-sublist">
+                                    <li>หากไม่มีบัญชีให้ <a href="https://accounts.chaos.com/register"
+                                            target="_blank">Create Account</a></li>
+                                </ul>
+                            </li>
+                            <li>เมนูด้านบนเลือก <strong>Organization</strong></li>
+                            <li>ที่หัวข้อ User คลิกที่จุดสามจุด <strong>⋮</strong> → <strong>Invite users</strong></li>
+                            <li>ใส่อีเมลของผู้ใช้งานให้ครบตามจำนวน</li>
+                            <li>คลิก <strong>Back to Organization</strong> เพื่อกลับไปหน้าก่อน</li>
+                            <li>เลื่อนลงมาด้านล่าง จะมีอีเมลผู้ใช้งานแสดงอยู่</li>
+                            <li>คลิกทำเครื่องหมาย เลือกอีเมลที่ต้องการ Assign</li>
+                            <li>ที่เมนูด้านล่างเลือก <strong>Product</strong> → <strong>Assign</strong></li>
+                            <li>คลิก <strong>Continue with…users</strong></li>
+                            <li>เลือกโปรดักส์ → <strong>Continue</strong></li>
+                            <li>คลิกที่ชื่อโปรดักส์ → <strong>Continue with…products</strong></li>
+                            <li>ตรวจสอบข้อมูลสรุป → คลิก <strong>Assign to…users</strong></li>
+                            <li>เสร็จสิ้น คลิก <strong>Got it</strong></li>
+                            <li>กลับมาที่หน้าหลัก จะมีข้อมูลสรุปสำหรับอีเมลผู้ใช้งานและโปรดักส์ที่ใช้งานได้</li>
+                        </ul>
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>ผู้ใช้งานจะได้รับอีเมลคำเชิญเพื่อเริ่มต้นใช้งานโปรแกรม — ผู้ใช้งานจะต้องมีบัญชี Chaos
+                                เพื่อเริ่มต้นใช้งาน</p>
+                        </div>
+
+                        <div class="video-container">
+                            <iframe loading="lazy"
+                                src="https://www.canva.com/design/DAGn-UZSvwU/Z8iUb314N0DWdOGLFxL1Gw/watch?embed"
+                                allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="floating" class="guide-section">
+                    <h2>จัดการใบอนุญาต — Floating License</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p><strong>Floating License</strong> ใช้พร้อมกันได้ตามจำนวนที่ซื้อ โดยมี 2 รูปแบบ คือ
+                                ใช้อีเมลเดียวกันทุกเครื่อง หรือแยกอีเมลสำหรับผู้ใช้แต่ล่ะเครื่อง Floating License Sharing</p>
+                        </div>
+
+                        <h3>แบบที่ 1 — ใช้อีเมลเดียวกันทุกเครื่อง</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่ <a href="https://my.chaos.com/products" target="_blank">my.chaos.com/products</a>
+                            </li>
+                            <li>เข้าสู่ระบบด้วยอีเมลที่ใช้สั่งซื้อ</li>
+                            <li>คุณจะพบกับใบอนุญาตทั้งหมด — ใช้อีเมลและรหัสผ่านนี้เปิดใช้งานทุกเครื่องได้เลย</li>
+                        </ul>
+
+                        <div class="video-container">
+                            <iframe loading="lazy"
+                                src="https://www.canva.com/design/DAGspgLjsEY/DdH0elMPmNw1zS72OXGs1g/watch?embed"
+                                allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                        <p>⬎</p>
+                        <h3>แบบที่ 2 — แยกอีเมลสำหรับผู้ใช้แต่ล่ะเครื่อง</h3>
+                        <ul class="guide-list">
+                            <li>
+                                ทำตามขั้นตอน <a href="#manage">Named License</a> เพื่อเพิ่มและ Assign
+                                อีเมลผู้ใช้งานแต่ละคน
+                                <ul class="info-sublist">
+                                    <li>ไม่ต้องเพิ่มโปรดักส์ให้ผู้ใช้งาน</a></li>
+                                </ul>
+                            </li>
+                            <li>ผู้ใช้งานแต่ละคนจะใช้อีเมลของตนเองเปิดใช้งาน โดยแชร์จำนวน Floating ร่วมกัน</li>
+                            <li>โปรดดูให้มั่นใจว่า Floating license sharing ต้องมีสถานะ <strong>Enabled</strong></li>
+                        </ul>
+
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <p>หากใช้งานพร้อมกันเกินจำนวน Floating License ที่ซื้อ
+                                ผู้ใช้งานคนนั้นจะไม่สามารถเปิดใช้งานได้จนกว่าคนอื่นจะปิดโปรแกรม</p>
+                        </div>
+
+                        <div class="video-container">
+                            <iframe loading="lazy"
+                                src="https://www.canva.com/design/DAGspxykTps/uVhX8ZcfXZO2VINYRuLiVQ/watch?embed"
+                                allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="install-corona" class="guide-section">
+                    <h2>ติดตั้งและเปิดใช้งาน Corona</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <p>ต้องติดตั้งโปรแกรม host เช่น 3ds Max หรือ Cinema 4D ก่อน — ไฟล์ติดตั้ง Corona สำหรับแต่ละ
+                                host จะใช้ไฟล์แยกกัน</p>
+                        </div>
+
+                        <h3>ขั้นตอนติดตั้ง Corona</h3>
+                        <ul class="guide-list">
+                            <li>ดาวน์โหลดไฟล์ติดตั้ง Corona ที่หน้า <a
+                                    href="/docs/chaos/corona/#installation">ดาวน์โหลด</a></li>
+                            <li>ดับเบิลคลิกที่ไฟล์ เพื่อติดตั้งโปรแกรม</li>
+                            <li>คลิกทำเครื่องหมายที่ช่อง <strong>I accept…</strong> → คลิก <strong>Install</strong></li>
+                            <li>รอติดตั้งสักครู่ → คลิก <strong>Done</strong></li>
+                        </ul>
+
+                        <h3>ขั้นตอนเปิดใช้งาน Chaos Corona</h3>
+                        <ul class="guide-list">
+                            <li>เปิดหน้าต่าง <strong>Render Setup (F10)</strong></li>
+                            <li>ไปที่แท็บ <strong>System</strong></li>
+                            <li>คลิก <strong>About Chaos Corona / Licensing</strong></li>
+                            <li>คลิกปุ่ม <strong>Sign In to Chaos Account</strong></li>
+                            <li>ระบบจะเปิด Web Browser ขึ้นมา ให้กรอก Email และ Password ของ Chaos Account</li>
+                        </ul>
+
+                        <div class="video-container">
+                            <iframe loading="lazy"
+                                src="https://www.canva.com/design/DAGtaY3j6bY/cjNHotY814_-X8Gep5Fzvw/watch?embed"
+                                allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="install-enscape" class="guide-section">
+                    <h2>ติดตั้งและเปิดใช้งาน Enscape</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <p>ต้องติดตั้งโปรแกรม host ก่อน เช่น SketchUp, Revit, Rhino, Archicad หรือ Vectorworks —
+                                ไฟล์ติดตั้งเดียวรองรับทุก host</p>
+                        </div>
+
+                        <h3>ขั้นตอนติดตั้ง Enscape</h3>
+                        <ul class="guide-list">
+                            <li>ดาวน์โหลดไฟล์ติดตั้ง Enscape ที่หน้า <a
+                                    href="/docs/chaos/enscape/#installation">ดาวน์โหลด</a></li>
+                            <li>ดับเบิลคลิกที่ไฟล์ เพื่อติดตั้งโปรแกรม</li>
+                            <li>คลิกทำเครื่องหมายที่ช่อง <strong>I accept…</strong> → คลิก <strong>Next</strong></li>
+                            <li>คลิก <strong>Install</strong> → รอติดตั้งสักครู่ → คลิก <strong>Done</strong></li>
+                        </ul>
+
+                        <h3>ขั้นตอนเปิดใช้งาน Chaos Enscape</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่แถบเครื่องมือ (Toolbar) ของ Enscape ในโปรแกรมที่คุณใช้งาน</li>
+                            <li>
+                                คลิกที่ปุ่มหรือเมนู <strong>Chaos Account</strong>
+                                <ul class="info-sublist">
+                                    <li>บางโปรแกรมจะอยู่ในเมนู <strong>Extensions</strong> → <strong>Enscape</strong> →
+                                        <strong>Chaos Account</strong>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>ระบบจะเปิด Web Browser ขึ้นมา ให้กรอก Email และ Password ของ Chaos Account</li>
+                        </ul>
+
+                        <div class="video-container">
+                            <iframe loading="lazy"
+                                src="https://www.canva.com/design/DAGtaI1kf-k/BislDUXaX57mgI-mpv4yKQ/watch?embed"
+                                allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="install-vray" class="guide-section">
+                    <h2>ติดตั้งและเปิดใช้งาน V-Ray</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <p>ต้องติดตั้งโปรแกรม host ก่อน เช่น SketchUp หรือ 3ds Max — สำหรับ V-Ray for 3ds Max
+                                ต้องใช้ไฟล์ติดตั้งที่ตรงกับเวอร์ชั่นของ 3ds Max เท่านั้น</p>
+                        </div>
+
+                        <h3>ขั้นตอนติดตั้ง V-Ray</h3>
+                        <ul class="guide-list">
+                            <li>ดาวน์โหลดไฟล์ติดตั้ง V-Ray ที่หน้า <a
+                                    href="/docs/chaos/vray/#installation">ดาวน์โหลด</a></li>
+                            <li>ดับเบิลคลิกที่ไฟล์ เพื่อติดตั้งโปรแกรม</li>
+                            <li>คลิกทำเครื่องหมายที่ช่อง <strong>I accept…</strong> → คลิก <strong>Continue</strong>
+                            </li>
+                            <li>คลิก <strong>Install</strong> → รอติดตั้งสักครู่ → คลิก <strong>Done</strong></li>
+                        </ul>
+
+                        <h3>ขั้นตอนเปิดใช้งาน Chaos V-Ray</h3>
+                        <ul class="guide-list">
+                            <li>
+                                SketchUp / Rhino: ไปที่เมนู <strong>Extensions</strong> → <strong>V-Ray</strong> →
+                                <strong>Help</strong> → <strong>Chaos Account</strong> → เลือก <strong>Sign In</strong>
+                                <ul class="info-sublist">
+                                    <li>หรือคลิกที่ไอค่อนเครื่องมือรูปกาน้ำ</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                3ds Max / Maya: ไปที่เมนู <strong>V-Ray</strong> ด้านบนสุด → <strong>Licensing</strong>
+                                → <strong>Chaos Account</strong> → เลือก <strong>Sign In</strong>
+                            </li>
+                            <li>ระบบจะเปิด Web Browser ขึ้นมา ให้กรอก Email และ Password ของ Chaos Account</li>
+                        </ul>
+
+                        <div class="video-container">
+                            <iframe loading="lazy"
+                                src="https://www.canva.com/design/DAGsqKEkkV8/f03cUVOCCiTbmO-M8VBwKw/watch?embed"
+                                allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="decivate" class="guide-section">
+                    <h2>ถอนใบอนุญาต (Deactivate)</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-red">
+                            <i class="fas fa-exclamation-circle info-box-icon"></i>
+                            <p>แนะนำให้ถอนใบอนุญาตก่อน Uninstall โปรแกรม หรือก่อนเปลี่ยนเครื่องคอมพิวเตอร์</p>
+                        </div>
+
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <p>ปัจจุบัน Chaos ใช้ตัวจัดการใบอนุญาต 2 แบบ ขึ้นอยู่กับเวอร์ชั่นแอปพลิเคชันของคุณ</p>
+                        </div>
+
+                        <h3>ขั้นตอน Deactivate สำหรับ License Server</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่ <a href="http://localhost:30304/#" target="_blank">localhost:30304</a></li>
+                            <li>ที่เมนูด้านบนคลิก <strong>Online licensing</strong></li>
+                            <li>คลิก <strong>Sign out</strong></li>
+                            <li>คลิก <strong>Yes</strong> เพื่อยืนยัน</li>
+                            <li>หน้าจอแสดงข้อความ <em>Sign out complete.</em> — เสร็จเรียบร้อย</li>
+                        </ul>
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>คุณสามารถใช้อีเมลและรหัสผ่านเดิมในการเปิดใช้งานที่คอมพิวเตอร์เครื่องใหม่ได้ทันที</p>
+                        </div>
+
+                        <p>⬎</p>
+
+                        <h3>ขั้นตอน Deactivate สำหรับ Cloud Licensing</h3>
+                        <ul class="guide-list">
+                            <li>
+                                <strong>Chaos Corona</strong>
+                                <ul class="info-sublist">
+                                    <li>3ds Max: ไปที่หน้าต่าง <strong>Render Setup (F10)</strong> → แท็บ
+                                        <strong>System</strong> → คลิกปุ่ม <strong>About Chaos Corona /
+                                            Licensing</strong> → คลิก <strong>Chaos Account</strong> แล้วเลือก
+                                        <strong>Sign Out</strong>
+                                    </li>
+                                    <li>Cinema 4D: ไปที่เมนูด้านบน <strong>Corona</strong> → เลือก
+                                        <strong>About</strong> → คลิก <strong>Chaos Account</strong> แล้วเลือก
+                                        <strong>Sign Out</strong>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Enscape</strong>
+                                <ul class="info-sublist">
+                                    <li>ไปที่แถบเครื่องมือของ Enscape ในโปรแกรมที่คุณใช้งาน (เช่น SketchUp, Revit,
+                                        Rhino)</li>
+                                    <li>หาเมนู <strong>Chaos Account</strong> (หรือในบางเวอร์ชันเข้าไปที่
+                                        <strong>Extensions/Enscape</strong> → <strong>Chaos Account</strong>)
+                                    </li>
+                                    <li>คลิก <strong>Sign Out</strong></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>V-Ray</strong>
+                                <ul class="info-sublist">
+                                    <li>SketchUp: ไปที่ <strong>Extensions</strong> → <strong>V-Ray</strong> →
+                                        <strong>Help</strong> → <strong>Chaos Account</strong> → <strong>Sign
+                                            Out</strong>
+                                    </li>
+                                    <li>3ds Max / Maya: ไปที่เมนู <strong>V-Ray</strong> ด้านบน →
+                                        <strong>Licensing</strong> → <strong>Chaos Account</strong> → <strong>Sign
+                                            Out</strong>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>คุณสามารถใช้อีเมลและรหัสผ่านเดิมในการเปิดใช้งานที่คอมพิวเตอร์เครื่องใหม่ได้ทันที</p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- ข้อมูลเพิ่มเติม -->
+                <section id="options" class="guide-section">
+                    <div class="content-card">
+                        <h3>ข้อมูลเพิ่มเติม</h3>
+                        <ul class="guide-list">
+                            <li><a href="/docs/chaos/corona/#faq">คำถามที่พบบ่อย</a></li>
+                            <li><a href="/docs/chaos/tips/#ea">วิธีเช็ควันหมดอายุ</a></li>
+                            <li><a href="/docs/chaos/tips/#cus">วิธีเปลี่ยนอีเมลผู้ใช้งาน</a></li>
+                            <li><a href="/docs/chaos/tips/#ls">Chaos License Server ไม่ขึ้น ทำอย่างไร</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="guide-cta" id="contact">
+                    <h2>ต้องการความช่วยเหลือเพิ่มเติม?</h2>
+                    <p>หากคุณยังมีคำถาม โปรดติดต่อทีมสนับสนุนของเรา</p>
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="cta-button">
+                        <i class="fas fa-headset"></i> ติดต่อเจ้าหน้าที่
+                    </a>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sale</h4>
+                    <a href="https://8baht.com" target="_blank">Product</a>
+                    <a href="mailto:8baht@applicadthai.com">Contact Sale</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank">Open Ticket</a>
+                    <a href="mailto:support8baht@applicadthai.com">Contact Support</a>
+                </div>
+                <div class="footer-section">
+                    <h4>8Baht</h4>
+                    <a href="https://8baht.com/" target="_blank">About</a>
+                    <a href="/docs/cookies/" target="_blank">Cookie Policy</a>
+                </div>
+                <div class="footer-section">
+                    <h5>เวลาทำการ สำนักงานใหญ่</h5>
+                    <span style="font-size:12px;color:var(--footer-text)">จันทร์–ศุกร์ 09:00–17:00</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 8Baht Support. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-support">
+        <button onclick="toggleChat()" title="ติดต่อฝ่ายสนับสนุน">
+            <i class="fas fa-headset"></i>
+        </button>
+    </div>
+
+    <div id="chatWidget" class="chat-widget hidden">
+        <div class="chat-header">
+            <h4>Support Chat</h4>
+            <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot">
+                <p>สวัสดี! มีคำถามเกี่ยวกับ Chaos ไหม?</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="พิมพ์ข้อความ..." onkeydown="handleChatKey(event)">
+            <button onclick="sendChat()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="../../script.js"></script>
+    <script src="../../chat-engine.js"></script>
+</body>
+
+</html>

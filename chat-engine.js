@@ -105,7 +105,6 @@ DOCS.adobe = `
 function getContext() {
   const path = window.location.pathname
   if (path.includes('/adobe/'))    return DOCS.adobe
-  if (path.includes('/autodesk/'))   return DOCS.autodesk
   // if (path.includes('/product2/')) return DOCS.product2
   // if (path.includes('/product3/')) return DOCS.product3
   return null
@@ -266,99 +265,3 @@ function removeTyping() {
   const el = document.getElementById('typingIndicator')
   if (el) el.remove()
 }
-
-// ── Autodesk ───────────────────────────
-DOCS.autodesk = `
-# คู่มือ Autodesk - 8Baht Docs
-
-## โปรดักส์ที่รองรับ
-AutoCAD LT, AutoCAD, 3ds Max, Fusion, Revit, Inventor, AEC Collection, PD&M Collection, M&E Collection, Navisworks, Robot Structural Analysis, และแอปพลิเคชันอื่นๆ
-
-## ไฟล์ติดตั้ง
-- AutoCAD LT 2027 (Windows): ดาวน์โหลดได้ที่หน้า /docs/autodesk/autocadlt/
-- AutoCAD LT 2027 (macOS): ดาวน์โหลดได้ที่หน้า /docs/autodesk/autocadlt/
-- AutoCAD Web: ใช้งานผ่านเว็บ https://web.autocad.com/
-- AutoCAD 2027 (Windows/macOS): ดาวน์โหลดได้ที่หน้า /docs/autodesk/autocad/
-- AutoCAD Mechanical 2027 (Windows): ดาวน์โหลดได้ที่หน้า /docs/autodesk/autocad/
-- AutoCAD Electrical 2027 (Windows): ดาวน์โหลดได้ที่หน้า /docs/autodesk/autocad/
-- AutoCAD Architecture 2027 (Windows): ดาวน์โหลดได้ที่หน้า /docs/autodesk/autocad/
-- 3ds Max 2027 (Windows): ดาวน์โหลดได้ที่หน้า /docs/autodesk/3dsmax/
-- 3ds Max 2026 (Windows): ดาวน์โหลดได้ที่หน้า /docs/autodesk/3dsmax/
-- Fusion (Windows): ดาวน์โหลดได้ที่หน้า /docs/autodesk/other/
-- Revit 2027 (Windows): ดาวน์โหลดได้ที่หน้า /docs/autodesk/other/
-- Inventor 2027 (Windows): ดาวน์โหลดได้ที่หน้า /docs/autodesk/other/
-- Navisworks 2027 (Windows): ดาวน์โหลดได้ที่หน้า /docs/autodesk/other/
-- Robot Structural Analysis 2027 (Windows): ดาวน์โหลดได้ที่หน้า /docs/autodesk/other/
-- AEC Collection, PD&M Collection, M&E Collection: ดาวน์โหลดผ่าน https://manage.autodesk.com/products/all
-- เวอร์ชั่นก่อนหน้า / Official Download ทุกแอป: https://manage.autodesk.com/products/all
-- Product documentation: https://help.autodesk.com/
-
-## วิธีจัดการใบอนุญาต — เริ่มต้นใช้งาน
-- เมื่อสั่งซื้อสำเร็จจะได้รับอีเมลยืนยัน อีเมลที่สั่งซื้อสามารถเพิ่มผู้ใช้งานและจัดการใบอนุญาตได้ทั้งหมด
-- 1 ใบอนุญาต ต่อ 1 อีเมล เช่น 5 ใบอนุญาต ใช้ 5 อีเมล
-- License จะถูกมอบหมายให้อีเมลที่สั่งซื้อโดยอัตโนมัติ สามารถ Unassign เพื่อมอบให้ผู้ใช้งานอื่นได้
-
-## วิธีเพิ่มผู้ใช้งาน (Admin)
-- เข้า https://manage.autodesk.com/ → Sign in ด้วยอีเมลที่สั่งซื้อ
-- ไปที่เมนู User Management → คลิก Invite users
-- ใส่ข้อมูลให้ครบ กด Send invite
-- ไปที่ User Management → คลิกชื่อผู้ใช้งานที่เพิ่มใหม่
-- เลื่อนลงด้านล่าง คลิก Assign เพื่อเพิ่มโปรดักส์
-- หากปุ่ม Assign เป็นสีเทา แปลว่าโปรดักส์ถูกมอบหมายครบแล้ว ต้อง Unassign จากผู้ใช้งานอื่นก่อน
-- ดูคู่มือ: [วิธีจัดการใบอนุญาต](https://8bahtapp.github.io/docs/autodesk/manage/)
-
-## วิธีติดตั้งและเปิดใช้งาน
-- ไปที่ https://manage.autodesk.com/products/all เพื่อดาวน์โหลดไฟล์ติดตั้ง
-- คลิกที่ไฟล์ → Next → Install → รอติดตั้ง → Finish
-- เปิดโปรแกรม → เลือก Sign in with your Autodesk ID
-- Sign in ด้วยอีเมลผู้ใช้งาน → คลิก Go to product → Open Autodesk Identity Manager
-- ต้องเชื่อมต่ออินเทอร์เน็ตระหว่าง Activate และทุก 30 วัน เพื่อตรวจสอบสถานะใบอนุญาต
-- ดูคู่มือ: [ติดตั้งและเปิดใช้งาน](https://8bahtapp.github.io/docs/autodesk/manage/#install)
-
-## วิธีถอนใบอนุญาตก่อนเปลี่ยนเครื่อง
-- เปิดโปรแกรม Autodesk Access หรือโปรแกรม Autodesk ใดก็ได้
-- คลิกไอคอนคนหรือชื่อมุมขวาบน → คลิก Sign out
-- ถอนใบอนุญาตสำเร็จ สามารถติดตั้งที่เครื่องใหม่ด้วยอีเมลและรหัสผ่านเดิมได้เลย
-- ดูคู่มือ: [ถอนใบอนุญาต](https://8bahtapp.github.io/docs/autodesk/manage/#decivate)
-
-## วิธีค้นหา Serial Number / Subscription ID
-- Serial Number จะระบุใน Certificate หรือหาได้จาก Autodesk Account
-- เข้า https://manage.autodesk.com/billing/subscription-management/subscriptions-contracts
-- Sign in → Billing and Orders → Subscriptions and Contracts
-- เลือกชื่อโปรดักส์ → เลื่อนลง Included in contract → เลือกชื่อโปรดักส์อีกครั้ง
-- จะเห็น Subscription ID รูปแบบ xxx-xxxxxxxx
-- ดูคู่มือ: [วิธีค้นหา Serial Number](https://8bahtapp.github.io/docs/autodesk/tips/#sn)
-
-## วิธีเช็ควันหมดอายุ
-- เข้า https://manage.autodesk.com/billing/subscription-management/subscriptions-contracts
-- Sign in → Billing and Orders → Subscriptions and Contracts
-- จะเห็นชื่อโปรดักส์ จำนวน และวันหมดอายุ
-- สามารถต่ออายุล่วงหน้าได้ถึง 90 วัน ก่อนวันหมดอายุ
-- หากต่ออายุไม่ทัน ยังใช้งานได้อีก 30 วัน แต่จะมีข้อความแจ้งเตือนทุกครั้ง
-- ดูคู่มือ: [วิธีเช็ควันหมดอายุ](https://8bahtapp.github.io/docs/autodesk/tips/#exp)
-
-## วิธีเปลี่ยนอีเมลผู้ใช้งาน
-- ถอดสิทธิ์เดิม: เข้า User Management → คลิกชื่อผู้ใช้เดิม → คลิก Unassign
-- เพิ่มใหม่: User Management → Invite users → ใส่อีเมลใหม่ → Send invite → คลิกชื่อผู้ใช้ใหม่ → Assign
-- ดูคู่มือ: [วิธีเปลี่ยนอีเมลผู้ใช้งาน](https://8bahtapp.github.io/docs/autodesk/tips/#cus)
-
-## FAQ
-- Serial Number: ระบุใน Certificate หรือดูได้จาก Autodesk Account
-- วันหมดอายุ: ระบุใน Certificate หรือดูจาก Autodesk Account → Billing and Orders
-- ถอนใบอนุญาต: Sign Out จากโปรแกรม Autodesk ก่อนเปลี่ยนเครื่องหรือ Uninstall เสมอ
-- อินเทอร์เน็ต: ต้องใช้ระหว่าง Activate และทุก 30 วัน ออฟไลน์ได้สูงสุด 30 วัน
-- ลืมรหัสผ่าน: ไปที่ Autodesk Account คลิก "Forgot password"
-- อัปเกรดเวอร์ชั่น: Subscription สามารถดาวน์โหลดเวอร์ชั่นล่าสุดได้ที่ https://manage.autodesk.com/products/all
-- Windows/macOS: ใช้ได้ทั้งสองระบบ รวมถึง Mobile, Tablet, Web สำหรับแอปที่รองรับ
-- เวอร์ชั่นก่อนหน้า: รองรับ 4 เวอร์ชั่นล่าสุด ดาวน์โหลดได้ที่ https://manage.autodesk.com/products/all
-- แผนรวม (Collection): ใช้งานได้ทุกแอปในแผน เช่น AEC Collection, PD&M Collection
-- หลังต่ออายุ: รับอีเมลยืนยัน ถ้าผู้ใช้ไม่เปลี่ยนใช้งานต่อได้เลย
-- ติดปัญหาติดตั้ง: เปิด Ticket ที่ [บริการช่วยเหลือ](https://8baht.com/help?ref=8Baht_Docs)
-
-## ช่องทางติดต่อ
-- Open Ticket: [บริการช่วยเหลือ](https://8baht.com/help?ref=8Baht_Docs)
-- Support: support8baht@applicadthai.com
-- Sale: 8baht@applicadthai.com
-- เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
-`
-

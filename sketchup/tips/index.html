@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SketchUp Tips - 8Baht Docs</title>
+    <title>Rhino Tips - 8Baht Docs</title>
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/favicon.png">
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -42,10 +42,10 @@
                     </a>
                 </div>
                 <div class="nav-links">
-                    <a href="/docs/sketchup/#installation" class="nav-link">ดาวน์โหลด</a>
-                    <a href="/docs/sketchup/#license" class="nav-link">จัดการใบอนุญาต</a>
-                    <a href="/docs/sketchup/#faq" class="nav-link">คำถามที่พบบ่อย</a>
-                    <a href="/docs/sketchup/tips" class="nav-link active">ข้อมูลเพิ่มเติม</a>
+                    <a href="/docs/rhino/#installation" class="nav-link">ดาวน์โหลด</a>
+                    <a href="/docs/rhino/#license" class="nav-link">จัดการใบอนุญาต</a>
+                    <a href="/docs/rhino/#faq" class="nav-link">คำถามที่พบบ่อย</a>
+                    <a href="/docs/rhino/tips" class="nav-link active">ข้อมูลเพิ่มเติม</a>
                 </div>
                 <div class="nav-icons">
                     <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="help-btn">Open Ticket</a>
@@ -61,11 +61,9 @@
                 <div class="sidebar-content">
                     <h3>สารบัญ</h3>
                     <nav class="toc-nav">
-                        <a href="#de"  class="toc-link active">วิธีรีเซ็ตใบอนุญาต</a>
-                        <a href="#cus" class="toc-link">วิธีเปลี่ยนอีเมลผู้ใช้งาน</a>
-                        <a href="#eba" class="toc-link">วิธีเช็ควันหมดอายุ (Admin)</a>
-                        <a href="#ebu" class="toc-link">วิธีเช็ควันหมดอายุ (User)</a>
-                        <a href="#sa"  class="toc-link">วิธีบันทึกไฟล์เป็นเวอร์ชั่นเก่า</a>
+                        <a href="#ps"      class="toc-link active">วิธีตั้งรหัสผ่าน</a>
+                        <a href="#ea"      class="toc-link">วิธีเช็ควันหมดอายุ</a>
+                        <a href="#cus"     class="toc-link">วิธีเปลี่ยนอีเมลผู้ใช้งาน</a>
                         <a href="#options" class="toc-link">เพิ่มเติม</a>
                     </nav>
                 </div>
@@ -74,205 +72,130 @@
             <div class="guide-main">
 
                 <div class="guide-header">
-                    <h1>SketchUp</h1>
+                    <h1>Rhino 8</h1>
                     <p>ข้อมูลเพิ่มเติมและคำแนะนำเกี่ยวกับใบอนุญาต</p>
                 </div>
 
                 <div class="breadcrumb-nav">
-                    <a href="/docs/sketchup/">SketchUp</a>
+                    <a href="/docs/rhino/">Rhino 8</a>
                     <i class="fas fa-chevron-right"></i>
                     <span>Knowledge Base</span>
                 </div>
 
-                <section id="de" class="guide-section">
-                    <h2>วิธีรีเซ็ตใบอนุญาต (Deauthorize)</h2>
+                <section id="ps" class="guide-section">
+                    <h2>วิธีตั้งรหัสผ่าน</h2>
                     <div class="content-card">
 
-                        <div class="info-box info-yellow">
-                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
-                            <p>หากคุณเข้าสู่ระบบที่โปรแกรม SketchUp และมีข้อความแจ้งว่า <em>"You have exceeded your allowed activations"</em> หรือ <em>"Please authorize SketchUp"</em> โปรดดำเนินการตามขั้นตอนดังนี้เพื่อรีเซ็ตการเข้าสู่ระบบทั้งหมด</p>
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>โดยค่าเริ่มแรก Rhino Account จะใช้วิธีกดยืนยันทางอีเมลเพื่อเข้าสู่ระบบ คุณสามารถเปลี่ยนเป็นการเข้าสู่ระบบด้วยรหัสผ่านได้ตามขั้นตอนนี้</p>
                         </div>
 
-                        <h3>รีเซ็ตการเข้าสู่ระบบ (Deauthorize All)</h3>
+                        <h3>ขั้นตอนการตั้งรหัสผ่าน</h3>
                         <ul class="guide-list">
-                            <li>คลิกที่ <strong>Manage Activations</strong> ในโปรแกรม หรือไปที่ <a href="https://ecom-prd.trimblepaas.com/account/" target="_blank">SketchUp License Portal</a></li>
-                            <li>เข้าสู่ระบบ</li>
-                            <li>เลือกโปรไฟล์ชื่อบริษัท (Purchased via....)</li>
-                            <li>เลือก <strong>My Products</strong></li>
-                            <li>คลิก <strong>View Included Applications</strong></li>
-                            <li>คลิก <strong>Manage Devices</strong></li>
-                            <li>คลิก <strong>Deauthorize All</strong> → คลิก <strong>Done</strong></li>
-                            <li>กลับไปที่โปรแกรม SketchUp</li>
-                            <li>Sign out และ Sign in ใหม่อีกครั้ง</li>
+                            <li>
+                                ไปที่หน้าจัดการใบอนุญาต <a href="https://www.rhino3d.com/my-account/" target="_blank"> Rhino License Portal</a>
+                                <ul class="info-sublist">
+                                    <li>คุณอาจต้องกดยืนยันทางอีเมลเพื่อเข้าสู่ระบบก่อน</li>
+                                </ul>
+                            </li>
+                            <li>เลือกเมนู <a href="https://accounts.rhino3d.com/?controller=home" target="_blank">View and edit your account details</a></li>
+                            <li>คลิก <strong>Login</strong></li>
+                            <li>คลิก <strong>Password</strong></li>
+                            <li>
+                                ตั้งรหัสผ่านใหม่
+                                <ul class="info-sublist">
+                                    <li>หากคุณเคยมีรหัสผ่านแล้ว ระบบจะให้ใส่รหัสผ่านเก่าก่อน</li>
+                                </ul>
+                            </li>
                         </ul>
 
                         <div class="info-box info-blue">
                             <i class="fas fa-info-circle info-box-icon"></i>
-                            <p>ขั้นตอนอาจมีแตกต่างเล็กน้อยขึ้นอยู่กับ Role ของคุณ</p>
+                            <p>หลังตั้งรหัสผ่านแล้ว คุณสามารถเลือกเข้าสู่ระบบด้วยรหัสผ่านหรือการยืนยันทางอีเมลก็ได้</p>
                         </div>
 
                         <div class="video-container">
-                            <iframe loading="lazy" src="https://www.canva.com/design/DAGl_pl77KY/tBepp81FSTWFPodGbx3Vzg/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGtyS8UfOs/yApU2WG1uEjFt80RXQuOMA/watch?embed" allowfullscreen allow="fullscreen"></iframe>
                         </div>
 
                     </div>
                 </section>
 
+                <!-- วิธีเช็ควันหมดอายุ -->
+                <section id="ea" class="guide-section">
+                    <h2>วิธีเช็ควันหมดอายุ</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>ผู้ดูแล (เจ้าของทีม Cloud Zoo) สามารถตรวจสอบวันหมดอายุของ License Key ทั้งหมดได้จาก Rhino License Portal</p>
+                        </div>
+
+                        <h3>ขั้นตอนเช็ควันหมดอายุ</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่ <a href="https://www.rhino3d.com/licenses" target="_blank">Rhino License Portal</a></li>
+                            <li>เข้าสู่ระบบด้วยอีเมลที่เป็นเจ้าของทีม</li>
+                            <li>เลือกทีมของคุณ</li>
+                            <li>รายการ License Key และวันหมดอายุจะแสดงในหน้านี้</li>
+                        </ul>
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>ผู้ใช้งานทั่วไปสามารถดูสถานะ License ได้ในโปรแกรม Rhino ที่เมนู <strong>Help</strong> → <strong>About Rhinoceros</strong></p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- วิธีเปลี่ยนอีเมลผู้ใช้งาน -->
                 <section id="cus" class="guide-section">
                     <h2>วิธีเปลี่ยนอีเมลผู้ใช้งาน</h2>
                     <div class="content-card">
 
                         <div class="info-box info-blue">
                             <i class="fas fa-info-circle info-box-icon"></i>
-                            <p>การเปลี่ยนอีเมลผู้ใช้งานทำโดย Admin โดยต้องถอดสิทธิ์อีเมลเดิมออกก่อน แล้วเพิ่มอีเมลใหม่เข้าไปในระบบ</p>
+                            <p>Rhino Cloud Zoo ใช้ License Key ร่วมกันในทีม ไม่ได้ผูกกับอีเมลใดอีเมลหนึ่ง ดังนั้นการเปลี่ยนผู้ใช้งานทำได้โดยให้ผู้ใช้เดิม Logout ออก แล้วผู้ใช้ใหม่ Sign in ด้วยอีเมลของตนเองได้เลย โดยที่ผู้ดูแลต้องเพิ่มอีเมลใหม่เข้าทีมก่อน</p>
                         </div>
 
-                        <h3>ถอดสิทธิ์ผู้ใช้งานเดิม</h3>
+                        <h3>กรณีที่ 1 — ทีมยังไม่มีอีเมลผู้ใช้ใหม่</h3>
                         <ul class="guide-list">
-                            <li>ไปที่ <a href="https://ecom-prd.trimblepaas.com/account/organization/" target="_blank">SketchUp License Portal</a></li>
-                            <li>เข้าสู่ระบบด้วยอีเมล Admin</li>
-                            <li>เลือกโปรไฟล์ชื่อบริษัท (Purchased via....)</li>
-                            <li>เลือก <strong>Members</strong></li>
-                            <li>คลิกที่ <strong>⁝</strong> (จุดสามจุด) ด้านหลังอีเมลผู้ใช้งาน</li>
-                            <li>คลิก <strong>Modify Product Access</strong></li>
-                            <li>คลิกยกเลิกโปรดักส์</li>
-                            <li>คลิกยืนยัน <strong>Save Product Access</strong></li>
+                            <li>ไปที่ <a href="https://www.rhino3d.com/licenses" target="_blank">Rhino License Portal</a></li>
+                            <li>เข้าสู่ระบบด้วยอีเมลเจ้าของทีม</li>
+                            <li>เลือกทีมของคุณ</li>
+                            <li>คลิก <strong>Members</strong> → <strong>Invite Members</strong></li>
+                            <li>ใส่อีเมลผู้ใช้งานใหม่ → คลิก <strong>Send Invitation</strong></li>
+                            <li>ผู้ใช้งานใหม่จะได้รับอีเมลเชิญ โปรดกดยืนยันในอีเมล</li>
+                            <li>หลังจากเข้าร่วมทีมแล้ว ผู้ใช้ใหม่สามารถ Sign in ที่โปรแกรม Rhino ได้เลย</li>
                         </ul>
 
-                        <h3>เพิ่มผู้ใช้งานใหม่</h3>
+                        <h3>กรณีที่ 2 — ต้องการนำอีเมลเดิมออกจากทีม</h3>
                         <ul class="guide-list">
-                            <li>เลือก <strong>Add New User</strong> เพื่อเพิ่มอีเมลผู้ใช้งาน</li>
-                            <li>ใส่อีเมลผู้ใช้งาน → คลิก <strong>Next</strong></li>
-                            <li>เลือกโปรดักส์ SketchUp ที่ต้องการ และคลิก <strong>Add User</strong></li>
-                            <li>อีเมลจะถูกเพิ่มเข้ามาที่หน้าจัดการใบอนุญาต</li>
-                            <li>ผู้ใช้งานใหม่ (Status: <strong>Invited</strong>) จะได้รับอีเมลคำเชิญจาก Trimble โปรดกดรับคำเชิญทางอีเมล</li>
-                        </ul>
-
-                        <div class="info-box info-blue">
-                            <i class="fas fa-info-circle info-box-icon"></i>
-                            <p>ผู้มีสิทธิ์ใช้งานจะมีสถานะ <strong>1 Product...</strong> หากไม่ได้รับสิทธิ์จะเป็น None</p>
-                        </div>
-
-                        <div class="video-container">
-                            <iframe loading="lazy" src="https://www.canva.com/design/DAGsOFMSqUw/L06Cv7LMPrqz3dl5gNjr-w/watch?embed" allowfullscreen allow="fullscreen"></iframe>
-                        </div>
-
-                    </div>
-                </section>
-
-                <section id="eba" class="guide-section">
-                    <h2>วิธีเช็ควันหมดอายุ (Admin)</h2>
-                    <div class="content-card">
-
-                        <div class="info-box info-blue">
-                            <i class="fas fa-info-circle info-box-icon"></i>
-                            <p>SketchUp Subscription สามารถเช็ควันหมดอายุได้แบบออนไลน์โดยผู้ดูแลใบอนุญาต (อีเมลที่ใช้สั่งซื้อหรือผู้ที่ได้รับสิทธิ์ Admin) โดยมีข้อมูลที่จำเป็นทั้งหมดสำหรับการต่ออายุ</p>
-                        </div>
-
-                        <h3>ขั้นตอนสำหรับผู้ดูแลใบอนุญาต</h3>
-                        <ul class="guide-list">
-                            <li>ไปที่ <a href="https://ecom-prd.trimblepaas.com/account/organization/" target="_blank">SketchUp License Portal</a></li>
-                            <li>เข้าสู่ระบบด้วยอีเมล Admin</li>
-                            <li>เลือกโปรไฟล์ชื่อบริษัท (Purchased via....)</li>
-                            <li>เลือก <strong>Plan Settings</strong></li>
-                            <li>วันหมดอายุ, ชื่อโปรดักส์ และจำนวนใบอนุญาตจะแสดงอยู่ที่หน้านี้</li>
-                        </ul>
-
-                        <div class="info-box info-blue">
-                            <i class="fas fa-info-circle info-box-icon"></i>
-                            <p>หน้านี้จะเห็นวันหมดอายุของใบอนุญาตทั้งหมด เฉพาะผู้ดูแลใบอนุญาตเท่านั้น — หากคุณเป็นผู้ใช้งานทั่วไป โปรดดู <a href="#ebu">วิธีเช็ควันหมดอายุ (User)</a></p>
-                        </div>
-
-                        <div class="video-container">
-                            <iframe loading="lazy" src="https://www.canva.com/design/DAGn3uz3QwA/zDmacVsLO_dC6_40FPjLnw/watch?embed" allowfullscreen allow="fullscreen"></iframe>
-                        </div>
-
-                    </div>
-                </section>
-
-                <section id="ebu" class="guide-section">
-                    <h2>วิธีเช็ควันหมดอายุ (User)</h2>
-                    <div class="content-card">
-
-                        <div class="info-box info-blue">
-                            <i class="fas fa-info-circle info-box-icon"></i>
-                            <p>ผู้ใช้งานทั่วไปสามารถตรวจสอบวันหมดอายุของใบอนุญาตได้โดยตรงจากในโปรแกรม SketchUp</p>
-                        </div>
-
-                        <h3>ขั้นตอนสำหรับผู้ใช้งาน</h3>
-                        <ul class="guide-list">
-                            <li>เปิดโปรแกรม SketchUp ของคุณ</li>
-                            <li>วันหมดอายุของคุณจะแสดงที่มุมด้านบนทางขวา</li>
-                            <li>หรือไปที่เมนู <strong>Help</strong> → <strong>Manage Licensing</strong></li>
-                        </ul>
-
-                        <div class="info-box info-blue">
-                            <i class="fas fa-info-circle info-box-icon"></i>
-                            <p>หากคุณเป็นผู้ดูแลใบอนุญาต โปรดดู <a href="#eba">วิธีเช็ควันหมดอายุ (Admin)</a></p>
-                        </div>
-
-                        <div class="video-container">
-                            <iframe loading="lazy" src="https://www.canva.com/design/DAGn3qnZ7e8/hHVFHzp_glWNHd9yRQkj1w/watch?embed" allowfullscreen allow="fullscreen"></iframe>
-                        </div>
-
-                    </div>
-                </section>
-
-                <section id="sa" class="guide-section">
-                    <h2>วิธีบันทึกไฟล์เป็นเวอร์ชั่นเก่า</h2>
-                    <div class="content-card">
-
-                        <div class="info-box info-yellow">
-                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
-                            <p>SketchUp 2024 หรือใหม่กว่าจะไม่มีเครื่องมือสำหรับ Save As ไฟล์เป็นเวอร์ชั่นเก่า คุณจะต้องใช้ Extension เพิ่มเติมเพื่อบันทึกไฟล์เป็นเวอร์ชั่นเก่า</p>
-                        </div>
-
-                        <div class="info-box info-blue">
-                            <i class="fas fa-info-circle info-box-icon"></i>
-                            <p>ไฟล์ที่บันทึกด้วย SketchUp 2021 หรือใหม่กว่าสามารถใช้งานร่วมกันได้โดยไม่ต้องระบุเวอร์ชั่น</p>
-                        </div>
-
-                        <h3>ติดตั้ง Extension — Dezmo Save to older SketchUp Version</h3>
-                        <ul class="guide-list">
-                            <li>
-                                ดาวน์โหลดไฟล์ติดตั้ง Dezmo ที่ <a href="https://forums.sketchup.com/uploads/short-url/5u6BiSKx32GIOJYDJ3tBnsGjfre.rbz" target="_blank">Download - Dezmo Save to older SketchUp Version</a> หรือที่ <a href="https://sketchucation.com/plugin/2821-dezmo_save_to_older_ver" target="_blank">SketchUcation</a>
-                            </li>
-                            <li>คุณจะได้รับไฟล์ <strong>.rbz</strong> สำหรับติดตั้ง</li>
-                            <li>เปิด SketchUp (เลือก Templates ใดก็ได้ หากมี)</li>
-                            <li>ที่เมนูด้านบนเลือก <strong>Extension</strong> → <strong>Extension Manager</strong></li>
-                            <li>คลิก <strong>Install Extension</strong></li>
-                            <li>ไปที่โฟลเดอร์ไฟล์ .rbz ที่คุณดาวน์โหลดมา</li>
-                            <li>คลิกที่ไฟล์ .rbz → คลิก <strong>Open</strong></li>
-                            <li>
-                                เครื่องมือ Dezmo จะแสดงขึ้นมา
-                                <ul class="info-sublist">
-                                    <li>หากไม่แสดงให้ไปที่เมนู <strong>View</strong> → <strong>Toolbars</strong> → เลือก <strong>Dezmo</strong></li>
-                                </ul>
-                            </li>
-                            <li>คุณสามารถเลือกบันทึกเป็นเวอร์ชั่นที่ต้องการ</li>
+                            <li>ไปที่ <a href="https://www.rhino3d.com/licenses" target="_blank">Rhino License Portal</a></li>
+                            <li>เข้าสู่ระบบด้วยอีเมลเจ้าของทีม</li>
+                            <li>เลือกทีมของคุณ → <strong>Members</strong></li>
+                            <li>คลิกที่อีเมลที่ต้องการนำออก → คลิก <strong>Remove Member</strong></li>
+                            <li>ยืนยันการลบ</li>
                         </ul>
 
                         <div class="info-box info-yellow">
                             <i class="fas fa-exclamation-triangle info-box-icon"></i>
-                            <p>เนื่องจาก Extension ถูกพัฒนาโดยบุคคลที่สาม อาจมีข้อผิดพลาดในการใช้งาน</p>
-                        </div>
-
-                        <div class="video-container">
-                            <iframe loading="lazy" src="https://www.canva.com/design/DAG5sd1kSrY/mU8uhOfEC0Bw_vje3F8Xgw/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                            <p>ผู้ใช้งานที่ถูกนำออกจากทีมจะไม่สามารถใช้งาน Rhino ได้ทันที โปรดแจ้งผู้ใช้งานก่อนดำเนินการ</p>
                         </div>
 
                     </div>
                 </section>
 
+                <!-- ข้อมูลเพิ่มเติม -->
                 <section id="options" class="guide-section">
                     <div class="content-card">
 
                         <h3>ข้อมูลเพิ่มเติม</h3>
                         <ul class="guide-list">
-                            <li><a href="/docs/sketchup/#faq">คำถามที่พบบ่อย</a></li>
-                            <li><a href="/docs/sketchup/manage/#manage">วิธีจัดการใบอนุญาต</a></li>
-                            <li><a href="/docs/sketchup/manage/#install">วิธีติดตั้งและเปิดใช้งาน</a></li>
-                            <li><a href="/docs/sketchup/manage/#decivate">วิธีถอนใบอนุญาต</a></li>
+                            <li><a href="/docs/rhino/#faq">คำถามที่พบบ่อย</a></li>
+                            <li><a href="/docs/rhino/manage/#manage">วิธีจัดการใบอนุญาต</a></li>
+                            <li><a href="/docs/rhino/manage/#install">วิธีติดตั้งและเปิดใช้งาน</a></li>
+                            <li><a href="/docs/rhino/manage/#decivate">วิธีถอนใบอนุญาต (Deactivate)</a></li>
                         </ul>
 
                     </div>
@@ -332,7 +255,7 @@
         </div>
         <div class="chat-body" id="chatBody">
             <div class="chat-message bot">
-                <p>สวัสดี! มีคำถามเกี่ยวกับ SketchUp ไหม?</p>
+                <p>สวัสดี! มีคำถามเกี่ยวกับ Rhino 8 ไหม?</p>
             </div>
         </div>
         <div class="chat-input">
