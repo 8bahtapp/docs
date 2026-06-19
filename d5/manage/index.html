@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D5 Manage - 8Baht Docs</title>
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/favicon.png">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "x1nphjvla3");
+    </script>
+</head>
+
+<body>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <div>
+                <h4>Cookies Policy</h4>
+                <p>เราใช้คุกกี้เพื่อปรับปรุงประสบการณ์ของคุณ <a href="/docs/cookies/"
+                        target="_blank">บทความของเรา</a>จะช่วยให้คุณเข้าใจมากขึ้น</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn accept" onclick="acceptCookies()">ยอมรับ</button>
+                <button class="cookie-btn decline" onclick="declineCookies()">ปฏิเสธ</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="https://8baht.com" target="_blank" rel="noopener noreferrer">
+                        <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/logo-8baht_n.png"
+                            alt="8Baht Logo">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="/docs/d5/#installation" class="nav-link">ดาวน์โหลด</a>
+                    <a href="/docs/d5/#license" class="nav-link">จัดการใบอนุญาต</a>
+                    <a href="/docs/d5/#faq" class="nav-link">คำถามที่พบบ่อย</a>
+                    <a href="/docs/d5/#tips" class="nav-link">ข้อมูลเพิ่มเติม</a>
+                </div>
+                <div class="nav-icons">
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="help-btn">Open Ticket</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content guide-page">
+        <div class="container guide-container">
+
+            <aside class="guide-sidebar">
+                <div class="sidebar-content">
+                    <h3>สารบัญ</h3>
+                    <nav class="toc-nav">
+                        <a href="#pro" class="toc-link active">D5 Pro</a>
+                        <a href="#teams" class="toc-link">D5 for Teams</a>
+                        <a href="#decivate" class="toc-link">ถอนใบอนุญาต</a>
+                        <a href="#options" class="toc-link">เพิ่มเติม</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <div class="guide-main">
+
+                <div class="guide-header">
+                    <h1>D5 Render</h1>
+                    <p>การจัดการใบอนุญาต ติดตั้งและถอนใบอนุญาต</p>
+                </div>
+
+                <div class="breadcrumb-nav">
+                    <a href="/docs/D5/">D5 Render</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Manage License</span>
+                </div>
+
+                <section id="pro" class="guide-section">
+                    <h2>D5 Pro - ใบอนุญาตและเปิดใช้งาน</h2>
+
+                    <div class="content-card">
+
+                        <div class="info-box info-red">
+                            <i class="fas fa-exclamation-circle info-box-icon"></i>
+                            <p>สำหรับ D5 Pro โปรดใช้ 1 Redeem Code ต่อ 1 Email เท่านั้น</p>
+                        </div>
+
+                        <h3 id="mp">วิธีแลกรหัสใช้งาน D5 Pro</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่ <a href="https://myspace.d5render.com/settings" target="_blank">D5 Account</a></li>
+                            <li>
+                                <strong>Sign in</strong> หากเคยมี D5 Account อยู่แล้ว (โปรดมั่นใจว่าเป็นอีเมลที่ถูกต้อง)
+                                <ul class="info-sublist">
+                                    <li>Sign Up หากไม่เคยมีบัญชี</li>
+                                </ul>
+                            </li>
+                            <li>ที่เมนู Settings เลื่อนลงไปด้านล่าง มองหาและคลิกคำว่า <strong>Redeem Code</strong></li>
+                            <li>
+                                คลิก <strong>Send to Email</strong> ระบบจะส่ง Verification Code ไปที่อีเมลของคุณ
+                                <ul class="info-sublist">
+                                    <li>นำชุดตัวเลข Verification Code นั้นมาใส่ในช่องให้ถูกต้อง</li>
+                                </ul>
+                            </li>
+                            <li>ใส่รหัส <strong>Redeem Code</strong> (ชุดตัวเลขกับอักษรภาษาอังกฤษ 8 ตัว)</li>
+                            <li>ใบอนุญาตจะผูกกับอีเมลนั้นๆ เป็นระยะเวลา 1 ปี Code</li>
+                            <li>คลิก <strong>Redeem</strong> เพื่อยืนยันการแลกรหัส เมื่อสำเร็จหน้าจอจะแสดงวันหมดอายุของคุณ</li>
+                        </ul>
+
+                        <div class="video-container">
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGt3xihvW0/8mihZC-AdoooIk7utkfQDQ/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+
+                    <div class="content-card">
+                        <h3 id="ap">วิธีติดตั้งและเปิดใช้งาน D5 Pro</h3>
+                        <ul class="guide-list">
+                            <li>ดาวน์โหลดไฟล์ติดตั้ง D5 <a href="https://www.d5render.com/downloading">ที่นี่</a></li>
+                            <li>ดับเบิลคลิกไฟล์ติดตั้ง แล้วกด <strong>Install</strong> — รอติดตั้งสักครู่</li>
+                            <li>เปิดโปรแกรม <strong>D5 Render</strong> แล้วคลิก <strong>Sign in</strong></li>
+                            <li>ใส่อีเมลและรหัสผ่านที่ผูก License Pro ไว้</li>
+                            <li>หลัง Sign in สำเร็จ ระบบจะแสดงสถานะ <strong>Pro</strong></li>
+                            <li>หากยังแสดง Free โปรดตรวจสอบการ Redeem Code</li>
+                        </ul>
+                        
+                        <div class="video-container">
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGt38DR4kk/WQGPh8WAhSUy7e-kYJg4bw/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="teams" class="guide-section">
+                    <h2>D5 for Teams - ใบอนุญาตและเปิดใช้งาน</h2>
+
+                    <div class="content-card">
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>เมื่อสั่งซื้อสำเร็จคุณจะได้รับอีเมลคำเชิญเพื่อเริมต้นใช้งาน D5 for teams</p>
+                        </div>
+
+                        <h3 id="manage-teams">วิธีจัดการใบอนุญาต D5 for Teams</h3>
+                        <ul class="guide-list">
+                            <li>ตรวจสอบอีเมลที่ได้รับจาก D5 หรือค้นหาอีเมลที่ส่งมาจาก <strong>alert@dm.d5techs.com</strong></li>
+                            <li>คลิกปุ่ม <strong>Accept</strong> ในอีเมลคำเชิญ</li>
+                            <li><strong>Sign in</strong> หากเคยมี D5 Account อยู่แล้ว หรือเลือก <strong>Sign Up</strong> / คลิก <strong>Forgot Password?</strong> หากยังไม่มีบัญชีหรือจำรหัสผ่านไม่ได้</li>
+                            <li>ไปที่หน้าจัดการระบบทีม <a href="https://team.d5render.com/" target="_blank">D5 Team Management</a></li>
+                            <li>เลือกโปรไฟล์ <strong>Team</strong> ของคุณ</li>
+                            <li>ที่มุมบนขวา ให้คลิกปุ่ม <strong>Invite</strong> เพื่อเพิ่มอีเมลผู้ใช้งาน</li>
+                            <li>กรอกอีเมลของผู้ใช้งานที่ต้องการเชิญเข้าสู่ทีม</li>
+                            <li>คลิก <strong>Send</strong> เพื่อส่งคำเชิญ</li>
+                            <li>
+                                ผู้ใช้งานจะได้รับอีเมลคำเชิญและจะต้องกดเข้าร่วม (Join) เพื่อเริ่มต้นใช้งาน
+                                <ul class="info-sublist">
+                                    <li><strong>Status - Invited:</strong> อยู่ระหว่างรอผู้ใช้งานกดตอบรับคำเชิญ</li>
+                                    <li><strong>Status - Join:</strong> ผู้ใช้งานเข้าร่วมทีมสำเร็จแล้ว</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Account Attributes (การกำหนดสิทธิ์):</strong>
+                                <ul class="info-sublist">
+                                    <li><strong>Editable:</strong> สามารถใช้งาน D5 ได้</li>
+                                    <li><strong>Manage Only:</strong> สำหรับแอดมินที่เข้ามาจัดการใบอนุญาตเท่านั้น ไม่สามารถเปิดใช้งานโปรแกรม D5 </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="video-container">
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGt4dErLL4/RfckK3hK_d7IOUOABVA7fg/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+
+                    <div class="content-card">
+                        <h3 id="at">วิธีติดตั้งและเปิดใช้งาน D5 for Teams</h3>
+                        <ul class="guide-list">
+                            <li>โปรดเช็คอีเมลที่ได้รับจาก D5 หรือค้นหาอีเมลที่มาจาก <strong>notification@d5techs.com</strong></li>
+                            <li>คลิกปุ่ม <strong>Accept Invitation</strong> ในอีเมล</li>
+                            <li><strong>Sign in</strong> หากเคยมี D5 Account อยู่แล้ว หรือเลือก <strong>Sign Up</strong> หากไม่เคยมีบัญชี (กรณีจำรหัสผ่านไม่ได้ให้คลิก <em>Forgot Password?</em>)</li>
+                            <li>ใส่ชื่อที่ต้องการใช้งาน จากนั้นคลิก <strong>Confirm</strong></li>
+                            <li>ดาวน์โหลดไฟล์ติดตั้งโปรแกรมได้ที่ <a href="https://www.d5render.com/download" target="_blank">D5 Launcher Download</a></li>
+                            <li>ดับเบิลคลิกที่ไฟล์ที่ดาวน์โหลดมา เพื่อเริ่มต้นติดตั้งโปรแกรม</li>
+                            <li>คลิกทำเครื่องหมายที่ช่องข้อตกลงการใช้งาน (User Agreement)</li>
+                            <li>คลิก <strong>Install Now</strong> → รอระบบติดตั้งสักครู่ → จากนั้นเปิดโปรแกรม <strong>D5 Launcher</strong></li>
+                            <li><strong>Sign in</strong> เข้าสู่ระบบด้วยอีเมลและรหัสผ่านของคุณให้เรียบร้อย</li>
+                            <li>เมื่อเข้าสู่ระบบสำเร็จ สถานะบัญชีจะแสดงเป็น <strong>Team</strong></li>
+                            <li>คลิกที่เมนู <strong>Workflow</strong> → คลิก <strong>Install D5</strong> → รอระบบดำเนินการติดตั้งจนเสร็จสิ้น</li>
+                            <li>
+                                <strong>Note:</strong> โปรดตรวจสอบและมั่นใจว่าคอมพิวเตอร์ของคุณเชื่อมต่ออินเทอร์เน็ตอยู่ตลอดเวลาในขณะใช้งาน D5
+                            </li>
+                        </ul>
+
+                        <div class="video-container">
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGt4SZCuKA/YI0naH35elwan5t2LwoioQ/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="decivate" class="guide-section">
+                    <h2>ถอนใบอนุญาต Deactivate</h2>
+
+                    <div class="content-card">
+
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <div>
+                                <p><strong>ข้อควรระวัง —</strong> ควร Deactivate ก่อนเสมอเมื่อต้องการ Uninstall
+                                    หรือเปลี่ยนเครื่อง เพื่อให้ License พร้อมใช้งานบนเครื่องใหม่</p>
+                            </div>
+                        </div>
+
+                        <h3>วิธี Deactivate ผ่านโปรแกรม D5 (แนะนำ)</h3>
+                        <ul class="guide-list">
+                            <li>เปิดโปรแกรม <strong>D5 Launcher </strong> บนเครื่องที่ต้องการถอน</li>
+                            <li>คลิกที่ <strong>ชื่อผู้ใช้งาน</strong> มุมล่างซ้าย</li>
+                            <li>คลิก <strong>Log out</strong> หรือ</li>
+                            <li>ยืนยันการถอน — License จะพร้อมใช้งานบนเครื่องใหม่ทันที</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h3>Unbind ผ่าน D5 Account Portal (กรณีเข้าถึงเครื่องเดิมไม่ได้)</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่ <a href="https://myspace.d5render.com/settings" target="_blank">D5 Account Portal</a></li>
+                            <li><strong>Sign in</strong> ด้วยอีเมลของคุณ</li>
+                            <li>ไปที่เมนู <strong>Settings</strong></li>
+                            <li>มองหา <strong>Device Management</strong></li>
+                            <li>เลือกเครื่องที่ต้องการถอน แล้วคลิก <strong>Unbind</strong></li>
+                            <li>ยืนยันการถอน License จะถูกปลดออกจากเครื่องนั้น</li>
+                        </ul>
+
+                    </div>
+                </section>
+
+                <section id="options" class="guide-section">
+                    <h2>ข้อมูลเพิ่มเติม</h2>
+                    <ul class="guide-list">
+                        <li><a href="/docs/d5/#faq">คำถามที่พบบ่อย</a></li>
+                        <li><a href="/docs/d5/tips/#exp">วิธีเช็ควันหมดอายุ D5 Pro</a></li>
+                        <li><a href="/docs/d5/tips/#unbind">วิธี Unbind D5 Pro</a></li>
+                    </ul>
+                </section>
+
+                <section class="guide-cta">
+                <h2>ต้องการความช่วยเหลือเพิ่มเติม?</h2>
+                <p>หากคุณยังมีคำถาม โปรดติดต่อทีมสนับสนุนของเรา</p>
+                <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="cta-button">
+                    <i class="fas fa-headset"></i> ติดต่อเจ้าหน้าที่
+                </a>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sale</h4>
+                    <a href="https://8baht.com" target="_blank">Product</a>
+                    <a href="mailto:8baht@applicadthai.com">Contact Sale</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank">Open Ticket</a>
+                    <a href="mailto:support8baht@applicadthai.com">Contact Support</a>
+                </div>
+                <div class="footer-section">
+                    <h4>8Baht</h4>
+                    <a href="https://8baht.com/" target="_blank">About</a>
+                    <a href="/docs/cookies/" target="_blank">Cookie Policy</a>
+                </div>
+                <div class="footer-section">
+                    <h5>เวลาทำการ สำนักงานใหญ่</h5>
+                    <span style="font-size:12px;color:var(--footer-text)">จันทร์–ศุกร์ 09:00–17:00</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 8Baht Support. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-support">
+        <button onclick="toggleChat()" title="ติดต่อฝ่ายสนับสนุน">
+            <i class="fas fa-headset"></i>
+        </button>
+    </div>
+
+    <div id="chatWidget" class="chat-widget hidden">
+        <div class="chat-header">
+            <h4>Support Chat</h4>
+            <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot">
+                <p>สวัสดี! มีคำถามเกี่ยวกับ D5 ไหม?</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="พิมพ์ข้อความ..." onkeydown="handleChatKey(event)">
+            <button onclick="sendChat()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="../../script.js"></script>
+    <script src="../../chat-engine.js"></script>
+</body>
+
+</html>
