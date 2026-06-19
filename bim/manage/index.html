@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIM Manage - 8Baht Docs</title>
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/favicon.png">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "x1nphjvla3");
+    </script>
+</head>
+
+<body>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <div>
+                <h4>Cookies Policy</h4>
+                <p>เราใช้คุกกี้เพื่อปรับปรุงประสบการณ์ของคุณ <a href="/docs/cookies/"
+                        target="_blank">บทความของเรา</a>จะช่วยให้คุณเข้าใจมากขึ้น</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn accept" onclick="acceptCookies()">ยอมรับ</button>
+                <button class="cookie-btn decline" onclick="declineCookies()">ปฏิเสธ</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="https://8baht.com" target="_blank" rel="noopener noreferrer">
+                        <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/logo-8baht_n.png"
+                            alt="8Baht Logo">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="/docs/bim/#installation" class="nav-link">ดาวน์โหลด</a>
+                    <a href="/docs/bim/#license" class="nav-link">จัดการใบอนุญาต</a>
+                    <a href="/docs/bim/#faq" class="nav-link">คำถามที่พบบ่อย</a>
+                </div>
+                <div class="nav-icons">
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="help-btn">Open Ticket</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content guide-page">
+        <div class="container guide-container">
+
+            <aside class="guide-sidebar">
+                <div class="sidebar-content">
+                    <h3>สารบัญ</h3>
+                    <nav class="toc-nav">
+                        <a href="#manage"   class="toc-link active">Licenses</a>
+                        <a href="#install"  class="toc-link">ติดตั้งและเปิดใช้งาน</a>
+                        <a href="#decivate" class="toc-link">ถอนใบอนุญาต</a>
+                        <a href="#rs" class="toc-link">วิธี Reset Activation</a>
+                        <a href="#options"  class="toc-link">เพิ่มเติม</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <div class="guide-main">
+
+                <div class="guide-header">
+                    <h1>BIM Bundle</h1>
+                    <p>การจัดการใบอนุญาต ติดตั้งและถอนใบอนุญาต</p>
+                </div>
+
+                <div class="breadcrumb-nav">
+                    <a href="/docs/bim/">BIM Bundle</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Manage License</span>
+                </div>
+
+                <section id="manage" class="guide-section">
+                    <h2>Licenses</h2>
+                    <div class="content-card">
+
+                        <h3 id="activation-bim">ใบอนุญาต BIM Bundle ประกอบไปด้วย:</h3>
+                        <ul class="content-card">
+                            <li>Profile Builder</li>
+                            <li>Quantifier Pro</li>
+                        </ul>
+
+                    </div>
+                </section>
+
+                <section id="install" class="guide-section">
+                    <h2>ติดตั้งและเปิดใช้งาน</h2>
+                    <div class="content-card">
+                        
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>คุณจะต้องติดตั้ง SketchUp ก่อนเพื่อติดตั้งปลั๊กอินเสริม</p>
+                        </div>
+
+                        <h3>วิธีติดตั้งและเปิดใช้งาน BIM Bundle</h3>
+                        <ul class="guide-list">
+                            <li><a href="docs/bim/" target="_blank">Download</a> ไฟล์ติดตั้ง</li>
+                            <li>เปิดโปรแกรม <strong>SketchUp</strong></li>
+                            <li>ไปที่เมนู <strong>Extensions</strong> → <strong>Extension Manager</strong></li>
+                            <li>คลิกปุ่ม <strong>Install Extension</strong></li>
+                            <li>ไปที่โฟลเดอร์ที่มีไฟล์ติดตั้งนามสกุล <strong>.brz</strong></li>
+                            <li>คลิกที่ไฟล์ <strong>.brz</strong> จากนั้นคลิก <strong>Open</strong></li>
+                        </ul>
+
+                        <h3>ขั้นตอนการเปิดใช้งาน (Activation)</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่เมนู <strong>Extensions</strong> บนแถบเครื่องมือ SketchUp</li>
+                            <li>เลือก <strong>Profile Builder</strong> หรือ <strong>Quantifier Pro</strong> → คลิก <strong>License..</strong></li>
+                            <li>คลิกปุ่ม <strong>Add License..</strong></li>
+                            <li>กรอกข้อมูล <strong>Email</strong> และ <strong>License Key</strong> ให้ถูกต้อง</li>
+                            <li>คลิกปุ่ม <strong>Activate License..</strong> เพื่อเริ่มใช้งาน</li>
+                            <li>
+                                <strong>Note:</strong> ก่อนลบโปรแกรมหรือรีเซ็ตเครื่องคอมพิวเตอร์ใหม่ แนะนำให้ <strong>Deactivate</strong> ก่อนทุกครั้ง เพื่อป้องกันสิทธิ์เครื่องเต็ม
+                            </li>
+                        </ul>
+
+                        <div class="video-container">
+                            <iframe loading="lazy" src="https://www.youtube.com/embed/h0bzBByELOc?si=UYLKu-4GwTYV7lY_" allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="decivate" class="guide-section">
+                    <h2>ถอนใบอนุญาต Deactivate</h2>
+
+                    <div class="content-card">
+
+                        <div class="info-box info-red">
+                            <i class="fas fa-exclamation-circle info-box-icon"></i>
+                            <p>ต้อง Deactivate ก่อนเสมอเมื่อต้องการ Uninstall หรือเปลี่ยนเครื่อง เพื่อให้ License พร้อมใช้งานบนเครื่องใหม่</p>
+                        </div>
+
+                        <h3>ขั้นตอนปิดใช้งาน Profile Builder/ Quantifier Pro</h3>
+                        <ul class="guide-list">
+                            <li>เปิดโปรแกรม <strong>SketchUp</strong></li>
+                            <li>ไปที่เมนู <strong>Extensions</strong></li>
+                            <li>เลือก <strong>Profile Builder/ Quantifier Pro</strong></li>
+                            <li>คลิก <strong>License..</strong></li>
+                            <li>คลิก <strong>Remove License..</strong></li>
+                        </ul>                      
+                    </div>
+                </section>
+
+                <section id="rs" class="guide-section">
+                    <h2>วิธี Reset Activation</h2>
+                    <div class="content-card">                       
+                        <h3>ขั้นตอนรีเซ็ตการเปิดใช้งาน</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่เว็บไซต์ <a href="https://mindsightstudios.com/my-licenses/" target="_blank">mind.sight.studios - My Licenses</a></li>
+                            <li><strong>Sign in</strong> เข้าสู่ระบบด้วยอีเมลที่เชื่อมโยงกับใบอนุญาต</li>
+                            <li>
+                                หากยังไม่มีบัญชีผู้ใช้งาน ให้คลิก <strong>Create one!</strong> เพื่อสมัครสมาชิกก่อน
+                            </li>
+                            <li>เมื่อเข้าสู่ระบบสำเร็จ คุณจะพบกับข้อมูลใบอนุญาตของคุณทั้งหมด</li>
+                            <li>เลื่อนหน้าจอลงมาด้านล่างสุด</li>
+                            <li>คลิกปุ่ม <strong>Reset All Activations</strong></li>
+                            <li>คลิกปุ่ม <strong>Submit</strong> เพื่อยืนยันการทำรายการ</li>
+                            <li>เมื่อระบบขึ้นข้อความแสดงสำเร็จ <strong>"All licenses reset successfully!"</strong> เป็นอันเรียบร้อย</li>
+                            <li>คุณสามารถนำ License Key ไปกรอกเปิดใช้งานบนเครื่องใหม่หรือเปิดใช้งานซ้ำได้อีกครั้งทันที</li>
+                        </ul>
+
+                        <div class="video-container">
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGt97YdQJ0/65SRrAK0mxNIMavvkFA-pg/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="options" class="guide-section">
+                    <h2>ข้อมูลเพิ่มเติม</h2>
+                    <ul class="guide-list">
+                        <li><a href="/docs/bim/#faq">คำถามที่พบบ่อย</a></li>
+                    </ul>
+                </section>
+
+                <section class="guide-cta">
+                <h2>ต้องการความช่วยเหลือเพิ่มเติม?</h2>
+                <p>หากคุณยังมีคำถาม โปรดติดต่อทีมสนับสนุนของเรา</p>
+                <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="cta-button">
+                    <i class="fas fa-headset"></i> ติดต่อเจ้าหน้าที่
+                </a>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sale</h4>
+                    <a href="https://8baht.com" target="_blank">Product</a>
+                    <a href="mailto:8baht@applicadthai.com">Contact Sale</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank">Open Ticket</a>
+                    <a href="mailto:support8baht@applicadthai.com">Contact Support</a>
+                </div>
+                <div class="footer-section">
+                    <h4>8Baht</h4>
+                    <a href="https://8baht.com/" target="_blank">About</a>
+                    <a href="/docs/cookies/" target="_blank">Cookie Policy</a>
+                </div>
+                <div class="footer-section">
+                    <h5>เวลาทำการ สำนักงานใหญ่</h5>
+                    <span style="font-size:12px;color:var(--footer-text)">จันทร์–ศุกร์ 09:00–17:00</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 8Baht Support. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-support">
+        <button onclick="toggleChat()" title="ติดต่อฝ่ายสนับสนุน">
+            <i class="fas fa-headset"></i>
+        </button>
+    </div>
+
+    <div id="chatWidget" class="chat-widget hidden">
+        <div class="chat-header">
+            <h4>Support Chat</h4>
+            <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot">
+                <p>สวัสดี! มีคำถามเกี่ยวกับ BIM Bundle ไหม?</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="พิมพ์ข้อความ..." onkeydown="handleChatKey(event)">
+            <button onclick="sendChat()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="../../script.js"></script>
+    <script src="../../chat-engine.js"></script>
+</body>
+
+</html>
