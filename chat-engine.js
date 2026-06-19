@@ -109,6 +109,8 @@ function getContext() {
   if (path.includes('/sketchup/'))   return DOCS.sketchup
   if (path.includes('/rhino/'))      return DOCS.rhino
   if (path.includes('/chaos/'))      return DOCS.chaos
+  if (path.includes('/d5/'))         return DOCS.d5
+  if (path.includes('/bim/'))        return DOCS.bim
   // if (path.includes('/product2/')) return DOCS.product2
   // if (path.includes('/product3/')) return DOCS.product3
   return null
@@ -630,6 +632,136 @@ DOCS.chaos = `
 - สร้างบัญชี Chaos: https://accounts.chaos.com/register
 - หลังต่ออายุใบอนุญาตจะต่ออัตโนมัติ ไม่ต้องทำขั้นตอนใหม่
 - Chaos Unified Login และ Chaos License Server ต้องทำงานอยู่ตลอดเวลา อย่า Disable
+- ติดปัญหา: [Open Ticket](https://8baht.com/help?ref=8Baht_Docs)
+
+## ช่องทางติดต่อ
+- Open Ticket: [บริการช่วยเหลือ](https://8baht.com/help?ref=8Baht_Docs)
+- Support: support8baht@applicadthai.com
+- Sale: 8baht@applicadthai.com
+- เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
+`
+// ── D5 Render ──────────────────────────
+DOCS.d5 = `
+# คู่มือ D5 Render - 8Baht Docs
+
+## ไฟล์ติดตั้ง
+- D5 Pro (Windows): https://www.d5render.com/downloading
+- D5 for Teams (Windows): https://www.d5render.com/download (D5 Launcher)
+- D5 LiveSync (Windows): https://www.d5render.com/download
+- System Requirements: https://docs.d5render.com/user-guide/hardware/system-requirements-for-d5-render
+- User guide: https://docs.d5render.com/
+
+## D5 Pro — วิธีแลกรหัสใช้งาน (Redeem Code)
+- 1 Redeem Code ต่อ 1 อีเมล เช่น 5 License ต้องใช้ 5 อีเมล
+- ไปที่ https://myspace.d5render.com/settings → Sign in
+- เมนู Settings → คลิก Redeem Code
+- คลิก Send to Email → รับ Verification Code จากอีเมล → ใส่ในช่อง
+- ใส่ Redeem Code (ตัวอักษร+ตัวเลข 8 ตัว) → คลิก Redeem
+- License จะผูกกับอีเมลนั้น 1 ปี
+- ดูคู่มือ: [วิธีแลกรหัส D5 Pro](https://8bahtapp.github.io/docs/d5/manage/#pro)
+
+## D5 Pro — วิธีติดตั้งและเปิดใช้งาน
+- ดาวน์โหลดและติดตั้ง D5 → คลิก Install → รอ → เปิดโปรแกรม
+- Sign in ด้วยอีเมลที่ Redeem Code ไว้
+- หลัง Sign in สำเร็จสถานะจะแสดงเป็น Pro
+- หากยังแสดง Free ให้ตรวจสอบการ Redeem Code อีกครั้ง
+
+## D5 for Teams — วิธีจัดการใบอนุญาต (Admin)
+- Admin จะได้รับอีเมลคำเชิญจาก alert@dm.d5techs.com
+- คลิก Accept ในอีเมล → Sign in หรือ Sign Up
+- ไปที่ https://team.d5render.com/ → เลือกโปรไฟล์ Team
+- คลิก Invite (มุมขวาบน) → ใส่อีเมลผู้ใช้งาน → Send
+- ผู้ใช้งานจะได้รับอีเมลคำเชิญและต้องกด Join เพื่อเข้าร่วม
+- Status Invited = รอผู้ใช้กด Accept, Status Join = เข้าร่วมสำเร็จ
+- Account Attributes: Editable = ใช้งาน D5 ได้, Manage Only = แอดมินจัดการเท่านั้น
+- ดูคู่มือ: [วิธีจัดการใบอนุญาต D5 for Teams](https://8bahtapp.github.io/docs/d5/manage/#teams)
+
+## D5 for Teams — วิธีติดตั้งและเปิดใช้งาน
+- ผู้ใช้งานจะได้รับอีเมลจาก notification@d5techs.com
+- คลิก Accept Invitation → Sign in หรือ Sign Up → ใส่ชื่อ → Confirm
+- ดาวน์โหลด D5 Launcher: https://www.d5render.com/download
+- ติดตั้ง → ติ๊กยอมรับข้อตกลง → Install Now → เปิด D5 Launcher
+- Sign in → สถานะจะแสดงเป็น Team
+- คลิก Workflow → Install D5 → รอติดตั้ง
+- ต้องเชื่อมต่ออินเทอร์เน็ตตลอดเวลาขณะใช้งาน D5 for Teams
+
+## วิธีถอนใบอนุญาต (Deactivate)
+- เปิด D5 Launcher → คลิกชื่อผู้ใช้งานมุมล่างซ้าย → คลิก Log out
+- ดูคู่มือ: [วิธีถอนใบอนุญาต](https://8bahtapp.github.io/docs/d5/manage/#decivate)
+
+## วิธี Unbind (กรณีเข้าถึงเครื่องเดิมไม่ได้)
+- ไปที่ https://myspace.d5render.com/settings → Sign in
+- Settings → Device Management → เลือกเครื่องที่ต้องการถอน → Unbind
+- ดูคู่มือ: [วิธี Unbind D5 Pro](https://8bahtapp.github.io/docs/d5/tips/#unbind)
+
+## วิธีเช็ควันหมดอายุ D5 Pro
+- ไปที่ https://myspace.d5render.com/settings → Sign in
+- Settings → Subscription Plan จะแสดงวันหมดอายุ
+- การต่ออายุต้อง Redeem Code ใหม่อีกครั้ง
+- ดูคู่มือ: [วิธีเช็ควันหมดอายุ D5 Pro](https://8bahtapp.github.io/docs/d5/tips/#exp)
+
+## FAQ
+- D5 Pro Portal: https://myspace.d5render.com/
+- D5 for Teams Portal: https://team.d5render.com/
+- D5 Pro ใช้งานได้ 1 เครื่องต่อ 1 อีเมลในเวลาเดียวกัน
+- D5 ต้องการการ์ดจอ NVIDIA RTX 20xx ขึ้นไปสำหรับ Real-time Ray Tracing
+- D5 for Teams ต้องเชื่อมต่ออินเทอร์เน็ตตลอดเวลา
+- Sign in แล้วยังแสดง Free: ตรวจสอบว่า Redeem Code กับอีเมลนี้หรือไม่ที่ D5 Account Portal
+- ต้องการย้ายเครื่อง: Log out จากเครื่องเดิมก่อน แล้ว Sign in ที่เครื่องใหม่
+- ติดปัญหา: [Open Ticket](https://8baht.com/help?ref=8Baht_Docs)
+
+## ช่องทางติดต่อ
+- Open Ticket: [บริการช่วยเหลือ](https://8baht.com/help?ref=8Baht_Docs)
+- Support: support8baht@applicadthai.com
+- Sale: 8baht@applicadthai.com
+- เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
+`
+
+// ── BIM Bundle ─────────────────────────
+DOCS.bim = `
+# คู่มือ BIM Bundle - 8Baht Docs
+
+## โปรดักส์ที่รวมอยู่ใน BIM Bundle
+- Profile Builder 4 (for SketchUp)
+- Quantifier Pro (for SketchUp)
+
+## ไฟล์ติดตั้ง
+- Profile Builder 4: https://mindsightstudios.com/dist/ProfileBuilder-v4.0.5.rbz
+- Quantifier Pro: https://mindsightstudios.com/dist/Quantifier-Pro-v1.2.4.rbz
+- Profile Builder 3 (เวอร์ชั่นเก่า): https://mindsightstudios.com/dist/ProfileBuilder-v3.3.7.rbz
+- Profile Builder 2 (เวอร์ชั่นเก่า): https://mindsightstudios.com/dist/ProfileBuilder2_1_7.rbz
+- My Licenses Portal: https://mindsightstudios.com/my-licenses/
+- User guide Profile Builder: https://drive.google.com/file/d/1Nd7XZwmjsWChma3Qlmxagejw_I9ttvEC/view
+- User guide Quantifier Pro: https://drive.google.com/file/d/1MbSmuGjANTcfXOVyxBdFoQw6D7sdEiKv/view
+
+## วิธีติดตั้งและเปิดใช้งาน BIM Bundle
+- ต้องติดตั้ง SketchUp ก่อน
+- เปิดโปรแกรม SketchUp → Extensions → Extension Manager
+- คลิก Install Extension → เลือกไฟล์ .rbz ที่ดาวน์โหลดมา → Open
+- ขั้นตอน Activation:
+  Extensions → Profile Builder หรือ Quantifier Pro → License..
+  → Add License.. → ใส่ Email และ License Key → Activate License..
+- ดูคู่มือ: [วิธีติดตั้งและเปิดใช้งาน](https://8bahtapp.github.io/docs/bim/manage/#install)
+
+## วิธีถอนใบอนุญาต (Deactivate)
+- ต้อง Deactivate ก่อน Uninstall หรือเปลี่ยนเครื่องทุกครั้ง
+- เปิด SketchUp → Extensions → Profile Builder หรือ Quantifier Pro
+- คลิก License.. → Remove License..
+- ดูคู่มือ: [วิธีถอนใบอนุญาต](https://8bahtapp.github.io/docs/bim/manage/#decivate)
+
+## วิธี Reset Activation (กรณีสิทธิ์เต็มหรือเข้าเครื่องเดิมไม่ได้)
+- ไปที่ https://mindsightstudios.com/my-licenses/
+- Sign in ด้วยอีเมลที่ผูกกับ License (ถ้ายังไม่มีบัญชีคลิก Create one!)
+- เลื่อนลงด้านล่างสุด → คลิก Reset All Activations → Submit
+- เมื่อขึ้น "All licenses reset successfully!" เสร็จสิ้น
+- นำ License Key ไปกรอกเปิดใช้งานบนเครื่องใหม่ได้ทันที
+- ดูคู่มือ: [วิธี Reset Activation](https://8bahtapp.github.io/docs/bim/manage/#rs)
+
+## FAQ
+- BIM Bundle ประกอบด้วย Profile Builder และ Quantifier Pro
+- ต้องติดตั้ง SketchUp ก่อนเสมอ ปลั๊กอินจะไม่ทำงานหากไม่มี SketchUp
+- License Key ได้รับพร้อมกับการสั่งซื้อ ใช้คู่กับอีเมลที่ลงทะเบียน
+- ถ้า Activation Error หรือสิทธิ์เต็ม ให้ใช้ Reset Activation ที่ my-licenses
 - ติดปัญหา: [Open Ticket](https://8baht.com/help?ref=8Baht_Docs)
 
 ## ช่องทางติดต่อ
