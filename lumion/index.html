@@ -82,6 +82,9 @@
                                 <p class="card-version">Named-user license | <i class="fa-brands fa-microsoft" aria-hidden="true"></i>
                                     Windows</p>
                             </div>
+                            <button class="info-btn" onclick="showInfo('ofc')" title="ข้อมูลเพิ่มเติม">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
                         </div>
                         <div class="card-divider"></div>
                         <a href="https://account.lumion.com/products" target="_blank"
@@ -104,6 +107,9 @@
                                 <p class="card-version">Floating license | <i class="fa-brands fa-microsoft" aria-hidden="true"></i>
                                     Windows</p>
                             </div>
+                            <button class="info-btn" onclick="showInfo('ofc')" title="ข้อมูลเพิ่มเติม">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
                         </div>
                         <div class="card-divider"></div>
                         <a href="https://account.lumion.com/products" target="_blank"
@@ -115,6 +121,50 @@
                         <a href="https://support.lumion.com/video-tutorials" target="_blank" class="user-manual-btn">User guide →</a>
                     </div>
 
+                    <div class="download-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/icon-lumion.png"
+                                    alt="Older Versions">
+                            </div>
+                            <div class="card-title">
+                                <h3>Older Versions</h3>
+                                <p class="card-version">เวอร์ชั่นก่อนหน้า</p>
+                            </div>
+                            <button class="info-btn" onclick="showInfo('ofc')" title="ข้อมูลเพิ่มเติม">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="card-divider"></div>
+                        <a href="https://account.lumion.com/products"
+                            target="_blank" class="download-btn">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        <a href="https://support.lumion.com/video-tutorials" target="_blank" class="user-manual-btn">User guide →</a>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/icon-lumion.png"
+                                    alt="Official Download">
+                            </div>
+                            <div class="card-title">
+                                <h3>Official Download</h3>
+                                <p class="card-version">Account Portal</p>
+                            </div>
+                            <button class="info-btn" onclick="showInfo('ofc')" title="ข้อมูลเพิ่มเติม">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="card-divider"></div>
+                        <a href="https://account.lumion.com/products"
+                            target="_blank" class="download-btn">
+                            <i class="fas fa-external-link"></i> Launch
+                        </a>
+                        <a href="https://support.lumion.com/knowledge-base" target="_blank" class="user-manual-btn">Product documentation →</a>
+                    </div>
+
                 </div>
             </section>
 
@@ -122,20 +172,20 @@
                 <h2 class="section-title">จัดการใบอนุญาต</h2>
                 <div class="info-cards-grid">
                     <div class="info-card">
-                        <div class="card-icon activate-icon">
+                        <div class="card-icon transfer-icon">
                             <i class="fas fa-users"></i>
                         </div>
                         <h3>Lumion Pro - Named-user</h3>
                         <p>จัดการใบอนุญาต ติดตั้งและเปิดใช้งาน</p>
-                        <a href="/docs/lumion/lumion-pro" class="card-link">เรียนรู้วิธี →</a>
+                        <a href="/docs/lumion/manage/lumion-pro" class="card-link">เรียนรู้วิธี →</a>
                     </div>
                     <div class="info-card">
                         <div class="card-icon activate-icon">
-                            <i class="fas fa-download"></i>
+                            <i class="fas fa-users"></i>
                         </div>
                         <h3>Lumion Studio - Floating license</h3>
                         <p>จัดการใบอนุญาต ติดตั้งและเปิดใช้งาน</p>
-                        <a href="/docs/lumion/lumion-studio" class="card-link">เรียนรู้วิธี →</a>
+                        <a href="/docs/lumion/manage/lumion-studio" class="card-link">เรียนรู้วิธี →</a>
                     </div>
                     <div class="info-card">
                         <div class="card-icon" style="background: rgba(255,59,48,0.1); color: #ff3b30;">
@@ -152,6 +202,90 @@
                 <h2 class="section-title">คำถามที่พบบ่อย</h2>
                 <div class="faq-container">
 
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>สามารถติดตั้ง Lumion ไว้ในคอมพิวเตอร์หลายเครื่องได้ไหม</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>ได้</strong> คุณสามารถดาวน์โหลดและติดตั้งไฟล์โปรแกรม Lumion ลงในคอมพิวเตอร์กี่เครื่องก็ได้ที่อยู่ในบริษัทหรือเป็นของคุณเอง แต่จำนวนเครื่องที่สามารถเปิดใช้งานพร้อมกันได้จะขึ้นอยู่กับจำนวนสิทธิ์ที่คุณซื้อไว้</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>ใบอนุญาตของ Lumion Pro และ Lumion Studio ต่างกันอย่างไร</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>Lumion Pro:</strong> จะเป็นสิทธิ์แบบผูกกับชื่อผู้ใช้ Named-user License ต้องระบุอีเมลผู้ใช้งานและล็อกอินเปิดโปรแกรมได้ทีละคนตามอีเมลนั้นๆ</p>
+                            <p><strong>Lumion Studio:</strong> จะเป็นสิทธิ์แบบแชร์ใช้งานร่วมกัน Floating License ซึ่งสามารถแชร์กันในองค์กรได้ เปิดใช้งานพร้อมกันได้ตามจำนวนสิทธิ์ที่ซื้อไว้</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>ฉันจะดูวันหมดอายุและจัดการผู้ใช้งานใบอนุญาตได้อย่างไร</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>คุณสามารถล็อกอินเข้าไปตรวจสอบสิทธิ์ วันหมดอายุ ดาวน์โหลดตัวติดตั้ง รวมถึงการเพิ่ม-ลบอีเมลผู้ใช้งาน ได้โดยตรงผ่านทางหน้าเว็บ <a href="https://account.lumion.com/" target="_blank">Lumion Account</a> ของคุณ</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>จำเป็นต้องเชื่อมต่ออินเทอร์เน็ตตลอดเวลาขณะใช้งาน Lumion หรือไม่</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>จำเป็น</strong> ระบบสิทธิ์ของ Lumion ตั้งแต่เวอร์ชั่นปัจจุบันจำเป็นต้องใช้การต่ออินเทอร์เน็ตเพื่อตรวจสอบสิทธิ์ ตลอดเวลาในการเปิดและรันโปรแกรม รวมถึงการดึงคลังโมเดลออนไลน์</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>เกิดข้อผิดพลาด "All seats are in use" หรือสิทธิ์เต็ม ต้องทำอย่างไร</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>ปัญหานี้เกิดจากจำนวนเครื่องที่กำลังเปิดใช้งานโปรแกรมอยู่ครบตามจำนวนสิทธิ์ที่มีแล้ว วิธีแก้ไขคือต้องให้คอมพิวเตอร์เครื่องอื่นที่เปิดโปรแกรมอยู่ทำการปิดโปรแกรม Lumion ลง เพื่อคืนสิทธิ์กลับเข้าสู่ระบบส่วนกลางก่อน</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>จะย้ายสิทธิ์ License ไปใช้ที่คอมพิวเตอร์เครื่องอื่นอย่างไร</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>เพียงแค่คุณกดปิดโปรแกรม Lumion ในคอมพิวเตอร์เครื่องเดิม ระบบจะทำการคืนสิทธิ์กลับไปที่ระบบ Cloud ทันที จากนั้นคุณสามารถไปเปิดโปรแกรมล็อกอินใช้งานที่คอมพิวเตอร์เครื่องใหม่ได้เลย</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>หากปล่อยให้ใบอนุญาต Subscription หมดอายุ จะเกิดอะไรขึ้นกับไฟล์งาน</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>หากสิทธิ์หมดอายุ ไฟล์โปรเจกต์ของคุณจะยังคงอยู่และปลอดภัยดี แต่คุณจะไม่สามารถเปิดเข้าไปแก้ไขงานในโปรแกรม Lumion Pro ได้ โดยตัวโปรแกรมจะเปิดขึ้นมาใน Expired Mode เท่านั้น จนกว่าจะทำการต่ออายุสัญญา</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>ลิงก์สำหรับศึกษาคู่มือ วิดีโอสอนการใช้งาน และตรวจสอบสเปคคอมพิวเตอร์มีอะไรบ้าง</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>สามารถศึกษาข้อมูลเพิ่มเติมได้จากลิงก์ทางการด้านล่างนี้:</p>
+                            <p>ตรวจสอบสเปคคอมพิวเตอร์: <a href="https://lumion.com/product/buy#requirements" target="_blank">Lumion System Requirements</a></p>
+                            <p>วิดีโอสอนใช้งาน: <a href="https://support.lumion.com/video-tutorials" target="_blank">Lumion Video Tutorials</a></p>
+                            <p>ศูนย์รวมความรู้และวิธีแก้ปัญหา: <a href="https://support.lumion.com/knowledge-base" target="_blank">Lumion Knowledge Base</a></p>
+                        </div>
+                    </div>
+                    
                     <div class="faq-item">
                         <button class="faq-question" onclick="toggleFaq(this)">
                             <span>หากฉันติดปัญหาการติดตั้งและเปิดใช้งานโปรแกรมทำอย่างไร</span>
@@ -235,6 +369,21 @@
         <div class="chat-input">
             <input type="text" id="chatInput" placeholder="พิมพ์ข้อความ..." onkeydown="handleChatKey(event)">
             <button onclick="sendChat()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <div id="infoModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+                <div id="req-ofc" class="req-content hidden">
+                    <h3>Download</h3>
+                    <ul>
+                        <li> ต้องเข้าสู่ระบบเพื่อดาวน์โหลดไฟล์ติดตั้ง</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
