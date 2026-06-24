@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foxit Manage - 8Baht Docs</title>
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/favicon.png">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "x1nphjvla3");
+    </script>
+</head>
+
+<body>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <div>
+                <h4>Cookies Policy</h4>
+                <p>เราใช้คุกกี้เพื่อปรับปรุงประสบการณ์ของคุณ <a href="/docs/cookies/"
+                        target="_blank">บทความของเรา</a>จะช่วยให้คุณเข้าใจมากขึ้น</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn accept" onclick="acceptCookies()">ยอมรับ</button>
+                <button class="cookie-btn decline" onclick="declineCookies()">ปฏิเสธ</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="https://8baht.com" target="_blank" rel="noopener noreferrer">
+                        <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/logo-8baht_n.png"
+                            alt="8Baht Logo">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="/docs/foxit/subscription/#installation" class="nav-link">ดาวน์โหลด</a>
+                    <a href="/docs/foxit/subscription/#license" class="nav-link">จัดการใบอนุญาต</a>
+                    <a href="/docs/foxit/subscription/#faq" class="nav-link">คำถามที่พบบ่อย</a>
+                </div>
+                <div class="nav-icons">
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="help-btn">Open Ticket</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content guide-page">
+        <div class="container guide-container">
+
+            <aside class="guide-sidebar">
+                <div class="sidebar-content">
+                    <h3>สารบัญ</h3>
+                    <nav class="toc-nav">
+                        <a href="#manage" class="toc-link active">จัดการใบอนุญาต</a>
+                        <a href="#install" class="toc-link">ติดตั้งและเปิดใช้งาน</a>
+                        <a href="#decivate" class="toc-link">ถอนใบอนุญาต</a>
+                        <a href="#options" class="toc-link">เพิ่มเติม</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <div class="guide-main">
+
+                <div class="guide-header">
+                    <h1>Foxit</h1>
+                    <h3>PDF Editor - Subscription</h3>
+                    <p>การจัดการใบอนุญาต ติดตั้งและถอนใบอนุญาต</p>
+                </div>
+
+                <div class="breadcrumb-nav">
+                    <a href="/docs/foxit/subscription/">Foxit Subscription</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Manage License</span>
+                </div>
+
+                <section id="manage" class="guide-section">
+                    <h2>จัดการใบอนุญาต</h2>
+                    <h2>วิธีจัดการใบอนุญาต</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>เมื่อสั่งซื้อสำเร็จคุณจะได้รับอีเมลยืนยันการสั่งซื้อ
+                                อีเมลที่สั่งซื้อสามารถเพิ่มอีเมลผู้ใช้งานและจัดการใบอนุญาตทั้งหมด</p>
+                        </div>
+
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <p>การใช้งานกำหนดให้ 1 ใบอนุญาต ผูกกับ 1 บัญชีอีเมล (เช่น หากมี 5 สิทธิ์การใช้งาน จะต้องใช้
+                                5 อีเมล) ทั้งนี้ อีเมลที่ใช้สั่งซื้อจะได้รับสิทธิ์เป็น ผู้ดูแลระบบ (Admin)
+                                ซึ่งสามารถจัดการมอบสิทธิ์ หรือโอนย้ายสิทธิ์การใช้งานให้แก่อีเมลอื่น ๆ ได้ตลอดเวลา
+                                โดยที่ยังคงสถานะผู้ดูแลระบบไว้ตามเดิม</p>
+                        </div>
+
+                        <h3>ขั้นตอน จัดการใบอนุญาต</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่ <a href="https://adminconsole.foxit.com/" target="_blank">Admin Console</a> หรือ
+                                ไปที่ <a href="https://www.foxit.com/get-password.html" target="_blank">Set Password</a>
+                                เพื่อตั้งรหัสผ่าน</li>
+                            <li><strong>Sign in</strong> ด้วย อีเมล ที่ใช้สั่งซื้อ</li>
+                            <li>ที่เมนูด้านซ้ายคลิก <strong>User ID Management</strong> → คลิก <strong>Users</strong>
+                            </li>
+                            <li>เมนูด้านบนไปที่ <strong>Invited users</strong></li>
+                            <li>เมนูด้านขวาไปที่ <strong>Invited users</strong> → คลิก <strong>Invited users</strong>
+                            </li>
+                            <li>
+                                ใส่อีเมลผู้ใช้งาน
+                                <ul class="info-sublist">
+                                    <li>คุณสามารถเพิ่มอีเมลได้คราวละหลายอีเมลโดยเพิ่มเครื่องหมายอัฒภาค (;)​​</li>
+                                </ul>
+                            </li>
+                            <li>ทำเครื่องหมายที่ช่อง <strong>Assign License</strong> เพื่อเพิ่มโปรดักส์</li>
+                            <li>กด <strong>Save</strong> เพื่อบันทึก</li>
+                            <li>คุณสามารถไปที่เมนู <strong>License Management</strong> เพื่อตรวจสอบผู้ใช้งานทั้งหมด</li>
+                            <li>ผู้ใช้งานจะได้รับคำเชิญเพื่อเริ่มใช้งานทางอีเมล</li>
+                        </ul>
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p><strong>Note:</strong> ผู้ใช้งานจะต้องกดรับคำเชิญทางอีเมลเพื่อเริ่มต้นใช้งานโปรแกรม
+                                (คำเชิญจะหมดอายุใน 3 วัน)</p>
+                        </div>
+
+                        <div class="video-container">
+                            <iframe loading="lazy"
+                                src="https://www.canva.com/design/DAGtMxA_qd0/IV971lMPGaXQchEraskLtQ/watch?embed"
+                                allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="install" class="guide-section">
+                    <h2>ติดตั้งและเปิดใช้งาน</h2>
+                    <div class="content-card">
+
+                        <h2>ติดตั้งและเปิดใช้งาน</h2>
+                        <div class="content-card">
+
+                            <div class="info-box info-blue">
+                                <i class="fas fa-info-circle info-box-icon"></i>
+                                <p>คำเชิญมีอายุ 3 วันหลังจากที่ผู้ใช้งานได้รับอีเมล -
+                                    หากคำเชิญหมดอายุโปรดแจ้งแอดมินของคุณเพื่อส่งคำเชิญใหม่</p>
+                            </div>
+
+                            <h3>ขั้นตอนติดตั้งและเปิดใช้งาน</h3>
+                            <ul class="guide-list">
+                                <li>ผู้ใช้งานจะได้รับอีเมลคำเชิญจาก <strong>Foxit</strong></li>
+                                <li>คลิก <strong>Click here to join now!</strong></li>
+                                <li>ใส่ข้อมูลและตั้งรหัสผ่าน สำหรับเข้าใช้งาน <strong>Foxit</strong></li>
+                                <li>คลิกที่นี่เพื่อ <a href="/docs/foxit/subscription/" target="_blank">Download</a>
+                                    ไฟล์ติดตั้ง</li>
+                                <li>คลิกที่ไฟล์เพื่อติดตั้งโปรแกรม</li>
+                                <li>คลิก <strong>Next</strong> → <strong>I accept</strong> → <strong>Next</strong></li>
+                                <li>คลิก <strong>Install</strong> → รอสักครู่ → คลิก <strong>Finish</strong></li>
+                                <li>เลือก <strong>Sign in</strong></li>
+                                <li><strong>Sign in</strong> ด้วยอีเมลและรหัสผ่านที่ตั้งไปก่อนหน้า</li>
+                                <li>โปรแกรมจะร้องขอให้เปิดปิดใหม่เลือก <strong>Restart Now</strong></li>
+                                <li>โปรแกรมจะเปิดขึ้นมาใหม่เป็นอันเสร็จเรียบร้อย</li>
+                            </ul>
+
+                            <div class="video-container">
+                                <iframe loading="lazy"
+                                    src="https://www.canva.com/design/DAGtNmRossA/gPywkRBl1derswOwmKcDYg/watch?embed"
+                                    allowfullscreen allow="fullscreen"></iframe>
+                            </div>
+
+                        </div>
+                </section>
+
+                <section id="decivate" class="guide-section">
+                    <h2>ถอนใบอนุญาต Deactivate</h2>
+
+                    <div class="content-card">
+
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <p>โปรด Deactivate ก่อนเสมอเมื่อต้องการ Uninstall หรือเปลี่ยนเครื่อง เพื่อให้ License
+                                พร้อมใช้งานบนเครื่องใหม่</p>
+                        </div>
+
+                        <h3>วิธีปิดใช้งานเพื่อลบโปรแกรมหรือย้ายเครื่อง</h3>
+                        <ul class="guide-list">
+                            <li>เปิดโปรแกรม <strong>Foxit</strong></li>
+                            <li>ไปที่เมนู <strong>Help</strong></li>
+                            <li>คลิก <strong>Manage</strong></li>
+                            <li>คลิกเครื่องหมาย <strong>กากบาท (X)</strong> ที่ด้านหลัง</li>
+                            <li>ปิดหน้าต่าง</li>
+                            <li>ที่มุมขวาบน คลิกที่ <strong>เครื่องหมายสามเหลี่ยมเล็ก</strong></li>
+                            <li>คลิก <strong>Sign Out</strong></li>
+                            <li>คลิก <strong>Yes</strong> เพื่อยืนยัน เป็นอันเสร็จเรียบร้อย</li>
+                        </ul>
+
+                        <div class="video-container">
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGtONsQclQ/Bxtt5uq-QSy8zpeMhnjP8g/watch?embed" allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="options" class="guide-section">
+                    <h2>ข้อมูลเพิ่มเติม</h2>
+                    <ul class="guide-list">
+                        <li><a href="/docs/foxit/#faq">คำถามที่พบบ่อย</a></li>
+                    </ul>
+                </section>
+
+                <section class="guide-cta">
+                    <h2>ต้องการความช่วยเหลือเพิ่มเติม?</h2>
+                    <p>หากคุณยังมีคำถาม โปรดติดต่อทีมสนับสนุนของเรา</p>
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="cta-button">
+                        <i class="fas fa-headset"></i> ติดต่อเจ้าหน้าที่
+                    </a>
+                </section>
+
+            </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sale</h4>
+                    <a href="https://8baht.com" target="_blank">Product</a>
+                    <a href="mailto:8baht@applicadthai.com">Contact Sale</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank">Open Ticket</a>
+                    <a href="mailto:support8baht@applicadthai.com">Contact Support</a>
+                </div>
+                <div class="footer-section">
+                    <h4>8Baht</h4>
+                    <a href="https://8baht.com/" target="_blank">About</a>
+                    <a href="/docs/cookies/" target="_blank">Cookie Policy</a>
+                </div>
+                <div class="footer-section">
+                    <h5>เวลาทำการ สำนักงานใหญ่</h5>
+                    <span style="font-size:12px;color:var(--footer-text)">จันทร์–ศุกร์ 09:00–17:00</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 8Baht Support. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-support">
+        <button onclick="toggleChat()" title="ติดต่อฝ่ายสนับสนุน">
+            <i class="fas fa-headset"></i>
+        </button>
+    </div>
+
+    <div id="chatWidget" class="chat-widget hidden">
+        <div class="chat-header">
+            <h4>Support Chat</h4>
+            <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot">
+                <p>สวัสดี! มีคำถามเกี่ยวกับ Foxit ไหม?</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="พิมพ์ข้อความ..." onkeydown="handleChatKey(event)">
+            <button onclick="sendChat()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="../../script.js"></script>
+    <script src="../../chat-engine.js"></script>
+</body>
+
+</html>
