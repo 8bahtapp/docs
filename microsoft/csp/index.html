@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft CSP Manage - 8Baht Docs</title>
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/favicon.png">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "x1nphjvla3");
+    </script>
+</head>
+
+<body>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <div>
+                <h4>Cookies Policy</h4>
+                <p>เราใช้คุกกี้เพื่อปรับปรุงประสบการณ์ของคุณ <a href="/docs/cookies/"
+                        target="_blank">บทความของเรา</a>จะช่วยให้คุณเข้าใจมากขึ้น</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn accept" onclick="acceptCookies()">ยอมรับ</button>
+                <button class="cookie-btn decline" onclick="declineCookies()">ปฏิเสธ</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="https://8baht.com" target="_blank" rel="noopener noreferrer">
+                        <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/logo-8baht_n.png"
+                            alt="8Baht Logo">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="#" class="nav-link"> </a>
+                </div>
+                <div class="nav-icons">
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="help-btn">Open Ticket</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content guide-page">
+        <div class="container guide-container">
+
+            <aside class="guide-sidebar">
+                <div class="sidebar-content">
+                    <h3>สารบัญ</h3>
+                    <nav class="toc-nav">
+                        <a href="#manage" class="toc-link active">จัดการใบอนุญาต</a>
+                        <a href="#install" class="toc-link">ติดตั้งและเปิดใช้งาน</a>
+                        <a href="#decivate" class="toc-link">ถอนใบอนุญาต</a>
+                        <a href="#mfa" class="toc-link">เพิ่ม MFA เครื่องใหม่</a>
+                        <a href="#faq" class="toc-link">คำถามที่พบบ่อย</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <div class="guide-main">
+
+                <div class="guide-header">
+                    <h1>Microsoft CSP</h1>
+                    <p>การจัดการใบอนุญาต ติดตั้งและถอนใบอนุญาต</p>
+                </div>
+
+                <div class="breadcrumb-nav">
+                    <a href="/docs/microsoft/">Microsoft</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Manage License</span>
+                </div>
+
+                <section id="#" class="guide-section">
+                    <div class="content-card">
+
+                        <h3 id="activation-bim">การเข้าถึง Microsoft 365 Admin Center</h3>
+                        <ul class="content-card">
+                            <li><strong>ผู้ใช้งาน New Tenant:</strong> คุณจะได้รับ รหัสผ่านในการเข้าสู่ระบบในครั้งแรก —
+                                ต้องตั้งรหัสผ่านใหม่หลังจากนั้น</li>
+                            <li><strong>ผู้ใช้งานที่มี Tenant เดิมอยู่แล้ว:</strong>
+                                สามารถใช้ข้อมูลการเข้าสู่ระบบเดิมของคุณ</li>
+                        </ul>
+
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <p><strong>Microsoft บังคับใช้ MFA</strong> (Multi-Factor Authentication)
+                                อย่างเต็มรูปแบบสำหรับผลิตภัณฑ์ CSP — โปรดเพิ่มช่องทางยืนยันตัวตนสำรอง และตั้ง Admin
+                                สำรองไว้ทันที เพราะหากมือถือหายหรือแอปถูกลบ จะไม่สามารถเข้าสู่ระบบได้</p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="manage" class="guide-section">
+                    <h2>วิธีจัดการใบอนุญาต</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>การจัดการใบอนุญาตทำได้ที่ <a href="https://admin.microsoft.com" target="_blank">Microsoft
+                                    365 Admin Center</a> — ต้องมีสิทธิ์ Global Admin, License Admin หรือ User Admin</p>
+                        </div>
+
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <p>หากซื้อผ่าน CSP ไม่สามารถใช้หน้า <strong>Your Products</strong>
+                                ในการมอบสิทธิ์บางโปรดักส์ได้ — ให้ใช้หน้า <strong>Billing &gt; Licenses</strong> แทน</p>
+                        </div>
+
+                        <h3>เพิ่มผู้ใช้งานและมอบสิทธิ์</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่ <a href="https://admin.microsoft.com" target="_blank">Microsoft 365 Admin
+                                    Center</a></li>
+                            <li>เข้าสู่ระบบด้วยบัญชีผู้ดูแลของคุณ</li>
+                            <li>
+                                เลือก <strong>Billing</strong> &gt; <strong>Licenses</strong>
+                                <ul class="info-sublist">
+                                    <li>หน้านี้จะแสดงโปรดักส์ทั้งหมด พร้อมจำนวน license ที่ใช้งานและคงเหลือ</li>
+                                </ul>
+                            </li>
+                            <li>เลือกโปรดักส์ที่ต้องการ</li>
+                            <li>คลิก <strong>Assign licenses</strong></li>
+                            <li>พิมพ์ชื่อหรืออีเมลผู้ใช้งาน แล้วเลือกจากรายการ</li>
+                            <li>
+                                สามารถเพิ่มได้สูงสุด 20 คนต่อครั้ง
+                                <ul class="info-sublist">
+                                    <li>หากต้องการมอบสิทธิ์จำนวนมาก แนะนำใช้ <a
+                                            href="https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide"
+                                            target="_blank">Group-based licensing</a></li>
+                                </ul>
+                            </li>
+                            <li>เลือก <strong>Turn apps and services on or off</strong> เพื่อกำหนดสิทธิ์เฉพาะบางบริการ
+                                (ถ้าต้องการ)</li>
+                            <li>คลิก <strong>Assign</strong> เพื่อยืนยัน</li>
+                        </ul>
+
+                        <h3>แก้ไขสิทธิ์ผู้ใช้งาน</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่ <strong>Users</strong> &gt; <strong>Active users</strong></li>
+                            <li>คลิกชื่อผู้ใช้งานที่ต้องการแก้ไข</li>
+                            <li>เลือกแท็บ <strong>Licenses and Apps</strong></li>
+                            <li>ทำเครื่องหมายหรือยกเลิกเครื่องหมายที่ License ที่ต้องการ</li>
+                            <li>คลิก <strong>Save changes</strong></li>
+                        </ul>
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>อ่านเพิ่มเติมจาก Microsoft Learn: <a
+                                    href="https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users?view=o365-worldwide"
+                                    target="_blank">Assign or unassign licenses for users</a></p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="install" class="guide-section">
+                    <h2>ติดตั้งและเปิดใช้งาน</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>ผู้ใช้งานต้องได้รับ License จาก Admin ก่อน จึงจะสามารถดาวน์โหลดและติดตั้งโปรแกรมได้</p>
+                        </div>
+
+                        <h3>ขั้นตอนดาวน์โหลดและติดตั้ง</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่ <a href="https://m365.cloud.microsoft/apps"
+                                    target="_blank">m365.cloud.microsoft/apps</a></li>
+                            <li>Sign in ด้วย Work/School account ที่ได้รับสิทธิ์</li>
+                            <li>
+                                คลิก <strong>Install apps</strong> มุมขวาบน แล้วเลือก <strong>Microsoft 365
+                                    apps</strong>
+                                <ul class="info-sublist">
+                                    <li>หากไม่เห็นปุ่ม Install apps โปรดติดต่อ Admin เพื่อตรวจสอบว่าได้รับ License
+                                        แล้วหรือไม่</li>
+                                </ul>
+                            </li>
+                            <li>ไฟล์ <strong>OfficeSetup.exe</strong> จะดาวน์โหลดมาที่โฟลเดอร์ Downloads</li>
+                            <li>ดับเบิลคลิกไฟล์ที่ดาวน์โหลดมา แล้วคลิก <strong>Yes</strong> เพื่ออนุญาตให้ติดตั้ง</li>
+                            <li>รอติดตั้งสักครู่ จนหน้าต่าง <strong>"You're all set!"</strong> ปรากฏขึ้น</li>
+                            <li>คลิก <strong>Close</strong> — โปรแกรมพร้อมใช้งานในเมนู Start</li>
+                        </ul>
+
+                        <h3>เปิดใช้งาน (Activation)</h3>
+                        <ul class="guide-list">
+                            <li>เปิดโปรแกรมใดก็ได้ เช่น Word หรือ Excel</li>
+                            <li>Sign in ด้วย Work/School account เดิม</li>
+                            <li>โปรแกรมจะ Activate อัตโนมัติเมื่อเชื่อมต่ออินเทอร์เน็ต</li>
+                        </ul>
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>อ่านเพิ่มเติมจาก Microsoft Learn: <a
+                                    href="https://learn.microsoft.com/en-us/microsoft-365/admin/setup/install-applications?view=o365-worldwide"
+                                    target="_blank">Install Microsoft 365 apps</a></p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="decivate" class="guide-section">
+                    <h2>ถอนใบอนุญาต</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <p>เมื่อถอน License ออกจากผู้ใช้งาน ข้อมูล Exchange Online จะถูกเก็บไว้ 30 วัน — ไฟล์
+                                OneDrive จะไม่ถูกลบจนกว่าจะลบ User account ออกจากระบบ</p>
+                        </div>
+
+                        <h3>วิธีถอน License จากผู้ใช้งาน (Admin)</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่ <a href="https://admin.microsoft.com" target="_blank">Microsoft 365 admin
+                                    center</a></li>
+                            <li>เลือก <strong>Users</strong> &gt; <strong>Active users</strong></li>
+                            <li>คลิกชื่อผู้ใช้งานที่ต้องการถอน License</li>
+                            <li>เลือกแท็บ <strong>Licenses and Apps</strong></li>
+                            <li>ยกเลิกเครื่องหมายที่ License ที่ต้องการถอน</li>
+                            <li>คลิก <strong>Save changes</strong></li>
+                            <li>License จะกลับมาอยู่ใน Pool และพร้อมมอบให้ผู้ใช้งานคนอื่นได้ทันที</li>
+                        </ul>
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>อ่านเพิ่มเติมจาก Microsoft Learn: <a
+                                    href="https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users?view=o365-worldwide"
+                                    target="_blank">Unassign licenses for users</a></p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="mfa" class="guide-section">
+                    <h2>วิธีเพิ่มการยืนยันสองขั้นตอน MFA</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-blue">
+                            <i class="fas fa-info-circle info-box-icon"></i>
+                            <p>ปัจจุบันทาง Microsoft จะบังคับให้ลูกค้าต้องเพิ่มการยืนยันสองขั้นตอน
+                                เพื่อความปลอดภัยในการเข้าถึงบัญชี — เพื่อความสะดวกในการเข้าถึง คุณควรติดตั้ง Microsoft
+                                Authenticator App เครื่องที่ 2 เผื่อกรณีโทรศัพท์มีปัญหา</p>
+                        </div>
+
+                        <h3>ขั้นตอนเพิ่มการยืนยันสองขั้นตอน</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่เว็บไซต์ <a href="https://myaccount.microsoft.com/" target="_blank" rel="noopener"
+                                    class="guide-link">My Account</a></li>
+                            <li>เข้าสู่ระบบด้วยบัญชีของคุณ เช่น <strong
+                                    class="user-select-all">admin@name.onmicrosoft.com</strong></li>
+                            <li>เลือกเมนู <strong>Security info</strong></li>
+                            <li>คลิกปุ่ม <strong>+ Add sign-in method</strong></li>
+                            <li>คุณสามารถเลือกรูปแบบการยืนยันสองขั้นตอนตามที่ต้องการได้ทันที</li>
+                            <li>รูปแบบที่เชื่อมโยงกับบัญชีจะแสดงที่นี่ ซึ่งคุณสามารถแก้ไขหรือเปลี่ยนได้ในภายหลัง</li>
+                        </ul>
+
+                        <div class="info-box info-red">
+                            <i class="fas fa-exclamation-circle info-box-icon"></i>
+                            <p><strong>Note:</strong> หากต้องการเปลี่ยนโทรศัพท์เครื่องใหม่ ต้องเพิ่ม Microsoft
+                                Authenticator App ที่เครื่องใหม่ให้ก่อนทำการเปลี่ยนหรือล้างเครื่องเดิม</p>
+                        </div>
+
+                        <div class="video-container">
+                            <iframe loading="lazy"
+                                src="https://www.canva.com/design/DAGuKPAFSew/Y0wEjGEwPU-OncrcqEIQxw/watch?embed"
+                                allowfullscreen allow="fullscreen" title="Add MFA - Microsoft"></iframe>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="faq" class="section">
+                    <h2 class="section-title">คำถามที่พบบ่อย</h2>
+                    <div class="faq-container">
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>ใครมีสิทธิ์มอบ License ให้ผู้ใช้งานได้บ้าง</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>ผู้ที่มีสิทธิ์จัดการ License ได้แก่ Global Admin, License Admin และ User Admin</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>มอบ License ไปแล้ว แต่ผู้ใช้งานยังเปิดโปรแกรมไม่ได้</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>ให้ผู้ใช้งานลองรอประมาณ 5–10 นาทีหลังจาก Admin มอบ License
+                                    เนื่องจากระบบอาจใช้เวลาอัปเดตสิทธิ์ จากนั้นให้ Sign out แล้ว Sign in ใหม่ที่โปรแกรม
+                                    หากยังไม่ได้ให้ลอง Restart เครื่องหนึ่งครั้ง</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>พนักงานลาออก ต้องการโอน License ไปให้คนใหม่ทำอย่างไร</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>ไปที่ <strong>Users &gt; Active users</strong> เลือกชื่อพนักงานเดิม แล้วไปที่แท็บ
+                                    <strong>Licenses and Apps</strong> ยกเลิกเครื่องหมายที่ License แล้ว Save —
+                                    จากนั้นเพิ่มหรือสร้างบัญชีผู้ใช้งานใหม่และมอบ License เดิมให้</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>ถอด License แล้วข้อมูลอีเมลและไฟล์จะหายหรือไม่</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>ข้อมูล Exchange Online จะถูกเก็บไว้ <strong>30 วัน</strong> หลังถอด License
+                                    ก่อนถูกลบถาวร — ส่วนไฟล์ใน OneDrive จะ<strong>ไม่ถูกลบ</strong> จนกว่าจะลบ User
+                                    account ออกจากระบบ</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>ผู้ใช้งาน 1 คน ติดตั้งโปรแกรมได้กี่เครื่อง</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Microsoft 365 Business อนุญาตให้ผู้ใช้งาน 1 คน Sign in สูงสุดห้าเครื่อง</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>หากติดปัญหาการติดตั้งและเปิดใช้งานโปรแกรมทำอย่างไร</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>โปรดไปที่ <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank">Open
+                                        Ticket</a> เจ้าหน้าที่จะติดต่อคุณในช่วงเวลาทำการ</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="guide-cta" id="contact">
+                    <h2>ต้องการความช่วยเหลือเพิ่มเติม?</h2>
+                    <p>หากคุณยังมีคำถาม โปรดติดต่อทีมสนับสนุนของเรา</p>
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="cta-button">
+                        <i class="fas fa-headset"></i> ติดต่อเจ้าหน้าที่
+                    </a>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sale</h4>
+                    <a href="https://8baht.com" target="_blank">Product</a>
+                    <a href="mailto:8baht@applicadthai.com">Contact Sale</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank">Open Ticket</a>
+                    <a href="mailto:support8baht@applicadthai.com">Contact Support</a>
+                </div>
+                <div class="footer-section">
+                    <h4>8Baht</h4>
+                    <a href="https://8baht.com/" target="_blank">About</a>
+                    <a href="/docs/cookies/" target="_blank">Cookie Policy</a>
+                </div>
+                <div class="footer-section">
+                    <h5>เวลาทำการ สำนักงานใหญ่</h5>
+                    <span style="font-size:12px;color:var(--footer-text)">จันทร์–ศุกร์ 09:00–17:00</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 8Baht Support. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-support">
+        <button onclick="toggleChat()" title="ติดต่อฝ่ายสนับสนุน">
+            <i class="fas fa-headset"></i>
+        </button>
+    </div>
+
+    <div id="chatWidget" class="chat-widget hidden">
+        <div class="chat-header">
+            <h4>Support Chat</h4>
+            <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot">
+                <p>สวัสดี! มีคำถามเกี่ยวกับ PDFelement ไหม?</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="พิมพ์ข้อความ..." onkeydown="handleChatKey(event)">
+            <button onclick="sendChat()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="../../script.js"></script>
+    <script src="../../chat-engine.js"></script>
+</body>
+
+</html>

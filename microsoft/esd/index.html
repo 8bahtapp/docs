@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft ESD Manage - 8Baht Docs</title>
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/favicon.png">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "x1nphjvla3");
+    </script>
+</head>
+
+<body>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <div>
+                <h4>Cookies Policy</h4>
+                <p>เราใช้คุกกี้เพื่อปรับปรุงประสบการณ์ของคุณ <a href="/docs/cookies/"
+                        target="_blank">บทความของเรา</a>จะช่วยให้คุณเข้าใจมากขึ้น</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn accept" onclick="acceptCookies()">ยอมรับ</button>
+                <button class="cookie-btn decline" onclick="declineCookies()">ปฏิเสธ</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="https://8baht.com" target="_blank" rel="noopener noreferrer">
+                        <img src="https://raw.githubusercontent.com/8bahtapp/web-images/refs/heads/main/logo-8baht_n.png"
+                            alt="8Baht Logo">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="#" class="nav-link"> </a>
+                </div>
+                <div class="nav-icons">
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="help-btn">Open Ticket</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content guide-page">
+        <div class="container guide-container">
+
+            <aside class="guide-sidebar">
+                <div class="sidebar-content">
+                    <h3>สารบัญ</h3>
+                    <nav class="toc-nav">
+                        <a href="#esd" class="toc-link active">ใบอนุญาต ESD</a>
+                        <a href="#fpp" class="toc-link">ใบอนุญาต FPP</a>
+                        <a href="#install" class="toc-link">ติดตั้งและเปิดใช้งาน</a>
+                        <a href="#decivate" class="toc-link">ถอนใบอนุญาต</a>
+                        <a href="#faq" class="toc-link">คำถามที่พบบ่อย</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <div class="guide-main">
+
+                <div class="guide-header">
+                    <h1>Microsoft ESD</h1>
+                    <p>การจัดการใบอนุญาต ติดตั้งและถอนใบอนุญาต</p>
+                </div>
+
+                <div class="breadcrumb-nav">
+                    <a href="/docs/microsoft/">Microsoft</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Manage License</span>
+                </div>
+
+                <section id="#" class="guide-section">
+                    <div class="content-card">
+
+                        <h3 id="activation-bim">การเข้าถึง Microsoft individuals</h3>
+                        <ul class="content-card">
+                            <li><strong>Microsoft ESD:</strong> จะได้รับลิงก์การลงทะเบียนและ Product Key
+                                ทางอีเมลหลังจากสั่งซื้อสำเร็จ</li>
+                            <li><strong>Microsoft FPP:</strong> จะได้รับ กล่องผลิตผลิตภัณฑ์ ซึ่งมี Product Key
+                                อยู่ด้านใน</li>
+                        </ul>
+
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <p><strong>Product Key ใช้ได้ ครั้งเดียวเท่านั้น</strong> — เมื่อ Redeem แล้ว License
+                                จะผูกกับบัญชีนั้นถาวร ไม่สามารถย้ายไปบัญชีอื่นได้</p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="esd" class="guide-section">
+                    <h2>ใบอนุญาต Microsoft ESD</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-red">
+                            <i class="fas fa-exclamation-circle info-box-icon"></i>
+                            <p>ก่อนคลิกลิงก์ในอีเมล โปรดมั่นใจว่าคุณใช้ <strong>อีเมลที่ถูกต้องในการ Redeem </strong> —
+                                <a href="https://account.microsoft.com/" target="_blank">คลิกที่นี่</a> เพื่อตรวจสอบ
+                            </p>
+                        </div>
+
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <p>หากเบราว์เซอร์ค้างบัญชีเดิมอยู่ ให้ Sign out ออกก่อน แล้ว Sign in ด้วยบัญชีที่ต้องการผูก
+                                License</p>
+                        </div>
+
+                        <h3>ขั้นตอนการ Redeem License</h3>
+                        <ul class="guide-list">
+                            <li><strong>ตรวจสอบอีเมลที่ใช้สั่งซื้อ</strong> คุณจะได้รับลิงก์และ Product Key</li>
+                            <li>
+                                คลิกที่ลิงก์ในอีเมล หรือไปที่ <a href="https://setup.office.com" target="_blank">
+                                    setup.office.com</a></li>
+                            <li>
+                                <strong>ตรวจสอบบัญชีที่ Sign in อยู่ให้ดีก่อนกด Redeem</strong>
+                                <ul class="info-sublist">
+                                    <li>หากเบราว์เซอร์ค้างบัญชีเดิมอยู่ ให้ Sign out ออกก่อน แล้ว Sign in
+                                        ด้วยบัญชีที่ต้องการผูก License</li>
+                                    <li>เมื่อ Redeem แล้ว License จะผูกกับบัญชีนั้นถาวร — ไม่สามารถย้ายไปบัญชีอื่นได้
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>ใส่ Product Key (หากมี) แล้วคลิก <strong>Next</strong></li>
+                            <li>ยืนยันข้อมูล แล้วคลิก <strong>Redeem</strong> หรือ <strong>Continue</strong></li>
+                            <li>เสร็จสิ้น — License ถูกผูกกับบัญชีแล้ว พร้อมดาวน์โหลดและติดตั้ง</li>
+                            <li>ไปที่ <a href="#install">การติดตั้งและเปิดใช้งาน</a></li>
+                        </ul>
+
+                    </div>
+                </section>
+
+                <section id="fpp" class="guide-section">
+                    <h2>ใบอนุญาต Microsoft FPP</h2>
+                    <div class="content-card">
+
+                        <div class="info-box info-red">
+                            <i class="fas fa-exclamation-circle info-box-icon"></i>
+                            <p>ก่อน Redeem โปรดมั่นใจว่าคุณใช้ <strong>อีเมลที่ถูกต้องในการ Redeem </strong> —
+                                <a href="https://account.microsoft.com/" target="_blank">คลิกที่นี่</a> เพื่อตรวจสอบ
+                            </p>
+                        </div>
+
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <p>หากเบราว์เซอร์ค้างบัญชีเดิมอยู่ ให้ Sign out ออกก่อน แล้ว Sign in ด้วยบัญชีที่ต้องการผูก
+                                License</p>
+                        </div>
+
+                        <h3>ขั้นตอนการ Redeem License</h3>
+                        <ul class="guide-list">
+                            <li>คุณจะได้รับ <strong>กล่องผลิตผลิตภัณฑ์</strong> ซึ่งมี Product Key อยู่ด้านใน</li>
+                            <li>
+                                <strong>ตรวจสอบบัญชีที่ Sign in อยู่ให้ดีก่อนกด Redeem</strong>
+                                <ul class="info-sublist">
+                                    <li>หากเบราว์เซอร์ค้างบัญชีเดิมอยู่ ให้ Sign out ออกก่อน แล้ว Sign in
+                                        ด้วยบัญชีที่ต้องการผูก License</li>
+                                    <li>เมื่อ Redeem แล้ว License จะผูกกับบัญชีนั้นถาวร — ไม่สามารถย้ายไปบัญชีอื่นได้
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>ใส่ Product Key (25 ตัวอักษร) แล้วคลิก <strong>Next</strong></li>
+                            <li>ยืนยันข้อมูล แล้วคลิก <strong>Redeem</strong> หรือ <strong>Continue</strong></li>
+                            <li>เสร็จสิ้น — License ถูกผูกกับบัญชีแล้ว พร้อมดาวน์โหลดและติดตั้ง</li>
+                            <li>ไปที่ <a href="#install">การติดตั้งและเปิดใช้งาน</a></li>
+                        </ul>
+
+                        <div class="info-box info-red">
+                            <i class="fas fa-exclamation-circle info-box-icon"></i>
+                            <p>Product Key ใช้ได้ <strong>ครั้งเดียวเท่านั้น</strong> — หากระบบแจ้งว่า "This product key
+                                has already been used" แสดงว่า License ถูก Redeem แล้ว ให้ Sign in ที่ <a
+                                    href="https://account.microsoft.com/services"
+                                    target="_blank">account.microsoft.com/services</a> เพื่อดาวน์โหลดและติดตั้งได้เลย
+                            </p>
+                        </div>
+
+                        <div class="info-box info-yellow">
+                            <i class="fas fa-exclamation-triangle info-box-icon"></i>
+                            <p><strong>Microsoft 365 Personal</strong> — 1 บัญชี มีได้เพียง 1
+                                Subscription ที่ใช้งาน การ Redeem เข้าบัญชีเดิมจะเป็นการ<strong> ต่ออายุ</strong>
+                                ไม่ใช่เพิ่มสิทธิ์<br>
+                            </p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="install" class="guide-section">
+                    <h2>ติดตั้งและเปิดใช้งาน</h2>
+                    <div class="content-card">
+
+                        <h3>ขั้นตอนดาวน์โหลดและติดตั้ง</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่ <a href="https://account.microsoft.com/services"
+                                    target="_blank">account.microsoft.com/services</a></li>
+                            <li>
+                                Sign in ด้วยบัญชี Microsoft ที่ทำการ Redeem License ไว้
+                                <ul class="info-sublist">
+                                    <li>ต้องเป็นบัญชีเดิมที่ใช้ Redeem เท่านั้น — บัญชีอื่นจะไม่เห็นปุ่ม Install apps
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>คลิก <strong>Install apps</strong> โปรดักส์ของคุณ</li>
+                            <li>ไฟล์ <strong>OfficeSetup.exe</strong> จะดาวน์โหลดมาที่โฟลเดอร์ Downloads</li>
+                            <li>ดับเบิลคลิกไฟล์ที่ดาวน์โหลดมา แล้วคลิก <strong>Yes</strong> เพื่ออนุญาตให้ติดตั้ง</li>
+                            <li>รอติดตั้งสักครู่ จนหน้าต่าง <strong>"You're all set!"</strong> ปรากฏขึ้น คลิก
+                                <strong>Close</strong>
+                            </li>
+                        </ul>
+
+                        <h3>เปิดใช้งาน Activation</h3>
+                        <ul class="guide-list">
+                            <li>เปิดโปรแกรมใดก็ได้ เช่น Word หรือ Excel</li>
+                            <li>Sign in ด้วยบัญชี Microsoft ที่ทำการ Redeem License ไว้</li>
+                            <li>โปรแกรมจะ Activate อัตโนมัติเมื่อเชื่อมต่ออินเทอร์เน็ต</li>
+                        </ul>
+
+                    </div>
+                </section>
+
+                <section id="decivate" class="guide-section">
+                    <h2>ถอนใบอนุญาต</h2>
+                    <div class="content-card">
+
+                        <h3>วิธี Sign out ออกจากเครื่อง</h3>
+                        <ul class="guide-list">
+                            <li>เปิดโปรแกรมใดก็ได้ เช่น Word หรือ Excel</li>
+                            <li>ไปที่ <strong>File</strong> &gt; <strong>Account</strong></li>
+                            <li>คลิก <strong>Sign out</strong></li>
+                            <li>สามารถนำบัญชีและ License เดิมไปติดตั้งที่เครื่องใหม่ได้ทันที</li>
+                        </ul>
+
+                        <h3>วิธีจัดการเครื่องที่ Sign in อยู่ทางเว็บ (กรณีเข้าเครื่องเดิมไม่ได้)</h3>
+                        <ul class="guide-list">
+                            <li>ไปที่ <a href="https://account.microsoft.com/services"
+                                    target="_blank">account.microsoft.com/services</a></li>
+                            <li>Sign in ด้วยบัญชีที่ผูก License ไว้</li>
+                            <li>เลือก <strong>Microsoft 365</strong> &gt; <strong>View apps &amp; devices</strong></li>
+                            <li>ในส่วน <strong>Devices</strong> คลิก <strong>Sign out</strong>
+                                ที่เครื่องที่ต้องการถอนสิทธิ์</li>
+                        </ul>
+
+                    </div>
+                </section>
+
+                <section id="faq" class="section">
+                    <h2 class="section-title">คำถามที่พบบ่อย</h2>
+                    <div class="faq-container">
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>Redeem Product Key แล้ว แต่ไม่เห็นปุ่ม Install apps</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>สาเหตุที่พบบ่อยที่สุดคือ <strong>Redeem เข้าผิดบัญชี</strong> — ให้ตรวจสอบที่ <a
+                                        href="https://account.microsoft.com/services"
+                                        target="_blank">account.microsoft.com/services</a> ว่า License อยู่ในบัญชีใด
+                                    จากนั้น Sign out แล้ว Sign in ด้วยบัญชีนั้น</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>ระบบแจ้ง "This product key has already been used" ทำอย่างไร</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>หมายความว่า Product Key ถูก Redeem เข้าบัญชีใดบัญชีหนึ่งแล้ว — ไม่ต้องใส่ Key
+                                    อีกครั้ง ให้ Sign in ที่ <a href="https://account.microsoft.com/services"
+                                        target="_blank">account.microsoft.com/services</a> ด้วยบัญชีที่ Redeem ไว้
+                                    แล้วดาวน์โหลดโปรแกรมจากหน้านั้นได้เลย</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>ต้องการติดตั้งที่เครื่องใหม่ ทำอย่างไร</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>License ผูกกับบัญชี สามารถ Sign out
+                                    ออกจากเครื่องเดิม แล้ว Sign in ที่เครื่องใหม่ได้เลยโดยไม่ต้องซื้อเพิ่ม — Home and
+                                    Business: 1 เครื่องต่อ 1 License</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>ลืมว่า Redeem ไว้กับบัญชีอะไร ตรวจสอบได้อย่างไร</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>ให้เปิดโปรแกรมที่ติดตั้งอยู่ (เช่น Word) แล้วไปที่ <strong>File &gt; Account</strong>
+                                    จะเห็นชื่ออีเมลที่ผูก License ไว้ใต้ชื่อโปรดักส์ — หรือ Sign in ที่ <a
+                                        href="https://account.microsoft.com/services"
+                                        target="_blank">account.microsoft.com/services</a> แล้วตรวจสอบว่ามี License อยู่ในรายการหรือไม่</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>โปรแกรมแจ้ง "Unlicensed Product" ทั้งที่ Redeem แล้ว</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>มักเกิดจากโปรแกรม Sign in ด้วยบัญชีที่ไม่ตรงกับบัญชีที่ผูก License ไว้ — ให้ไปที่
+                                    <strong>File &gt; Account &gt; Sign out</strong> แล้ว Sign in
+                                    ใหม่ด้วยบัญชีที่ถูกต้อง หากยังไม่ได้ให้ลอง Repair Office ที่ <strong>Settings &gt;
+                                        Apps &gt; Microsoft 365 &gt; Modify &gt; Quick Repair</strong></p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>FPP (กล่อง) กับ ESD ต่างกันอย่างไร ใช้วิธีเดียวกันได้ไหม</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>FPP คือ License แบบกล่องที่มี Product Key อยู่ในกล่อง ส่วน ESD คือ License
+                                    ดิจิทัลที่ได้รับ Key ทางอีเมล — ทั้งสองใช้วิธี Redeem และติดตั้งเหมือนกันทุกประการ
+                                    ผ่าน <a href="https://setup.office.com" target="_blank">setup.office.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>หากติดปัญหาการติดตั้งและเปิดใช้งานโปรแกรมทำอย่างไร</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>โปรดไปที่ <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank">Open
+                                        Ticket</a> เจ้าหน้าที่จะติดต่อคุณในช่วงเวลาทำการ</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="guide-cta" id="contact">
+                    <h2>ต้องการความช่วยเหลือเพิ่มเติม?</h2>
+                    <p>หากคุณยังมีคำถาม โปรดติดต่อทีมสนับสนุนของเรา</p>
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" class="cta-button">
+                        <i class="fas fa-headset"></i> ติดต่อเจ้าหน้าที่
+                    </a>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sale</h4>
+                    <a href="https://8baht.com" target="_blank">Product</a>
+                    <a href="mailto:8baht@applicadthai.com">Contact Sale</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank">Open Ticket</a>
+                    <a href="mailto:support8baht@applicadthai.com">Contact Support</a>
+                </div>
+                <div class="footer-section">
+                    <h4>8Baht</h4>
+                    <a href="https://8baht.com/" target="_blank">About</a>
+                    <a href="/docs/cookies/" target="_blank">Cookie Policy</a>
+                </div>
+                <div class="footer-section">
+                    <h5>เวลาทำการ สำนักงานใหญ่</h5>
+                    <span style="font-size:12px;color:var(--footer-text)">จันทร์–ศุกร์ 09:00–17:00</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 8Baht Support. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-support">
+        <button onclick="toggleChat()" title="ติดต่อฝ่ายสนับสนุน">
+            <i class="fas fa-headset"></i>
+        </button>
+    </div>
+
+    <div id="chatWidget" class="chat-widget hidden">
+        <div class="chat-header">
+            <h4>Support Chat</h4>
+            <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot">
+                <p>สวัสดี! มีคำถามเกี่ยวกับ PDFelement ไหม?</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="พิมพ์ข้อความ..." onkeydown="handleChatKey(event)">
+            <button onclick="sendChat()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="../../script.js"></script>
+    <script src="../../chat-engine.js"></script>
+</body>
+
+</html>
