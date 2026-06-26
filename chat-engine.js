@@ -111,6 +111,10 @@ function getContext() {
   if (path.includes('/chaos/'))      return DOCS.chaos
   if (path.includes('/d5/'))         return DOCS.d5
   if (path.includes('/bim/'))        return DOCS.bim
+  if (path.includes('/lumion/'))     return DOCS.lumion
+  if (path.includes('/foxit/'))      return DOCS.foxit
+  if (path.includes('/pdfelement/')) return DOCS.pdfelement
+  if (path.includes('/microsoft/'))  return DOCS.microsoft
   // if (path.includes('/product2/')) return DOCS.product2
   // if (path.includes('/product3/')) return DOCS.product3
   return null
@@ -762,6 +766,247 @@ DOCS.bim = `
 - ต้องติดตั้ง SketchUp ก่อนเสมอ ปลั๊กอินจะไม่ทำงานหากไม่มี SketchUp
 - License Key ได้รับพร้อมกับการสั่งซื้อ ใช้คู่กับอีเมลที่ลงทะเบียน
 - ถ้า Activation Error หรือสิทธิ์เต็ม ให้ใช้ Reset Activation ที่ my-licenses
+- ติดปัญหา: [Open Ticket](https://8baht.com/help?ref=8Baht_Docs)
+
+## ช่องทางติดต่อ
+- Open Ticket: [บริการช่วยเหลือ](https://8baht.com/help?ref=8Baht_Docs)
+- Support: support8baht@applicadthai.com
+- Sale: 8baht@applicadthai.com
+- เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
+`
+// ── Lumion ─────────────────────────────
+DOCS.lumion = `
+# คู่มือ Lumion - 8Baht Docs
+
+## ไฟล์ติดตั้ง
+- Lumion Pro (Named-user, Windows): ดาวน์โหลดได้ที่ https://account.lumion.com/products
+- Lumion Studio (Floating, Windows): ดาวน์โหลดได้ที่ https://account.lumion.com/products
+- Older Versions: https://account.lumion.com/products
+- System Requirements: https://lumion.com/product/system-requirements
+- User guide / Video Tutorials: https://support.lumion.com/video-tutorials
+- Knowledge Base: https://support.lumion.com/knowledge-base
+- ต้อง Sign in เพื่อดาวน์โหลดไฟล์ติดตั้ง
+
+## Lumion Pro vs Lumion Studio ต่างกันอย่างไร
+- Lumion Pro: Named-user License ผูกกับอีเมลผู้ใช้งาน ใช้งานทีละคนตามอีเมลนั้น
+- Lumion Studio: Floating License แชร์ใช้งานร่วมกันในองค์กร เปิดพร้อมกันได้ตามจำนวนสิทธิ์ที่ซื้อ
+
+## วิธีจัดการใบอนุญาต Lumion Pro (Named-user)
+- ไปที่ https://account.lumion.com/ → Sign in ด้วยอีเมลที่ซื้อ
+- คลิกเมนู License Keys
+- คลิกไอคอน User (รูปคน)
+- ใบอนุญาตจะถูก Assign ที่ Admin ก่อน ใช้อีเมล Admin ได้ทันที
+- หากมีมากกว่า 1 License คลิก Assign user to license → ใส่อีเมลผู้ใช้งาน → Confirm → Ok
+- ดูคู่มือ: [จัดการ Lumion Pro](https://8bahtapp.github.io/docs/lumion/manage/#pro)
+
+## วิธีติดตั้งและเปิดใช้งาน Lumion Pro
+- Licenses → Download product Lumion → ดับเบิลคลิกไฟล์
+- โปรแกรมดาวน์โหลดไฟล์เพิ่มเติม (~105 GB) → Start Installation
+- เปิดโปรแกรม → Sign in ด้วยอีเมลผู้ใช้งานที่ได้รับสิทธิ์
+- ต้องเชื่อมต่ออินเทอร์เน็ตตลอดเวลาขณะใช้งาน
+
+## วิธีติดตั้งและเปิดใช้งาน Lumion Studio (Floating)
+- License Keys → Download product Lumion → ระบบแสดง Activation code → คัดลอกเก็บไว้
+- ดับเบิลคลิกไฟล์ → ใส่ Activation code → Verify
+- ดาวน์โหลดไฟล์เพิ่มเติม (~105 GB) → Start Installation
+- ดูคู่มือ: [จัดการ Lumion Studio](https://8bahtapp.github.io/docs/lumion/manage/#studio)
+
+## วิธีรีเซ็ตใบอนุญาต (เปลี่ยนเครื่อง / เปลี่ยน License)
+- Lumion 2025.0 ขึ้นไป: เปิด Lumion (Run as administrator) → Settings → License → Reset License → ปิดแล้วเปิดใหม่
+- Sign in หรือใส่ Activation code ใหม่ได้เลย ไม่ต้องลบและติดตั้งใหม่
+- ดูคู่มือ: [วิธีรีเซ็ตใบอนุญาต](https://8bahtapp.github.io/docs/lumion/manage/#reset)
+
+## FAQ
+- ติดตั้งได้หลายเครื่อง แต่เปิดใช้งานพร้อมกันได้ตามจำนวนสิทธิ์เท่านั้น
+- ต้องเชื่อมต่ออินเทอร์เน็ตตลอดเวลาในการเปิดและรันโปรแกรม
+- "All seats are in use": เครื่องอื่นต้องปิดโปรแกรมก่อนเพื่อคืนสิทธิ์
+- ย้ายเครื่อง: ปิดโปรแกรมเครื่องเดิม ระบบคืนสิทธิ์อัตโนมัติ เปิดที่เครื่องใหม่ได้เลย
+- License หมดอายุ: โปรแกรมเปิดใน Expired Mode ไฟล์งานยังอยู่ครบ
+- เช็ค/จัดการ: https://account.lumion.com/
+- ติดปัญหา: [Open Ticket](https://8baht.com/help?ref=8Baht_Docs)
+
+## ช่องทางติดต่อ
+- Open Ticket: [บริการช่วยเหลือ](https://8baht.com/help?ref=8Baht_Docs)
+- Support: support8baht@applicadthai.com
+- Sale: 8baht@applicadthai.com
+- เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
+`
+
+// ── Foxit ──────────────────────────────
+DOCS.foxit = `
+# คู่มือ Foxit PDF Editor - 8Baht Docs
+# ครอบคลุม: Perpetual และ Subscription
+
+## ไฟล์ติดตั้ง Perpetual
+- Foxit PDF Editor 14 (Windows, Perpetual): https://cdn01.foxitsoftware.com/product/phantomPDF/desktop/win/14.0.4/FoxitPDFEditor1404_L10N_Setup_Website_x64.exe
+- Foxit PDF Editor 14 (macOS, Perpetual): https://cdn01.foxitsoftware.com/pub/foxit/phantomPDF/desktop/mac/14.x/14.0.3/FoxitPDFEditor1403.L10N.Setup.pkg
+- Older Versions Perpetual: https://8bahtapp.github.io/docs/foxit/older
+
+## ไฟล์ติดตั้ง Subscription
+- Foxit PDF Editor 2026 (Windows, Subscription): https://cdn01.foxitsoftware.com/product/phantomPDF/desktop/win/2026.1.1/FoxitPDFEditor202611_L10N_Setup_Website_x64.exe
+- Foxit PDF Editor 2026 (macOS, Subscription): https://cdn01.foxitsoftware.com/pub/foxit/phantomPDF/desktop/mac/2026.x/2026.1/FoxitPDFEditor202611.L10N.Setup.pkg
+- แอปพลิเคชันอื่นๆ Subscription: https://adminconsole.foxit.com/products
+- Official Download: https://www.foxit.com/downloads/
+
+## Foxit Perpetual — ใบอนุญาต
+- 1 คำสั่งซื้อได้ 1 License Key ใช้ Key เดียวกันได้ทุกเครื่องตามจำนวนที่ซื้อ
+- เงื่อนไข: 1 License ต่อ 1 เครื่อง
+- Windows License ใช้กับ Windows เท่านั้น ไม่สามารถใช้กับ Mac ได้
+
+## Foxit Perpetual — วิธีติดตั้งและเปิดใช้งาน
+- ดาวน์โหลดและดับเบิลคลิกไฟล์ → Next → I accept → Next → Install → Finish
+- เปิดโปรแกรม → Activate → ใส่ License Key → Activate
+- หน้าจอแสดง "You have successfully..." = เสร็จสิ้น
+- ดูคู่มือ: [ติดตั้ง Foxit Perpetual](https://8bahtapp.github.io/docs/foxit/manage/#install)
+
+## Foxit Perpetual — วิธีถอนใบอนุญาต (Deactivate)
+- เปิดโปรแกรม Foxit → Help → Deactivate
+- ดูคู่มือ: [ถอนใบอนุญาต Perpetual](https://8bahtapp.github.io/docs/foxit/manage/#decivate)
+
+## Foxit Subscription — วิธีจัดการใบอนุญาต (Admin)
+- 1 ใบอนุญาต ต่อ 1 อีเมล อีเมลที่สั่งซื้อเป็น Admin จัดการสิทธิ์ได้
+- ไปที่ https://adminconsole.foxit.com/ หรือตั้งรหัสผ่านที่ https://www.foxit.com/get-password.html
+- Sign in → User ID Management → Users → Invited users
+- Invited users → ใส่อีเมล (คั่นด้วย ; สำหรับหลายอีเมล) → Assign License → Save
+- ผู้ใช้งานได้รับอีเมลคำเชิญ (หมดอายุใน 3 วัน)
+- ดูคู่มือ: [จัดการ Foxit Subscription](https://8bahtapp.github.io/docs/foxit/manages/#manage)
+
+## Foxit Subscription — วิธีติดตั้งและเปิดใช้งาน
+- ผู้ใช้งานรับคำเชิญทางอีเมล → Click here to join now! → ตั้งรหัสผ่าน
+- ดาวน์โหลดและติดตั้ง → Next → I accept → Next → Install → Finish → Restart Now
+- Sign in ด้วยอีเมลและรหัสผ่านที่ตั้งไว้
+- ดูคู่มือ: [ติดตั้ง Foxit Subscription](https://8bahtapp.github.io/docs/foxit/manages/#install)
+
+## Foxit Subscription — วิธีถอนใบอนุญาต (Deactivate)
+- เปิดโปรแกรม → Help → Manage → คลิก X → ปิดหน้าต่าง
+- คลิกสามเหลี่ยมเล็กมุมขวาบน → Sign Out → Yes
+- ดูคู่มือ: [ถอนใบอนุญาต Subscription](https://8bahtapp.github.io/docs/foxit/manages/#decivate)
+
+## FAQ
+- Perpetual = ซื้อขาด ใช้ License Key, Subscription = รายปี ใช้อีเมล+รหัสผ่าน
+- คำเชิญ Subscription หมดอายุใน 3 วัน หากหมดแจ้ง Admin ส่งใหม่
+- ต้อง Deactivate ก่อน Uninstall หรือเปลี่ยนเครื่องทุกครั้ง
+- ติดปัญหา: [Open Ticket](https://8baht.com/help?ref=8Baht_Docs)
+
+## ช่องทางติดต่อ
+- Open Ticket: [บริการช่วยเหลือ](https://8baht.com/help?ref=8Baht_Docs)
+- Support: support8baht@applicadthai.com
+- Sale: 8baht@applicadthai.com
+- เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
+`
+
+// ── PDFelement ─────────────────────────
+DOCS.pdfelement = `
+# คู่มือ PDFelement - 8Baht Docs
+
+## ไฟล์ติดตั้ง
+- PDFelement 12 (Windows): https://download.wondershare.com/inst/pdfelement-pro_setup_full5239.exe
+- PDFelement 12 (macOS): https://download.wondershare.com/inst/mac-pdfelement_setup_full5237.dmg
+- Older Versions: https://support.wondershare.com/how-tos/pdfelement/how-can-i-downgrade-to-pdfelement-11-or-other-older-versions.html
+- Official Download: https://pdf.wondershare.com/download.html
+- System Requirements: https://pdf.wondershare.com/tech-spec.html
+
+## วิธีจัดการใบอนุญาต (Admin)
+- License ผูกกับอีเมลที่ลงทะเบียน Redeem Code ใช้ได้เพียงครั้งเดียว แนะนำใช้อีเมลกลาง/ผู้ดูแล
+- ไปที่ https://accounts.wondershare.com/web/team-users → Sign in หรือ Create account
+- Plan & Products → Redeem Membership → ใส่ Redeem Code → SUBMIT
+- จัดการใบอนุญาต: Manage Team → Team Users → เลือกทีม → Submit
+- Add User → ใส่อีเมล → เลือก Role (Admin/User) → Submit → ตั้งรหัสผ่าน → เลือกโปรดักส์ → Submit
+- ดูคู่มือ: [วิธีจัดการ PDFelement](https://8bahtapp.github.io/docs/pdfelement/manage/#manage)
+
+## วิธีติดตั้งและเปิดใช้งาน
+- ดาวน์โหลดและดับเบิลคลิกไฟล์ → Install → Start Now
+- เปิดโปรแกรม → Sign in ด้วยอีเมลผู้ใช้งาน
+- ดูคู่มือ: [ติดตั้ง PDFelement](https://8bahtapp.github.io/docs/pdfelement/manage/#install)
+
+## วิธีถอนใบอนุญาต (Deactivate)
+- เปิดโปรแกรม PDFelement → มุมบนขวา → Log out
+- ดูคู่มือ: [ถอนใบอนุญาต](https://8bahtapp.github.io/docs/pdfelement/manage/#decivate)
+
+## วิธีเปลี่ยนอีเมลผู้ใช้งาน
+- Account Center → Manage Team → Team Users → คลิก Edit อีเมลเดิม → ยกเลิกโปรดักส์ → Submit
+- Add User → ใส่อีเมลใหม่ → Role → Submit → ตั้งรหัสผ่าน → เลือกโปรดักส์ → Submit
+- ดูคู่มือ: [เปลี่ยนอีเมลผู้ใช้งาน](https://8bahtapp.github.io/docs/pdfelement/manage/#change)
+
+## FAQ
+- Portal: https://accounts.wondershare.com/web/team-users
+- Redeem Code ใช้ได้ครั้งเดียว ระวังใส่ให้ถูกอีเมล
+- ต้อง Log out ก่อนเปลี่ยนเครื่องหรือ Uninstall
+- ติดปัญหา: [Open Ticket](https://8baht.com/help?ref=8Baht_Docs)
+
+## ช่องทางติดต่อ
+- Open Ticket: [บริการช่วยเหลือ](https://8baht.com/help?ref=8Baht_Docs)
+- Support: support8baht@applicadthai.com
+- Sale: 8baht@applicadthai.com
+- เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
+`
+
+// ── Microsoft ──────────────────────────
+DOCS.microsoft = `
+# คู่มือ Microsoft - 8Baht Docs
+# ครอบคลุม: CSP (Microsoft 365), ESD, FPP
+
+## Microsoft CSP — ภาพรวม
+- CSP คือ Microsoft 365 แบบ Subscription ผ่าน Partner
+- New Tenant: ได้รับรหัสผ่านเริ่มต้น ต้องเปลี่ยนรหัสผ่านหลังเข้าครั้งแรก
+- Existing Tenant: ใช้ข้อมูล Login เดิมได้เลย
+- Microsoft บังคับใช้ MFA สำหรับ CSP — ต้องเพิ่มช่องทางยืนยันตัวตนสำรอง และตั้ง Admin สำรองไว้ทันที
+
+## Microsoft CSP — วิธีจัดการใบอนุญาต (Admin)
+- ไปที่ https://admin.microsoft.com → Sign in ด้วย Admin account
+- Billing → Licenses → เลือกโปรดักส์
+- Assign licenses → พิมพ์ชื่อหรืออีเมลผู้ใช้งาน → เพิ่มได้สูงสุด 20 คนต่อครั้ง → Assign
+- แก้ไขสิทธิ์: Users → Active users → คลิกชื่อ → Licenses and Apps → Save changes
+- ดูคู่มือ: [จัดการ Microsoft CSP](https://8bahtapp.github.io/docs/microsoft/csp/#manage)
+
+## Microsoft CSP — วิธีติดตั้งและเปิดใช้งาน
+- ไปที่ https://m365.cloud.microsoft/apps → Sign in ด้วย Work/School account
+- Install apps → Microsoft 365 apps → ดาวน์โหลด OfficeSetup.exe
+- ดับเบิลคลิกไฟล์ → Yes → รอ → "You're all set!" → Close
+- เปิดโปรแกรม → Sign in ด้วยบัญชีเดิม → Activate อัตโนมัติ
+- ดูคู่มือ: [ติดตั้ง Microsoft CSP](https://8bahtapp.github.io/docs/microsoft/csp/#install)
+
+## Microsoft CSP — วิธีถอนใบอนุญาต (Admin)
+- Admin Center → Users → Active users → คลิกชื่อผู้ใช้ → Licenses and Apps → ยกเลิก License → Save
+- ข้อมูล Exchange Online เก็บ 30 วัน, ไฟล์ OneDrive ไม่ถูกลบจนกว่าจะลบ User account
+
+## Microsoft CSP — วิธีเพิ่ม MFA เครื่องใหม่
+- ไปที่ https://myaccount.microsoft.com/ → Security info → Add sign-in method
+- ก่อนเปลี่ยนโทรศัพท์ต้องเพิ่ม Authenticator App ที่เครื่องใหม่ก่อนเสมอ
+- ดูคู่มือ: [เพิ่ม MFA](https://8bahtapp.github.io/docs/microsoft/csp/#mfa)
+
+## Microsoft ESD — การ Redeem License
+- ESD: ได้รับลิงก์และ Product Key ทางอีเมล
+- FPP: ได้รับกล่องผลิตภัณฑ์ มี Product Key อยู่ในกล่อง
+- Product Key ใช้ได้ครั้งเดียวเท่านั้น เมื่อ Redeem แล้วผูกกับบัญชีนั้นถาวร
+- ตรวจสอบอีเมลที่ Sign in อยู่ก่อน Redeem เสมอ ที่ https://account.microsoft.com/
+- คลิกลิงก์ในอีเมลหรือไปที่ https://setup.office.com → ใส่ Product Key → Next → Redeem
+- ดูคู่มือ: [Redeem Microsoft ESD](https://8bahtapp.github.io/docs/microsoft/esd/#esd)
+
+## Microsoft ESD/FPP — วิธีติดตั้งและเปิดใช้งาน
+- ไปที่ https://account.microsoft.com/services → Sign in ด้วยบัญชีที่ Redeem ไว้
+- Install apps → ดาวน์โหลด OfficeSetup.exe → ดับเบิลคลิก → Yes → รอ → Close
+- เปิดโปรแกรม → Sign in ด้วยบัญชีเดิม → Activate อัตโนมัติ
+- ดูคู่มือ: [ติดตั้ง ESD/FPP](https://8bahtapp.github.io/docs/microsoft/esd/#install)
+
+## Microsoft ESD/FPP — วิธีถอนใบอนุญาต / ย้ายเครื่อง
+- File → Account → Sign out ที่เครื่องเดิม
+- กรณีเข้าเครื่องเดิมไม่ได้: https://account.microsoft.com/services → Microsoft 365 → View apps & devices → Sign out
+- ดูคู่มือ: [ถอนใบอนุญาต ESD/FPP](https://8bahtapp.github.io/docs/microsoft/esd/#decivate)
+
+## FAQ CSP
+- สิทธิ์จัดการ License: Global Admin, License Admin, User Admin
+- มอบ License แล้วเปิดไม่ได้: รอ 5-10 นาที, Sign out แล้ว Sign in ใหม่, Restart เครื่อง
+- พนักงานออก: ถอด License ที่เก่า → เพิ่ม User ใหม่ → มอบ License
+- ถอด License แล้วข้อมูล Exchange อยู่ 30 วัน, OneDrive ไม่หายจนกว่าลบ User
+- Microsoft 365 Business: Sign in ได้สูงสุด 5 เครื่อง
+
+## FAQ ESD/FPP
+- ไม่เห็นปุ่ม Install apps: Redeem เข้าผิดบัญชี ตรวจสอบที่ account.microsoft.com/services
+- "This product key has already been used": Redeem แล้ว Sign in ที่ account.microsoft.com/services เพื่อดาวน์โหลด
+- ลืมว่า Redeem ไว้กับอีเมลอะไร: เปิด Word → File → Account ดูชื่ออีเมลใต้ชื่อโปรดักส์
+- "Unlicensed Product": Sign in ผิดบัญชี → File → Account → Sign out → Sign in ใหม่
+- FPP กับ ESD ต่างกันแค่รูปแบบ (กล่อง vs ดิจิทัล) วิธี Redeem และติดตั้งเหมือนกัน
 - ติดปัญหา: [Open Ticket](https://8baht.com/help?ref=8Baht_Docs)
 
 ## ช่องทางติดต่อ
