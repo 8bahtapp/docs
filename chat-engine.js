@@ -173,13 +173,29 @@ function getContext() {
 }
  
 // ─────────────────────────────────────────
-// Session History — เก็บประวัติแชทตาม path
+// Session History — เก็บประวัติแชทตาม product group
 // ─────────────────────────────────────────
+function getHistoryKey() {
+  const path = location.pathname
+  if (path.includes('/adobe/'))      return 'chatHistory-adobe'
+  if (path.includes('/autodesk/'))   return 'chatHistory-autodesk'
+  if (path.includes('/sketchup/'))   return 'chatHistory-sketchup'
+  if (path.includes('/rhino/'))      return 'chatHistory-rhino'
+  if (path.includes('/chaos/'))      return 'chatHistory-chaos'
+  if (path.includes('/d5/'))         return 'chatHistory-d5'
+  if (path.includes('/bim/'))        return 'chatHistory-bim'
+  if (path.includes('/lumion/'))     return 'chatHistory-lumion'
+  if (path.includes('/foxit/'))      return 'chatHistory-foxit'
+  if (path.includes('/pdfelement/')) return 'chatHistory-pdfelement'
+  if (path.includes('/microsoft/'))  return 'chatHistory-microsoft'
+  return 'chatHistory-' + path
+}
+
 function saveHistory() {
   const body = document.getElementById('chatBody')
   if (!body) return
   try {
-    sessionStorage.setItem('chatHistory-' + location.pathname, body.innerHTML)
+    sessionStorage.setItem(getHistoryKey(), body.innerHTML)
   } catch (e) {}
 }
 
@@ -187,7 +203,7 @@ function loadHistory() {
   const body = document.getElementById('chatBody')
   if (!body) return
   try {
-    const saved = sessionStorage.getItem('chatHistory-' + location.pathname)
+    const saved = sessionStorage.getItem(getHistoryKey())
     if (saved) body.innerHTML = saved
   } catch (e) {}
 }
