@@ -14,6 +14,58 @@ const SUPPORT_URL = 'https://8baht.com/help?ref=8Baht_Docs'
 // ─────────────────────────────────────────
 // DOCS — เพิ่ม product ใหม่ตรงนี้
 // ─────────────────────────────────────────
+// ─────────────────────────────────────────
+// โปรดักส์ทั้งหมดของ 8Baht (แนะนำข้ามโปรดักส์)
+// ─────────────────────────────────────────
+const ALL_PRODUCTS = `
+## โปรดักส์อื่นๆ ของ 8Baht
+หากคำถามเกี่ยวกับโปรดักส์อื่น ให้แนะนำลิงก์ดังนี้:
+
+### Adobe (Creative Cloud, Photoshop, Illustrator, Acrobat, Premiere Pro, After Effects, InDesign, Lightroom, Adobe Express, XD ฯลฯ)
+- คู่มือ Adobe: [https://8bahtapp.github.io/docs/adobe/](https://8bahtapp.github.io/docs/adobe/)
+
+### Autodesk (AutoCAD LT, AutoCAD, AutoCAD Mechanical, AutoCAD Electrical, AutoCAD Architecture, 3ds Max, Fusion, Revit, Inventor, Navisworks, Robot Structural Analysis, AEC Collection, PD&M Collection ฯลฯ)
+- คู่มือ Autodesk: [https://8bahtapp.github.io/docs/autodesk/](https://8bahtapp.github.io/docs/autodesk/)
+- AutoCAD LT: [https://8bahtapp.github.io/docs/autodesk/autocadlt/](https://8bahtapp.github.io/docs/autodesk/autocadlt/)
+- AutoCAD: [https://8bahtapp.github.io/docs/autodesk/autocad/](https://8bahtapp.github.io/docs/autodesk/autocad/)
+- 3ds Max: [https://8bahtapp.github.io/docs/autodesk/3dsmax/](https://8bahtapp.github.io/docs/autodesk/3dsmax/)
+- Fusion, Revit, Inventor, Navisworks และอื่นๆ: [https://8bahtapp.github.io/docs/autodesk/other/](https://8bahtapp.github.io/docs/autodesk/other/)
+
+### SketchUp (SketchUp Pro, SketchUp for Web, Trimble Connect, PreDesign, V-Ray for SketchUp Studio)
+- คู่มือ SketchUp: [https://8bahtapp.github.io/docs/sketchup/](https://8bahtapp.github.io/docs/sketchup/)
+
+### Rhino (Rhino 8, Rhino 7)
+- คู่มือ Rhino: [https://8bahtapp.github.io/docs/rhino/](https://8bahtapp.github.io/docs/rhino/)
+
+### Chaos (Corona สำหรับ 3ds Max/Cinema 4D, Enscape สำหรับ SketchUp/Revit/Rhino/Archicad, V-Ray สำหรับ SketchUp/3ds Max/Maya/Rhino)
+- คู่มือ Chaos: [https://8bahtapp.github.io/docs/chaos/](https://8bahtapp.github.io/docs/chaos/)
+- Corona: [https://8bahtapp.github.io/docs/chaos/corona/](https://8bahtapp.github.io/docs/chaos/corona/)
+- Enscape: [https://8bahtapp.github.io/docs/chaos/enscape/](https://8bahtapp.github.io/docs/chaos/enscape/)
+- V-Ray: [https://8bahtapp.github.io/docs/chaos/vray/](https://8bahtapp.github.io/docs/chaos/vray/)
+
+### D5 Render (D5 Pro, D5 for Teams)
+- คู่มือ D5: [https://8bahtapp.github.io/docs/d5/](https://8bahtapp.github.io/docs/d5/)
+
+### BIM Bundle (Profile Builder 4, Quantifier Pro — ปลั๊กอินสำหรับ SketchUp)
+- คู่มือ BIM Bundle: [https://8bahtapp.github.io/docs/bim/](https://8bahtapp.github.io/docs/bim/)
+
+### Lumion (Lumion Pro Named-user, Lumion Studio Floating)
+- คู่มือ Lumion: [https://8bahtapp.github.io/docs/lumion/](https://8bahtapp.github.io/docs/lumion/)
+
+### Foxit PDF Editor (Perpetual ซื้อขาด, Subscription รายปี)
+- คู่มือ Foxit: [https://8bahtapp.github.io/docs/foxit/](https://8bahtapp.github.io/docs/foxit/)
+- Foxit Perpetual: [https://8bahtapp.github.io/docs/foxit/perpetual/](https://8bahtapp.github.io/docs/foxit/perpetual/)
+- Foxit Subscription: [https://8bahtapp.github.io/docs/foxit/subscription/](https://8bahtapp.github.io/docs/foxit/subscription/)
+
+### PDFelement
+- คู่มือ PDFelement: [https://8bahtapp.github.io/docs/pdfelement/](https://8bahtapp.github.io/docs/pdfelement/)
+
+### Microsoft (Microsoft 365 CSP — Word/Excel/PowerPoint/Outlook/Teams/OneDrive ฯลฯ, Office ESD, Office FPP)
+- คู่มือ Microsoft: [https://8bahtapp.github.io/docs/microsoft/](https://8bahtapp.github.io/docs/microsoft/)
+- Microsoft 365 CSP: [https://8bahtapp.github.io/docs/microsoft/csp/](https://8bahtapp.github.io/docs/microsoft/csp/)
+- Office ESD/FPP: [https://8bahtapp.github.io/docs/microsoft/esd/](https://8bahtapp.github.io/docs/microsoft/esd/)
+`
+
 const DOCS = {}
 
 // ── Adobe ──────────────────────────────
@@ -87,7 +139,7 @@ DOCS.adobe = `
 - Support: support8baht@applicadthai.com
 - Sale: 8baht@applicadthai.com
 - เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
-`
+` + ALL_PRODUCTS
 
 // ── Product 2 — เพิ่มตรงนี้ ──────────────
 // DOCS.product2 = `
@@ -121,6 +173,26 @@ function getContext() {
 }
  
 // ─────────────────────────────────────────
+// Session History — เก็บประวัติแชทตาม path
+// ─────────────────────────────────────────
+function saveHistory() {
+  const body = document.getElementById('chatBody')
+  if (!body) return
+  try {
+    sessionStorage.setItem('chatHistory-' + location.pathname, body.innerHTML)
+  } catch (e) {}
+}
+
+function loadHistory() {
+  const body = document.getElementById('chatBody')
+  if (!body) return
+  try {
+    const saved = sessionStorage.getItem('chatHistory-' + location.pathname)
+    if (saved) body.innerHTML = saved
+  } catch (e) {}
+}
+
+// ─────────────────────────────────────────
 // Disclaimer
 // ─────────────────────────────────────────
 function initDisclaimer() {
@@ -143,6 +215,7 @@ function initDisclaimer() {
   ].join(';')
   bar.innerHTML = 'ระบบตอบอัตโนมัติ — คำตอบอาจไม่ครอบคลุมทุกกรณี<br>ติดต่อเจ้าหน้าที่ คลิก <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" style="color:#0078d4;text-decoration:underline;">Open Ticket</a>'
   body.insertAdjacentElement('afterend', bar)
+  loadHistory()
 }
  
 // ─────────────────────────────────────────
@@ -286,6 +359,7 @@ function appendMessage(text, type, link = null) {
  
   body.appendChild(wrapper)
   body.scrollTop = body.scrollHeight
+  saveHistory()
 }
  
 function showTyping() {
@@ -398,7 +472,7 @@ AutoCAD LT, AutoCAD, 3ds Max, Fusion, Revit, Inventor, AEC Collection, PD&M Coll
 - Support: support8baht@applicadthai.com
 - Sale: 8baht@applicadthai.com
 - เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
-`
+` + ALL_PRODUCTS
 
 
 // ── SketchUp ───────────────────────────
@@ -474,7 +548,7 @@ DOCS.sketchup = `
 - Support: support8baht@applicadthai.com
 - Sale: 8baht@applicadthai.com
 - เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
-`
+` + ALL_PRODUCTS
 
 // ── Rhino ──────────────────────────────
 DOCS.rhino = `
@@ -538,7 +612,7 @@ DOCS.rhino = `
 - Support: support8baht@applicadthai.com
 - Sale: 8baht@applicadthai.com
 - เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
-`
+` + ALL_PRODUCTS
 
 // ── Chaos (Corona, Enscape, V-Ray) ─────
 DOCS.chaos = `
@@ -643,7 +717,7 @@ DOCS.chaos = `
 - Support: support8baht@applicadthai.com
 - Sale: 8baht@applicadthai.com
 - เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
-`
+` + ALL_PRODUCTS
 // ── D5 Render ──────────────────────────
 DOCS.d5 = `
 # คู่มือ D5 Render - 8Baht Docs
@@ -719,7 +793,7 @@ DOCS.d5 = `
 - Support: support8baht@applicadthai.com
 - Sale: 8baht@applicadthai.com
 - เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
-`
+` + ALL_PRODUCTS
 
 // ── BIM Bundle ─────────────────────────
 DOCS.bim = `
@@ -773,7 +847,7 @@ DOCS.bim = `
 - Support: support8baht@applicadthai.com
 - Sale: 8baht@applicadthai.com
 - เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
-`
+` + ALL_PRODUCTS
 // ── Lumion ─────────────────────────────
 DOCS.lumion = `
 # คู่มือ Lumion - 8Baht Docs
@@ -830,7 +904,7 @@ DOCS.lumion = `
 - Support: support8baht@applicadthai.com
 - Sale: 8baht@applicadthai.com
 - เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
-`
+` + ALL_PRODUCTS
 
 // ── Foxit ──────────────────────────────
 DOCS.foxit = `
@@ -893,7 +967,7 @@ DOCS.foxit = `
 - Support: support8baht@applicadthai.com
 - Sale: 8baht@applicadthai.com
 - เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
-`
+` + ALL_PRODUCTS
 
 // ── PDFelement ─────────────────────────
 DOCS.pdfelement = `
@@ -939,7 +1013,7 @@ DOCS.pdfelement = `
 - Support: support8baht@applicadthai.com
 - Sale: 8baht@applicadthai.com
 - เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
-`
+` + ALL_PRODUCTS
 
 // ── Microsoft ──────────────────────────
 DOCS.microsoft = `
@@ -1014,4 +1088,4 @@ DOCS.microsoft = `
 - Support: support8baht@applicadthai.com
 - Sale: 8baht@applicadthai.com
 - เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
-`
+` + ALL_PRODUCTS
