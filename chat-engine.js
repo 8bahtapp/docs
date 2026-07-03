@@ -229,7 +229,7 @@ function initDisclaimer() {
     'text-align:center',
     'flex-shrink:0'
   ].join(';')
-  bar.innerHTML = 'ระบบอัตโนมัติ — ข้อมูลอาจมีข้อผิดพลาด<br>คำถามเพิ่มเติมโปรด คลิก <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" style="color:#0078d4;text-decoration:underline;">ติดต่อเจ้าหน้าที่</a>'
+  bar.innerHTML = 'Support Chat เป็น AI — และอาจทำผิดพลาดได้<br>คำถามเพิ่มเติมโปรด คลิก <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" style="color:#0078d4;text-decoration:underline;">ติดต่อเจ้าหน้าที่</a>'
   body.insertAdjacentElement('afterend', bar)
   loadHistory()
 }
