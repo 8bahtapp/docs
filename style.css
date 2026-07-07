@@ -425,6 +425,7 @@ a:not(.help-btn):not(.download-btn):not(.cta-button):not(.cookie-btn):not(.nav-l
   box-shadow: var(--glass-shadow-hover);
   transform: translateY(-3px); border-color: var(--border-strong);
 }
+.info-card:hover .card-link { color: var(--green); padding-left: 4px }
 
 .info-card .card-icon {
   width: 50px; height: 50px; border-radius: 14px; font-size: 21px;
@@ -512,6 +513,7 @@ a:not(.help-btn):not(.download-btn):not(.cta-button):not(.cookie-btn):not(.nav-l
   transition: transform 0.28s ease;
 }
 .kb-card:hover              { transform: translateY(-3px); box-shadow: var(--glass-shadow-hover); border-color: var(--border-strong) }
+.kb-card:hover .kb-link      { color: var(--green); padding-left: 4px }
 .kb-card:hover::before      { transform: scaleX(1) }
 
 .kb-card-icon {

@@ -243,6 +243,38 @@ document.querySelectorAll('.download-btn, .card-link, .kb-link').forEach(btn => 
     });
 });
 // ========================================
+// Info Cards — Whole card clickable
+// ========================================
+document.querySelectorAll('.info-cards-grid .info-card').forEach(card => {
+    const link = card.querySelector('.card-link');
+    if (!link) return;
+
+    card.style.cursor = 'pointer';
+
+    card.addEventListener('click', (e) => {
+        // ถ้าคลิกที่ลิงก์เองอยู่แล้ว ให้ปล่อยให้ทำงานตามปกติ ไม่ต้องยิงซ้ำ
+        if (e.target.closest('.card-link')) return;
+        link.click();
+    });
+});
+
+// ========================================
+// KB Cards — Whole card clickable
+// ========================================
+document.querySelectorAll('.kb-grid .kb-card').forEach(card => {
+    const link = card.querySelector('.kb-link');
+    if (!link) return;
+
+    card.style.cursor = 'pointer';
+
+    card.addEventListener('click', (e) => {
+        // ถ้าคลิกที่ลิงก์เองอยู่แล้ว ให้ปล่อยให้ทำงานตามปกติ ไม่ต้องยิงซ้ำ
+        if (e.target.closest('.kb-link')) return;
+        link.click();
+    });
+});
+
+// ========================================
 // Cards Grid — Collapse / Expand
 // ซ่อนแถวที่ 2+ เมื่อมีการ์ดมากกว่า 1 แถว (> 3 ใบ)
 // ========================================
