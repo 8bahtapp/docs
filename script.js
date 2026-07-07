@@ -275,6 +275,20 @@ document.querySelectorAll('.kb-grid .kb-card').forEach(card => {
 });
 
 // ========================================
+// Doc Cards — Whole card clickable (.doc-card เท่านั้น)
+// ========================================
+document.querySelectorAll('.doc-card').forEach(card => {
+    const href = card.dataset.href;
+    if (!href) return;
+
+    card.addEventListener('click', (e) => {
+        // ถ้าคลิกที่ลิงก์/ปุ่มอื่นในการ์ด (ถ้ามี) ให้ปล่อยให้ทำงานตามปกติ ไม่ต้องยิงซ้ำ
+        if (e.target.closest('a, button')) return;
+        window.location.href = href;
+    });
+});
+
+// ========================================
 // Cards Grid — Collapse / Expand
 // ซ่อนแถวที่ 2+ เมื่อมีการ์ดมากกว่า 1 แถว (> 3 ใบ)
 // ========================================
@@ -283,6 +297,7 @@ document.querySelectorAll('.kb-grid .kb-card').forEach(card => {
   const THRESHOLD = COLS + 1; // > 3 ใบ = มีแถวที่ 2
 
   document.querySelectorAll('.cards-grid').forEach(grid => {
+    if (grid.classList.contains('no-collapse')) return; // หน้านี้ไม่ใช้ฟังก์ชันย่อ/ขยาย
     const cards = grid.querySelectorAll('.download-card');
     if (cards.length < THRESHOLD) return; // 1–3 ใบ ไม่ทำอะไร
 
