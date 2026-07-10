@@ -1,0 +1,15 @@
+{
+  "name": "8baht-docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "8Baht Support Docs — sync script สำหรับ generate DOCS ใน chat-engine.js จากหน้า HTML",
+  "scripts": {
+    "sync-docs": "node scripts/sync-docs.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

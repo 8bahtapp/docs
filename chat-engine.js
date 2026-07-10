@@ -68,6 +68,15 @@ const ALL_PRODUCTS = `
 
 const DOCS = {}
 
+// ═══════════════════════════════════════════════════════
+// DOCS: AUTO-GENERATED START
+// ห้ามแก้ไขส่วนนี้ด้วยมือ — แก้ที่หน้า docs HTML บน GitHub
+// แล้วรัน: npm run sync-docs
+// (สคริปต์จะเขียนทับเนื้อหาระหว่าง START/END นี้เท่านั้น
+//  ส่วนอื่นของไฟล์นี้จะไม่ถูกแตะต้อง)
+// ═══════════════════════════════════════════════════════
+
+// ── Adobe ──────────────────────────────
 // ── Adobe ──────────────────────────────
 DOCS.adobe = `
 # คู่มือ Adobe - 8Baht Docs
@@ -140,286 +149,6 @@ DOCS.adobe = `
 - Sale: 8baht@applicadthai.com
 - เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
 ` + ALL_PRODUCTS
-
-// ── Product 2 — เพิ่มตรงนี้ ──────────────
-// DOCS.product2 = `
-// # คู่มือ Product2 - 8Baht Docs
-// ...
-// `
-
-// ── Product 3 ─────────────────────────────
-// DOCS.product3 = `...`
-
-// ─────────────────────────────────────────
-// URL → Context mapping
-// เพิ่ม product ใหม่ตรงนี้ด้วย
-// ─────────────────────────────────────────
-function getContext() {
-  const path = window.location.pathname
-  if (path.includes('/adobe/'))    return DOCS.adobe
-  if (path.includes('/autodesk/'))   return DOCS.autodesk
-  if (path.includes('/sketchup/'))   return DOCS.sketchup
-  if (path.includes('/rhino/'))      return DOCS.rhino
-  if (path.includes('/chaos/'))      return DOCS.chaos
-  if (path.includes('/d5/'))         return DOCS.d5
-  if (path.includes('/bim/'))        return DOCS.bim
-  if (path.includes('/lumion/'))     return DOCS.lumion
-  if (path.includes('/foxit/'))      return DOCS.foxit
-  if (path.includes('/pdfelement/')) return DOCS.pdfelement
-  if (path.includes('/microsoft/'))  return DOCS.microsoft
-  // if (path.includes('/product2/')) return DOCS.product2
-  // if (path.includes('/product3/')) return DOCS.product3
-  return null
-}
- 
-// ─────────────────────────────────────────
-// Session History — เก็บประวัติแชทตาม product group
-// ─────────────────────────────────────────
-function getHistoryKey() {
-  const path = location.pathname
-  if (path.includes('/adobe/'))      return 'chatHistory-adobe'
-  if (path.includes('/autodesk/'))   return 'chatHistory-autodesk'
-  if (path.includes('/sketchup/'))   return 'chatHistory-sketchup'
-  if (path.includes('/rhino/'))      return 'chatHistory-rhino'
-  if (path.includes('/chaos/'))      return 'chatHistory-chaos'
-  if (path.includes('/d5/'))         return 'chatHistory-d5'
-  if (path.includes('/bim/'))        return 'chatHistory-bim'
-  if (path.includes('/lumion/'))     return 'chatHistory-lumion'
-  if (path.includes('/foxit/'))      return 'chatHistory-foxit'
-  if (path.includes('/pdfelement/')) return 'chatHistory-pdfelement'
-  if (path.includes('/microsoft/'))  return 'chatHistory-microsoft'
-  return 'chatHistory-' + path
-}
-
-function saveHistory() {
-  const body = document.getElementById('chatBody')
-  if (!body) return
-  try {
-    sessionStorage.setItem(getHistoryKey(), body.innerHTML)
-  } catch (e) {}
-}
-
-function loadHistory() {
-  const body = document.getElementById('chatBody')
-  if (!body) return
-  try {
-    const saved = sessionStorage.getItem(getHistoryKey())
-    if (saved) body.innerHTML = saved
-  } catch (e) {}
-}
-
-// ─────────────────────────────────────────
-// Chat Message History — ส่งให้โมเดลรู้บริบทบทสนทนาก่อนหน้า
-// (แยกจาก saveHistory/loadHistory ด้านบนที่เก็บไว้แค่โชว์ผล)
-// ─────────────────────────────────────────
-function getChatHistory() {
-  try {
-    const saved = sessionStorage.getItem(getHistoryKey() + '-msgs')
-    return saved ? JSON.parse(saved) : []
-  } catch (e) {
-    return []
-  }
-}
-
-function saveChatHistory(question, answer) {
-  try {
-    const history = getChatHistory()
-    history.push({ role: 'user', content: question })
-    history.push({ role: 'assistant', content: answer })
-    // เก็บแค่ 6 ข้อความล่าสุด (3 รอบสนทนา) กัน context บวมเกิน
-    const trimmed = history.slice(-6)
-    sessionStorage.setItem(getHistoryKey() + '-msgs', JSON.stringify(trimmed))
-  } catch (e) {}
-}
-
-// ─────────────────────────────────────────
-// Disclaimer
-// ─────────────────────────────────────────
-function initDisclaimer() {
-  const body = document.getElementById('chatBody')
-  if (!body) return
-  const parent = body.parentElement
-  if (parent.querySelector('.chat-disclaimer')) return
- 
-  const bar = document.createElement('div')
-  bar.className = 'chat-disclaimer'
-  bar.style.cssText = [
-    'background:#fff8e1',
-    'color:#7a6300',
-    'font-size:11px',
-    'line-height:1.5',
-    'padding:6px 10px',
-    'border-top:1px solid #c8900a',
-    'text-align:center',
-    'flex-shrink:0'
-  ].join(';')
-  bar.innerHTML = 'Support Chat เป็น AI — และอาจทำผิดพลาดได้<br>คำถามเพิ่มเติมโปรด คลิก <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" style="color:#0078d4;text-decoration:underline;">ติดต่อเจ้าหน้าที่</a>'
-  body.insertAdjacentElement('afterend', bar)
-  loadHistory()
-}
- 
-// ─────────────────────────────────────────
-// Parse markdown links → <a>
-// ─────────────────────────────────────────
-function parseLinks(text) {
-  // Escape HTML
-  let html = text
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-
-  // Bold: **text**
-  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-
-  // Markdown links [label](url)
-  html = html.replace(
-    /\[([^\]]+)\]\((https?:\/\/[^)]+|\/[^)]*)\)/g,
-    '<a href="$2" target="_blank" style="color:inherit;text-decoration:underline;">$1</a>'
-  )
-
-  // Split into lines and render bullets / paragraphs
-  const lines = html.split('\n')
-  const parts = []
-  let listOpen = false
-
-  for (const raw of lines) {
-    const line = raw.trim()
-    if (!line) {
-      if (listOpen) { parts.push('</ul>'); listOpen = false }
-      parts.push('<br>')
-      continue
-    }
-    if (line.startsWith('- ')) {
-      if (!listOpen) { parts.push('<ul style="margin:4px 0 4px 16px;padding:0;">'); listOpen = true }
-      parts.push(`<li style="margin-bottom:2px;">${line.slice(2)}</li>`)
-    } else {
-      if (listOpen) { parts.push('</ul>'); listOpen = false }
-      parts.push(`<span>${line}</span><br>`)
-    }
-  }
-  if (listOpen) parts.push('</ul>')
-
-  return parts.join('')
-}
- 
-// ─────────────────────────────────────────
-// Send & Reply
-// ─────────────────────────────────────────
-function sendChat() {
-  const input = document.getElementById('chatInput')
-  if (!input) return
-  const text = input.value.trim()
-  if (!text) return
- 
-  const context = getContext()
-  if (!context) return
- 
-  appendMessage(text, 'user')
-  input.value = ''
-  showTyping()
- 
-  getReply(text, context).then(reply => {
-    removeTyping()
-    appendMessage(reply.text, 'bot', reply.link)
-  })
-}
- 
-function handleChatKey(e) {
-  if (e.key === 'Enter') sendChat()
-}
- 
-async function getReply(question, context) {
-  try {
-    const history = getChatHistory()
-    const res = await fetch(WORKER_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ question, context, history })
-    })
- 
-    if (res.status === 429) {
-      return {
-        text: 'ขออภัย ระบบมีผู้ใช้งานจำนวนมาก กรุณาติดต่อเจ้าหน้าที่โดยตรง',
-        link: { text: 'Open Ticket', url: SUPPORT_URL }
-      }
-    }
- 
-    if (!res.ok) return contactStaffReply()
- 
-    const data = await res.json()
-    if (data.error) return contactStaffReply()
- 
-    saveChatHistory(question, data.answer)
-    return { text: data.answer, link: null }
- 
-  } catch (e) {
-    return contactStaffReply()
-  }
-}
- 
-function contactStaffReply() {
-  return {
-    text: 'ขออภัย ไม่สามารถเชื่อมต่อระบบได้ กรุณาติดต่อเจ้าหน้าที่โดยตรง',
-    link: { text: 'Open Ticket', url: SUPPORT_URL }
-  }
-}
- 
-// ─────────────────────────────────────────
-// UI Helpers
-// ─────────────────────────────────────────
-function appendMessage(text, type, link = null) {
-  const body = document.getElementById('chatBody')
-  if (!body) return
- 
-  const wrapper = document.createElement('div')
-  wrapper.className = `chat-message ${type}`
-  wrapper.style.cssText = type === 'user'
-    ? 'text-align:right; margin-bottom:10px;'
-    : 'margin-bottom:10px;'
- 
-  const bubble = document.createElement('div')
-  bubble.style.cssText = type === 'user'
-    ? 'display:inline-block; background:var(--text-primary); color:#fff; padding:9px 13px; border-radius:14px 14px 4px 14px; font-size:13px; max-width:85%; line-height:1.5;'
-    : 'line-height:1.5;'
- 
-  if (type === 'bot') {
-    bubble.innerHTML = parseLinks(text)
-  } else {
-    bubble.textContent = text
-  }
- 
-  wrapper.appendChild(bubble)
- 
-  if (link && type === 'bot') {
-    const a = document.createElement('a')
-    a.href = link.url
-    a.textContent = link.text
-    a.target = '_blank'
-    a.style.cssText = 'display:block; margin-top:6px; font-size:12px; color:var(--blue); text-decoration:underline;'
-    wrapper.appendChild(a)
-  }
- 
-  body.appendChild(wrapper)
-  body.scrollTop = body.scrollHeight
-  saveHistory()
-}
- 
-function showTyping() {
-  const body = document.getElementById('chatBody')
-  if (!body) return
-  const el = document.createElement('div')
-  el.id = 'typingIndicator'
-  el.className = 'chat-message bot'
-  el.style.marginBottom = '10px'
-  el.innerHTML = '<p style="display:inline-block; background:rgba(0,0,0,0.06); padding:9px 13px; border-radius:14px 14px 14px 4px; font-size:13px; color:#888;">กำลังพิมพ์...</p>'
-  body.appendChild(el)
-  body.scrollTop = body.scrollHeight
-}
- 
-function removeTyping() {
-  const el = document.getElementById('typingIndicator')
-  if (el) el.remove()
-}
 
 // ── Autodesk ───────────────────────────
 DOCS.autodesk = `
@@ -1132,3 +861,277 @@ DOCS.microsoft = `
 - Sale: 8baht@applicadthai.com
 - เวลาทำการ: จันทร์–ศุกร์ 09:00–17:00
 ` + ALL_PRODUCTS
+// ═══════════════════════════════════════════════════════
+// DOCS: AUTO-GENERATED END
+// ═══════════════════════════════════════════════════════
+
+// ─────────────────────────────────────────
+// URL → Context mapping
+// เพิ่ม product ใหม่ตรงนี้ด้วย
+// ─────────────────────────────────────────
+function getContext() {
+  const path = window.location.pathname
+  if (path.includes('/adobe/'))    return DOCS.adobe
+  if (path.includes('/autodesk/'))   return DOCS.autodesk
+  if (path.includes('/sketchup/'))   return DOCS.sketchup
+  if (path.includes('/rhino/'))      return DOCS.rhino
+  if (path.includes('/chaos/'))      return DOCS.chaos
+  if (path.includes('/d5/'))         return DOCS.d5
+  if (path.includes('/bim/'))        return DOCS.bim
+  if (path.includes('/lumion/'))     return DOCS.lumion
+  if (path.includes('/foxit/'))      return DOCS.foxit
+  if (path.includes('/pdfelement/')) return DOCS.pdfelement
+  if (path.includes('/microsoft/'))  return DOCS.microsoft
+  // if (path.includes('/product2/')) return DOCS.product2
+  // if (path.includes('/product3/')) return DOCS.product3
+  return null
+}
+ 
+// ─────────────────────────────────────────
+// Session History — เก็บประวัติแชทตาม product group
+// ─────────────────────────────────────────
+function getHistoryKey() {
+  const path = location.pathname
+  if (path.includes('/adobe/'))      return 'chatHistory-adobe'
+  if (path.includes('/autodesk/'))   return 'chatHistory-autodesk'
+  if (path.includes('/sketchup/'))   return 'chatHistory-sketchup'
+  if (path.includes('/rhino/'))      return 'chatHistory-rhino'
+  if (path.includes('/chaos/'))      return 'chatHistory-chaos'
+  if (path.includes('/d5/'))         return 'chatHistory-d5'
+  if (path.includes('/bim/'))        return 'chatHistory-bim'
+  if (path.includes('/lumion/'))     return 'chatHistory-lumion'
+  if (path.includes('/foxit/'))      return 'chatHistory-foxit'
+  if (path.includes('/pdfelement/')) return 'chatHistory-pdfelement'
+  if (path.includes('/microsoft/'))  return 'chatHistory-microsoft'
+  return 'chatHistory-' + path
+}
+
+function saveHistory() {
+  const body = document.getElementById('chatBody')
+  if (!body) return
+  try {
+    sessionStorage.setItem(getHistoryKey(), body.innerHTML)
+  } catch (e) {}
+}
+
+function loadHistory() {
+  const body = document.getElementById('chatBody')
+  if (!body) return
+  try {
+    const saved = sessionStorage.getItem(getHistoryKey())
+    if (saved) body.innerHTML = saved
+  } catch (e) {}
+}
+
+// ─────────────────────────────────────────
+// Chat Message History — ส่งให้โมเดลรู้บริบทบทสนทนาก่อนหน้า
+// (แยกจาก saveHistory/loadHistory ด้านบนที่เก็บไว้แค่โชว์ผล)
+// ─────────────────────────────────────────
+function getChatHistory() {
+  try {
+    const saved = sessionStorage.getItem(getHistoryKey() + '-msgs')
+    return saved ? JSON.parse(saved) : []
+  } catch (e) {
+    return []
+  }
+}
+
+function saveChatHistory(question, answer) {
+  try {
+    const history = getChatHistory()
+    history.push({ role: 'user', content: question })
+    history.push({ role: 'assistant', content: answer })
+    // เก็บแค่ 6 ข้อความล่าสุด (3 รอบสนทนา) กัน context บวมเกิน
+    const trimmed = history.slice(-6)
+    sessionStorage.setItem(getHistoryKey() + '-msgs', JSON.stringify(trimmed))
+  } catch (e) {}
+}
+
+// ─────────────────────────────────────────
+// Disclaimer
+// ─────────────────────────────────────────
+function initDisclaimer() {
+  const body = document.getElementById('chatBody')
+  if (!body) return
+  const parent = body.parentElement
+  if (parent.querySelector('.chat-disclaimer')) return
+ 
+  const bar = document.createElement('div')
+  bar.className = 'chat-disclaimer'
+  bar.style.cssText = [
+    'background:#fff8e1',
+    'color:#7a6300',
+    'font-size:11px',
+    'line-height:1.5',
+    'padding:6px 10px',
+    'border-top:1px solid #c8900a',
+    'text-align:center',
+    'flex-shrink:0'
+  ].join(';')
+  bar.innerHTML = 'Support Chat เป็น AI — และอาจทำผิดพลาดได้<br>คำถามเพิ่มเติมโปรด คลิก <a href="https://8baht.com/help?ref=8Baht_Docs" target="_blank" style="color:#0078d4;text-decoration:underline;">ติดต่อเจ้าหน้าที่</a>'
+  body.insertAdjacentElement('afterend', bar)
+  loadHistory()
+}
+ 
+// ─────────────────────────────────────────
+// Parse markdown links → <a>
+// ─────────────────────────────────────────
+function parseLinks(text) {
+  // Escape HTML
+  let html = text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+
+  // Bold: **text**
+  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+
+  // Markdown links [label](url)
+  html = html.replace(
+    /\[([^\]]+)\]\((https?:\/\/[^)]+|\/[^)]*)\)/g,
+    '<a href="$2" target="_blank" style="color:inherit;text-decoration:underline;">$1</a>'
+  )
+
+  // Split into lines and render bullets / paragraphs
+  const lines = html.split('\n')
+  const parts = []
+  let listOpen = false
+
+  for (const raw of lines) {
+    const line = raw.trim()
+    if (!line) {
+      if (listOpen) { parts.push('</ul>'); listOpen = false }
+      parts.push('<br>')
+      continue
+    }
+    if (line.startsWith('- ')) {
+      if (!listOpen) { parts.push('<ul style="margin:4px 0 4px 16px;padding:0;">'); listOpen = true }
+      parts.push(`<li style="margin-bottom:2px;">${line.slice(2)}</li>`)
+    } else {
+      if (listOpen) { parts.push('</ul>'); listOpen = false }
+      parts.push(`<span>${line}</span><br>`)
+    }
+  }
+  if (listOpen) parts.push('</ul>')
+
+  return parts.join('')
+}
+ 
+// ─────────────────────────────────────────
+// Send & Reply
+// ─────────────────────────────────────────
+function sendChat() {
+  const input = document.getElementById('chatInput')
+  if (!input) return
+  const text = input.value.trim()
+  if (!text) return
+ 
+  const context = getContext()
+  if (!context) return
+ 
+  appendMessage(text, 'user')
+  input.value = ''
+  showTyping()
+ 
+  getReply(text, context).then(reply => {
+    removeTyping()
+    appendMessage(reply.text, 'bot', reply.link)
+  })
+}
+ 
+function handleChatKey(e) {
+  if (e.key === 'Enter') sendChat()
+}
+ 
+async function getReply(question, context) {
+  try {
+    const history = getChatHistory()
+    const res = await fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question, context, history })
+    })
+ 
+    if (res.status === 429) {
+      return {
+        text: 'ขออภัย ระบบมีผู้ใช้งานจำนวนมาก กรุณาติดต่อเจ้าหน้าที่โดยตรง',
+        link: { text: 'Open Ticket', url: SUPPORT_URL }
+      }
+    }
+ 
+    if (!res.ok) return contactStaffReply()
+ 
+    const data = await res.json()
+    if (data.error) return contactStaffReply()
+ 
+    saveChatHistory(question, data.answer)
+    return { text: data.answer, link: null }
+ 
+  } catch (e) {
+    return contactStaffReply()
+  }
+}
+ 
+function contactStaffReply() {
+  return {
+    text: 'ขออภัย ไม่สามารถเชื่อมต่อระบบได้ กรุณาติดต่อเจ้าหน้าที่โดยตรง',
+    link: { text: 'Open Ticket', url: SUPPORT_URL }
+  }
+}
+ 
+// ─────────────────────────────────────────
+// UI Helpers
+// ─────────────────────────────────────────
+function appendMessage(text, type, link = null) {
+  const body = document.getElementById('chatBody')
+  if (!body) return
+ 
+  const wrapper = document.createElement('div')
+  wrapper.className = `chat-message ${type}`
+  wrapper.style.cssText = type === 'user'
+    ? 'text-align:right; margin-bottom:10px;'
+    : 'margin-bottom:10px;'
+ 
+  const bubble = document.createElement('div')
+  bubble.style.cssText = type === 'user'
+    ? 'display:inline-block; background:var(--text-primary); color:#fff; padding:9px 13px; border-radius:14px 14px 4px 14px; font-size:13px; max-width:85%; line-height:1.5;'
+    : 'line-height:1.5;'
+ 
+  if (type === 'bot') {
+    bubble.innerHTML = parseLinks(text)
+  } else {
+    bubble.textContent = text
+  }
+ 
+  wrapper.appendChild(bubble)
+ 
+  if (link && type === 'bot') {
+    const a = document.createElement('a')
+    a.href = link.url
+    a.textContent = link.text
+    a.target = '_blank'
+    a.style.cssText = 'display:block; margin-top:6px; font-size:12px; color:var(--blue); text-decoration:underline;'
+    wrapper.appendChild(a)
+  }
+ 
+  body.appendChild(wrapper)
+  body.scrollTop = body.scrollHeight
+  saveHistory()
+}
+ 
+function showTyping() {
+  const body = document.getElementById('chatBody')
+  if (!body) return
+  const el = document.createElement('div')
+  el.id = 'typingIndicator'
+  el.className = 'chat-message bot'
+  el.style.marginBottom = '10px'
+  el.innerHTML = '<p style="display:inline-block; background:rgba(0,0,0,0.06); padding:9px 13px; border-radius:14px 14px 14px 4px; font-size:13px; color:#888;">กำลังพิมพ์...</p>'
+  body.appendChild(el)
+  body.scrollTop = body.scrollHeight
+}
+ 
+function removeTyping() {
+  const el = document.getElementById('typingIndicator')
+  if (el) el.remove()
+}
