@@ -1,22 +1,20 @@
 // ============================================================
 // sync-docs.js
-// ดึงเนื้อหาจากหน้า docs HTML ทุกหน้าใน repo → generate เป็น
-// DOCS object → เขียนทับส่วน AUTO-GENERATED ใน chat-engine.js
+// ดึงเนื้อหาจากหน้า docs HTML ทุกหน้า "ในเครื่อง" (ไม่ยิงเน็ต) →
+// generate เป็น DOCS object → เขียนทับส่วน AUTO-GENERATED ใน chat-engine.js
 //
 // ใช้งาน: npm run sync-docs
-// (ต้องตั้งค่า GITHUB_TOKEN ใน env ถ้า repo เป็น private หรือ
-//  ถ้าเจอ rate limit ของ GitHub API แบบ unauthenticated)
+// (รันจาก root ของ repo ที่ clone ไว้แล้วในเครื่อง — ไม่ต้องใช้ token
+//  หรือเชื่อมต่อ GitHub API เพราะอ่านไฟล์จาก disk ตรงๆ)
 // ============================================================
 
 const fs = require('fs')
 const path = require('path')
 const cheerio = require('cheerio')
 
-const OWNER = '8bahtapp'
-const REPO = 'docs'
-const BRANCH = 'main'
 const SITE_BASE = 'https://8bahtapp.github.io'
-const CHAT_ENGINE_PATH = path.join(__dirname, '..', 'chat-engine.js')
+const REPO_ROOT = path.join(__dirname, '..')
+const CHAT_ENGINE_PATH = path.join(REPO_ROOT, 'chat-engine.js')
 
 // โฟลเดอร์ระดับบนสุดที่ถือว่าเป็น "โปรดักส์" — เพิ่มโปรดักส์ใหม่แค่เพิ่มบรรทัดนี้
 const PRODUCT_FOLDERS = [
@@ -28,43 +26,32 @@ const MARKER_START = '// DOCS: AUTO-GENERATED START'
 const MARKER_END = '// DOCS: AUTO-GENERATED END'
 
 // ─────────────────────────────────────────
-// 1. ดึงรายชื่อไฟล์ index.html ทั้งหมดจาก repo (recursive)
+// 1. เดินไฟล์ในเครื่อง หา index.html ทุกไฟล์ใต้แต่ละโฟลเดอร์โปรดักส์
+//    (ไม่ว่าจะซ้อนลึกกี่ชั้น ไม่ว่าโครงสร้างจะไม่เท่ากันก็ตาม)
 // ─────────────────────────────────────────
-async function fetchRepoTree() {
-  const url = `https://api.github.com/repos/${OWNER}/${REPO}/git/trees/${BRANCH}?recursive=1`
-  const headers = { 'Accept': 'application/vnd.github+json' }
-  if (process.env.GITHUB_TOKEN) headers['Authorization'] = `Bearer ${process.env.GITHUB_TOKEN}`
-
-  const res = await fetch(url, { headers })
-  if (!res.ok) throw new Error(`GitHub API error: ${res.status} ${res.statusText}`)
-  const data = await res.json()
-  if (data.truncated) console.warn('⚠️  GitHub tree ผลลัพธ์ถูกตัด (truncated) — repo อาจใหญ่เกินไป ตรวจสอบผลลัพธ์ดีๆ')
-  return data.tree
+function walkDir(dir, fileList = []) {
+  const entries = fs.readdirSync(dir, { withFileTypes: true })
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name)
+    if (entry.isDirectory()) {
+      if (entry.name === 'node_modules' || entry.name.startsWith('.')) continue
+      walkDir(fullPath, fileList)
+    } else if (entry.isFile() && entry.name === 'index.html') {
+      fileList.push(fullPath)
+    }
+  }
+  return fileList
 }
 
-function groupPagesByProduct(tree) {
+function groupPagesByProduct() {
   const pages = {}
-  for (const item of tree) {
-    if (item.type !== 'blob') continue
-    if (!item.path.endsWith('index.html')) continue
-
-    const topFolder = item.path.split('/')[0]
-    if (!PRODUCT_FOLDERS.includes(topFolder)) continue
-
-    if (!pages[topFolder]) pages[topFolder] = []
-    pages[topFolder].push(item.path)
+  for (const folder of PRODUCT_FOLDERS) {
+    const folderPath = path.join(REPO_ROOT, folder)
+    if (!fs.existsSync(folderPath)) continue
+    const files = walkDir(folderPath)
+    if (files.length) pages[folder] = files.sort()
   }
   return pages
-}
-
-// ─────────────────────────────────────────
-// 2. ดึงเนื้อหาไฟล์จริงจาก raw.githubusercontent.com
-// ─────────────────────────────────────────
-async function fetchFileContent(filePath) {
-  const url = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/${filePath}`
-  const res = await fetch(url)
-  if (!res.ok) throw new Error(`ดึงไฟล์ไม่สำเร็จ: ${filePath} (${res.status})`)
-  return res.text()
 }
 
 // ─────────────────────────────────────────
@@ -244,10 +231,9 @@ function toKeyName(folder) {
   return folder // ชื่อโฟลเดอร์ตรงกับ key อยู่แล้ว (adobe, autodesk, ...)
 }
 
-async function build() {
-  console.log('📡 กำลังดึงรายชื่อไฟล์จาก GitHub...')
-  const tree = await fetchRepoTree()
-  const pages = groupPagesByProduct(tree)
+function build() {
+  console.log('📂 กำลังสแกนไฟล์ index.html ในเครื่อง...')
+  const pages = groupPagesByProduct()
 
   const missing = PRODUCT_FOLDERS.filter(p => !pages[p])
   if (missing.length) {
@@ -259,8 +245,8 @@ async function build() {
   for (const folder of Object.keys(pages).sort()) {
     console.log(`🔎 ${folder}: ${pages[folder].length} หน้า`)
     let combined = ''
-    for (const filePath of pages[folder].sort()) {
-      const html = await fetchFileContent(filePath)
+    for (const filePath of pages[folder]) {
+      const html = fs.readFileSync(filePath, 'utf-8')
       const $ = cheerio.load(html)
       const text = extractText($)
       if (text) combined += text + '\n'
@@ -281,13 +267,15 @@ async function build() {
   const before = original.slice(0, startIdx)
   const after = original.slice(endIdx)
 
-  const updated = `${before}${MARKER_START}\n// ห้ามแก้ไขส่วนนี้ด้วยมือ — แก้ที่หน้า docs HTML บน GitHub แล้วรัน: npm run sync-docs\n${docsBlock}\n${after}`
+  const updated = `${before}${MARKER_START}\n// ห้ามแก้ไขส่วนนี้ด้วยมือ — แก้ที่หน้า docs HTML แล้วรัน: npm run sync-docs\n${docsBlock}\n${after}`
 
   fs.writeFileSync(CHAT_ENGINE_PATH, updated)
   console.log(`✅ อัปเดต chat-engine.js เรียบร้อย (${Object.keys(pages).length} โปรดักส์)`)
 }
 
-build().catch(err => {
+try {
+  build()
+} catch (err) {
   console.error('❌ Sync ล้มเหลว:', err.message)
   process.exit(1)
-})
+}
