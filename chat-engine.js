@@ -209,6 +209,30 @@ function loadHistory() {
 }
 
 // ─────────────────────────────────────────
+// Chat Message History — ส่งให้โมเดลรู้บริบทบทสนทนาก่อนหน้า
+// (แยกจาก saveHistory/loadHistory ด้านบนที่เก็บไว้แค่โชว์ผล)
+// ─────────────────────────────────────────
+function getChatHistory() {
+  try {
+    const saved = sessionStorage.getItem(getHistoryKey() + '-msgs')
+    return saved ? JSON.parse(saved) : []
+  } catch (e) {
+    return []
+  }
+}
+
+function saveChatHistory(question, answer) {
+  try {
+    const history = getChatHistory()
+    history.push({ role: 'user', content: question })
+    history.push({ role: 'assistant', content: answer })
+    // เก็บแค่ 6 ข้อความล่าสุด (3 รอบสนทนา) กัน context บวมเกิน
+    const trimmed = history.slice(-6)
+    sessionStorage.setItem(getHistoryKey() + '-msgs', JSON.stringify(trimmed))
+  } catch (e) {}
+}
+
+// ─────────────────────────────────────────
 // Disclaimer
 // ─────────────────────────────────────────
 function initDisclaimer() {
@@ -306,10 +330,11 @@ function handleChatKey(e) {
  
 async function getReply(question, context) {
   try {
+    const history = getChatHistory()
     const res = await fetch(WORKER_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ question, context })
+      body: JSON.stringify({ question, context, history })
     })
  
     if (res.status === 429) {
@@ -324,6 +349,7 @@ async function getReply(question, context) {
     const data = await res.json()
     if (data.error) return contactStaffReply()
  
+    saveChatHistory(question, data.answer)
     return { text: data.answer, link: null }
  
   } catch (e) {
